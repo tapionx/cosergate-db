@@ -51,7 +51,7 @@ Una volta inserite le spese, il sistema dovrà calcolare quanti soldi ogni inqui
 Abbozzo tabelle
 Ambiente
 
-    ID (PK)(tipo?)
+    id_ambiente (PK)
 
     nome [NN]
 
@@ -61,13 +61,13 @@ Ambiente
 
     città
 
-    CAP
+    cap
 
 Appartenenza
 
-    ID_ambiente (FK) 
+    id_ambiente (FK) 
 
-    ID_utente (FK)
+    id_utente (FK)
 
 Utente
 
@@ -83,11 +83,11 @@ Utente
 
 Pagamento
 
-    ID (PK)
+    id_pagamento (PK)
 
-    ID_pagante (FK) [NN]
+    id_pagante (FK) [NN]
 
-    ID_creditore (FK) [NN]
+    id_creditore (FK) [NN]
 
     importo [NN]
 
@@ -97,7 +97,7 @@ Pagamento
 
 Spesa
 
-    ID (PK)
+    id_spesa (PK)
 
     data [NN]
 
@@ -111,7 +111,7 @@ Spesa
 
 Prodotto
 
-    ID (PK)
+    id_prodotto (PK)
 
     costo [NN]
 
@@ -121,7 +121,7 @@ Prodotto
 
     nome [NN]
 
-    codice a barre
+    codice_a_barre
 
     spesa (FK) [NN]
 
@@ -133,16 +133,15 @@ Utilizzo
 
 Commento
 
-    ID (PK)
+    id_commento (PK)
 
-    ID_spesa (FK)
+    id_spesa (FK)
 
-    ID_prodotto (FK)
+    id_prodotto (FK)
 
-    ID_utente (FK) [NN]
+    id_utente (FK) [NN]
 
     timestamp [NN]
 
     testo [NN]
-
 
