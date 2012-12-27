@@ -3,20 +3,28 @@ http://www.unibo.it/SitoWebDocente/default.htm?NRMODE=Published&UPN=danilo.monte
 
     Raccolta delle specifiche della realtà di interesse espresse in linguaggio naturale, documentata.
 
-In tutte le case universitarie,  durante la settimana i componenti dell'abitazione vanno a fare la spesa.
-Non tutti comprano le stesse cose e non tutti consumano le stesse cose.
-Nessuno vuole spendere più del necessario; soprattutto gli studenti universitari.
-La questione della divisione delle spese, nelle case universitarie, è spesso causa di litigi.
+Ponendo in primis che, per il proprio sostentamento, ogni essere umano necessita di beni di prima necessità e ponendo inoltre che, per questioni legate agli impegni personali, tali beni non possono essere ogni volta comprati in concomitanza tra tutti i coinquilini di uno stesso appartamento è usanza comune che ognuno compri ciò di cui necessita e, conseguentemente, chiunque altro ne necessiti partecipi alla spesa.
+Tale usanza, nonostante risalga alla notte dei tempi (1088 ndr), è ancora poco accurata e fonte di incomprensione.
+L'incomprensione porta all'ostilità.
+L'ostilità porta alla guerra.
+Quello che stiamo sviluppando è un piccolo passo verso la pace nel mondo.
+In ogni casa, durante la settimana i componenti dell'abitazione vanno a fare la spesa.
+Non tutti comprano le stesse cose.
+Non tutti consumano le stesse cose.
+Nessuno vuole spendere più del necessario; soprattutto gli studenti universitari che sono dei poveracci per definizione.
+E' per questo che la questione della divisione delle spese, nelle case universitarie, è la principale causa di litigi.
 Per risolvere tale inconveniente in ogni casa ci si organizza diversamente: c'è chi decide di fare tutta la spesa in comune e cucinare insieme oppure c'è chi decide di organizzarsi autonomamente in modo tale che ognuno compri i propri alimenti e se li cucini.
-In entrambi i casi comunque, compaiono delle voci di spesa che riguardano tutti i componenti dell'abitazione: bollette, prodotti per la pulizia, e in generale tutti i beni di uso comune.
-La condivisione di tali voci di spesa comporta un periodico rituale che comprende la raccolta degli scontrini (spesso dimenticati nei portafogli), la trascrizione dei costi e il calcolo delle percentuali per definire chi deve soldi a chi.
+Nelle case più evolute, spesso, compaiono delle voci di spesa che riguardano tutti i componenti dell'abitazione: bollette, prodotti per la pulizia, e in generale tutti i beni di uso comune.
+La condivisione di tali voci di spesa comporta un periodico rituale che comprende la raccolta degli scontrini (spesso dimenticati nei meandri di un portafogli), la trascrizione dei costi e il calcolo delle percentuali per definire chi deve soldi a chi.
+E' cosa risaputa che tale procedura è la prima causa di omicidi all'interno delle case universitarie.
+Più sono i coinquilini e più sono le spese, il ché è un guaio considerando che il rituale sopracitato deve essere effettuato un numero di volte esponenziale rispetto al numero di spese effettuate.
+A questo punto noi ci siamo chiesti: non sarebbe molto più comodo automatizzare il procedimento evitando così crolli nervosi e lanci di monetine?
 Secondo noi è molto più comodo affidare la gestione della contabilità casalinga ad un programma. In questo modo si risolvono i problemi descritti e si può beneficiare di ulteriori vantaggi.
 Ogni volta che un membro dell'abitazione va a fare la spesa, inserisce nel sistema i prodotti che ha acquistato.
-Per ogni prodotto, specifica una breve descrizione, il prezzo, e quali coinquilini lo utilizzeranno.
+Per ogni prodotto, specifica una breve descrizione, il prezzo, e quali coinquilini utilizzeranno quel prodotto.
 Il sistema calcola automaticamente quanti soldi ognuno deve restitutire agli altri. 
 Essendo questa procedura così immediata, però, si può semplicemente evitare di scambiare il denaro ogni volta che si fa la spesa. Visto che di solito si abita con le stesse persone almeno per un anno, si può lasciare il conto "aperto" e restituirsi i soldi anche solo una volta all'anno, o semplicemente quando i debiti superano una soglia ragionevole.
-Organizzandosi in modo efficace, ruotando le persone che vanno a fare la spesa, però, si possono tenere basse le differenze tra debiti e crediti. 
-Se si riesce a tenere questa soglia sotto un certo limite, si può anche evitare del tutto di scambiarsi il denaro.
+Organizzandosi in modo efficace, ruotando le persone che vanno a fare la spesa, però, si poss tenere basse le differenze tra debiti e crediti, se si riesce a tenere questa soglia sotto un certo limite, si può anche evitare del tutto di scambiarsi il denaro.
 Oltre a semplificare la procedura descritta in precedenza, l'utilizzo di questo sistema, può introdurre anche dei notevoli vantaggi.
 Il programma registra lo storico degli acquisti, questo può essere molto utile per calcolare e presentare delle statistiche sulle spese casalinghe:
 
@@ -26,15 +34,13 @@ Il programma registra lo storico degli acquisti, questo può essere molto utile 
 
     Chi va a fare la spesa più spesso
 
-    Monitorare la variazione di prezzo dei prodotti
-
 L'afflusso di una grande quantità di dati relativi ai prodotti venduti nei supermercati, può inoltre rappresentare una risorsa per lo sviluppo di ulteriori funzionalità ed altre applicazioni.
 Associando ad ogni prodotto il suo codice a barre, si può creare con il tempo un database unico di articoli, associando ad ognuno i diversi prezzi proposti da ogni supermercato.
 Si potrebbe anche creare una tabella dei supermercati georeferenziati, in modo da mostrare su una mappa quelli più vicini a casa propria, e quelli che offrono prezzi più competitivi.
 La raccolta di questi dati potrebbe essere molto facilitata dall'utilizzo di applicazioni per smartphone. Con la fotocamera si registrano i codici a barre dei prodotti nel momento in cui vengono inseriti nel carrello. In questo modo non c'è bisogno di riportare al computer le spese effettuate una volta arrivati a casa, inoltre il GPS del cellulare può tenere traccia del supermercato in cui ci si trova, e se il prodotto che si sta acquistando è disponibile nelle vicinanze ad un prezzo minore, l'utente può essere avvisato con una notifica.
 Il sistema potrebbe aiutare anche le casalinghe a tenere traccia dei prodotti disponibili nella dispensa. Associando la data di scadenza ai generi alimentari, il sistema potrebbe notificare quando un prodotto sta per scadere.
 Tutte queste funzionalità sono sicuramente ambiziose, ma se il prodotto riesce a raggiungere un discreto numero di utenti, sono certamente realizzabili.
-Naturalmente nell'ambito del progetto di Basi di Dati non avremo la possiblità di sviluppare tutte queste possibilità, ma la nostra fase di Analisi dei Requisiti vuole essere più ampia e completa possibile per facilitare future espansioni.
+Naturalmente nell'ambito del progetto di Basi di Dati non avremo la possiblità di sviluppare tutte queste possibilità, ma la nostra fase di Analisi dei Requisiti vuole essere più ampia e completa possibile.
 Analisi dei Requisiti
 Si vuole realizzare una base di dati per gestire le spese all'interno di una abitazione.
 La spesa è identificata dallo scontrino, in cui è riportata la data e l'ora dell'acquisto, i nomi dei prodotti acquistati, collegati al prezzo e alla quantità, il nome e l'indirizzo del negozio e a volte anche il nome del cliente, se utilizza una tessera socio.
@@ -45,7 +51,7 @@ Una volta inserite le spese, il sistema dovrà calcolare quanti soldi ogni inqui
 Abbozzo tabelle
 Ambiente
 
-    id_ambiente (PK)
+    ID (PK)(tipo?)
 
     nome [NN]
 
@@ -55,13 +61,13 @@ Ambiente
 
     città
 
-    cap
+    CAP
 
 Appartenenza
 
-    id_ambiente (FK) 
+    ID_ambiente (FK) 
 
-    id_utente (FK)
+    ID_utente (FK)
 
 Utente
 
@@ -77,11 +83,11 @@ Utente
 
 Pagamento
 
-    id_pagamento (PK)
+    ID (PK)
 
-    id_pagante (FK) [NN]
+    ID_pagante (FK) [NN]
 
-    id_creditore (FK) [NN]
+    ID_creditore (FK) [NN]
 
     importo [NN]
 
@@ -91,7 +97,7 @@ Pagamento
 
 Spesa
 
-    id_spesa (PK)
+    ID (PK)
 
     data [NN]
 
@@ -105,7 +111,7 @@ Spesa
 
 Prodotto
 
-    id_prodotto (PK)
+    ID (PK)
 
     costo [NN]
 
@@ -115,7 +121,7 @@ Prodotto
 
     nome [NN]
 
-    codice_a_barre
+    codice a barre
 
     spesa (FK) [NN]
 
@@ -127,15 +133,16 @@ Utilizzo
 
 Commento
 
-    id_commento (PK)
+    ID (PK)
 
-    id_spesa (FK)
+    ID_spesa (FK)
 
-    id_prodotto (FK)
+    ID_prodotto (FK)
 
-    id_utente (FK) [NN]
+    ID_utente (FK) [NN]
 
     timestamp [NN]
 
     testo [NN]
+
 
