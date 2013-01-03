@@ -5,8 +5,8 @@ CREATE  TABLE IF NOT EXISTS `mydb`.`ambiente` (
   `cap` VARCHAR(45) NULL ,
   `numero_civico` VARCHAR(45) NULL ,
   `nome` VARCHAR(45) NOT NULL ,
-  PRIMARY KEY (`id_ambiente`) )
-ENGINE = InnoDB;
+  PRIMARY KEY (`id_ambiente`)   
+)
 
 CREATE  TABLE IF NOT EXISTS `mydb`.`utente` (
   `email` VARCHAR(45) NOT NULL ,
