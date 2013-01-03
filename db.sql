@@ -14,8 +14,8 @@ CREATE  TABLE IF NOT EXISTS `mydb`.`utente` (
   `cognome` VARCHAR(45) NOT NULL ,
   `password` VARCHAR(45) NOT NULL ,
   `username` VARCHAR(45) NOT NULL ,
-  PRIMARY KEY (`email`) )
-ENGINE = InnoDB;
+  PRIMARY KEY (`email`) 
+)
 
 CREATE  TABLE IF NOT EXISTS `mydb`.`appartenenza` (
   `id_ambiente` INT NOT NULL ,
