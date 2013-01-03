@@ -8,26 +8,30 @@ USE `mydb` ;
 -- -----------------------------------------------------
 -- Table `mydb`.`ambiente`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`ambiente` ;
+
 CREATE  TABLE IF NOT EXISTS `mydb`.`ambiente` (
-  `idAmbiente` INT NOT NULL AUTO_INCREMENT ,
-  `nome` VARCHAR(45) NOT NULL ,
-  `via` VARCHAR(45) NULL ,
-  `numero_civico` VARCHAR(45) NULL ,
+  `id_ambiente` INT NOT NULL AUTO_INCREMENT ,
   `citta` VARCHAR(45) NULL ,
+  `via` VARCHAR(45) NULL ,
   `cap` VARCHAR(45) NULL ,
-  PRIMARY KEY (`idAmbiente`) )
+  `numero_civico` VARCHAR(45) NULL ,
+  `nome` VARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`id_ambiente`) )
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
 -- Table `mydb`.`utente`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`utente` ;
+
 CREATE  TABLE IF NOT EXISTS `mydb`.`utente` (
   `email` VARCHAR(45) NOT NULL ,
   `nome` VARCHAR(45) NOT NULL ,
   `cognome` VARCHAR(45) NOT NULL ,
-  `nickname` VARCHAR(45) NOT NULL ,
   `password` VARCHAR(45) NOT NULL ,
+  `username` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`email`) )
 ENGINE = InnoDB;
 
@@ -35,12 +39,12 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`appartenenza`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`appartenenza` ;
+
 CREATE  TABLE IF NOT EXISTS `mydb`.`appartenenza` (
-  `idAmbiente` INT NOT NULL ,
-  `idUtente` INT NOT NULL ,
-  PRIMARY KEY (`idAmbiente`, `idUtente`) ,
-  INDEX `idUtente` () ,
-  INDEX `idAmbiente` () ,
+  `id_ambiente` INT NOT NULL ,
+  `id_utente` INT NOT NULL ,
+  PRIMARY KEY (`id_ambiente`, `id_utente`) ,
   CONSTRAINT `idUtente`
     FOREIGN KEY ()
     REFERENCES `mydb`.`utente` ()
@@ -53,18 +57,22 @@ CREATE  TABLE IF NOT EXISTS `mydb`.`appartenenza` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+CREATE INDEX `idUtente` ON `mydb`.`appartenenza` () ;
+
+CREATE INDEX `idAmbiente` ON `mydb`.`appartenenza` () ;
+
 
 -- -----------------------------------------------------
 -- Table `mydb`.`spesa`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`spesa` ;
+
 CREATE  TABLE IF NOT EXISTS `mydb`.`spesa` (
-  `idSpesa` INT NOT NULL ,
+  `id_spesa` INT NOT NULL ,
+  `negozio` VARCHAR(45) NULL ,
   `data` DATE NOT NULL ,
   `timestamp` DATE NOT NULL ,
-  `negozio` VARCHAR(45) NULL ,
-  PRIMARY KEY (`idSpesa`) ,
-  INDEX `ambiente` () ,
-  INDEX `cliente` () ,
+  PRIMARY KEY (`id_spesa`) ,
   CONSTRAINT `ambiente`
     FOREIGN KEY ()
     REFERENCES `mydb`.`ambiente` ()
@@ -81,42 +89,47 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `mydb`.`pagamento`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`pagamento` ;
+
 CREATE  TABLE IF NOT EXISTS `mydb`.`pagamento` (
-  `id` INT NOT NULL ,
-  `pagante` INT NOT NULL ,
-  `creditore` INT NOT NULL ,
+  `id_pagamento` INT NOT NULL ,
   `importo` INT NOT NULL ,
   `data` INT NOT NULL ,
   `timestamp` INT NOT NULL ,
-  PRIMARY KEY (`id`) ,
-  INDEX `pagante` () ,
-  INDEX `creditore` () ,
-  CONSTRAINT `pagante`
+  `id_pagante` INT NOT NULL ,
+  `id_creditore` INT NOT NULL ,
+  PRIMARY KEY (`id_pagamento`) ,
+  CONSTRAINT `id_pagante`
     FOREIGN KEY ()
     REFERENCES `mydb`.`utente` ()
     ON DELETE NO ACTION
     ON UPDATE NO ACTION,
-  CONSTRAINT `creditore`
+  CONSTRAINT `id_creditore`
     FOREIGN KEY ()
     REFERENCES `mydb`.`utente` ()
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+CREATE INDEX `id_pagante` ON `mydb`.`pagamento` () ;
+
+CREATE INDEX `id_creditore` ON `mydb`.`pagamento` () ;
+
 
 -- -----------------------------------------------------
 -- Table `mydb`.`prodotto`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`prodotto` ;
+
 CREATE  TABLE IF NOT EXISTS `mydb`.`prodotto` (
-  `id` INT NOT NULL ,
-  `costo` INT NOT NULL ,
-  `quantita` INT NOT NULL ,
-  `descrizione` VARCHAR(45) NULL ,
+  `id_prodotto` INT NOT NULL ,
   `nome` VARCHAR(45) NOT NULL ,
-  `codice_barre` INT NULL ,
+  `quantita` INT NOT NULL ,
+  `costo` INT NOT NULL ,
+  `descrizione` VARCHAR(45) NULL ,
+  `codice_a_barre` INT NULL ,
   `spesa` INT NOT NULL ,
-  PRIMARY KEY (`id`) ,
-  INDEX `spesa` () ,
+  PRIMARY KEY (`id_prodotto`) ,
   CONSTRAINT `spesa`
     FOREIGN KEY ()
     REFERENCES `mydb`.`spesa` ()
@@ -124,16 +137,18 @@ CREATE  TABLE IF NOT EXISTS `mydb`.`prodotto` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
+CREATE INDEX `spesa` ON `mydb`.`prodotto` () ;
+
 
 -- -----------------------------------------------------
 -- Table `mydb`.`utilizzo`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`utilizzo` ;
+
 CREATE  TABLE IF NOT EXISTS `mydb`.`utilizzo` (
   `prodotto` INT NOT NULL ,
   `utente` INT NOT NULL ,
   PRIMARY KEY (`prodotto`, `utente`) ,
-  INDEX `prodotto` () ,
-  INDEX `utente` () ,
   CONSTRAINT `prodotto`
     FOREIGN KEY ()
     REFERENCES `mydb`.`prodotto` ()
@@ -145,20 +160,24 @@ CREATE  TABLE IF NOT EXISTS `mydb`.`utilizzo` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+CREATE INDEX `prodotto` ON `mydb`.`utilizzo` () ;
+
+CREATE INDEX `utente` ON `mydb`.`utilizzo` () ;
 
 
 -- -----------------------------------------------------
 -- Table `mydb`.`commento`
 -- -----------------------------------------------------
+DROP TABLE IF EXISTS `mydb`.`commento` ;
+
 CREATE  TABLE IF NOT EXISTS `mydb`.`commento` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
-  `prodotto` INT NOT NULL ,
-  `utente` INT NOT NULL ,
-  `timestamp` INT NOT NULL ,
+  `id_commento` INT NOT NULL AUTO_INCREMENT ,
   `testo` INT NOT NULL ,
-  PRIMARY KEY (`id`) ,
-  INDEX `prodotto` () ,
-  INDEX `utente` () ,
+  `timestamp` INT NOT NULL ,
+  `id_prodotto` INT NOT NULL ,
+  `id_utente` INT NOT NULL ,
+  PRIMARY KEY (`id_commento`) ,
   CONSTRAINT `prodotto`
     FOREIGN KEY ()
     REFERENCES `mydb`.`prodotto` ()
@@ -170,6 +189,10 @@ CREATE  TABLE IF NOT EXISTS `mydb`.`commento` (
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
+
+CREATE INDEX `prodotto` ON `mydb`.`commento` () ;
+
+CREATE INDEX `utente` ON `mydb`.`commento` () ;
 
 
 
