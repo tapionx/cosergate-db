@@ -1,4 +1,4 @@
-CREATE  TABLE IF NOT EXISTS `mydb`.`ambiente` (
+CREATE  TABLE IF NOT EXISTS `ambiente` (
   `id_ambiente` INT NOT NULL AUTO_INCREMENT ,
   `citta` VARCHAR(45) NULL ,
   `via` VARCHAR(45) NULL ,
@@ -8,7 +8,7 @@ CREATE  TABLE IF NOT EXISTS `mydb`.`ambiente` (
   PRIMARY KEY (`id_ambiente`)   
 )
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`utente` (
+CREATE  TABLE IF NOT EXISTS `utente` (
   `email` VARCHAR(45) NOT NULL ,
   `nome` VARCHAR(45) NOT NULL ,
   `cognome` VARCHAR(45) NOT NULL ,
@@ -17,7 +17,7 @@ CREATE  TABLE IF NOT EXISTS `mydb`.`utente` (
   PRIMARY KEY (`email`) 
 )
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`appartenenza` (
+CREATE  TABLE IF NOT EXISTS `appartenenza` (
   `id_ambiente` INT NOT NULL ,
   `id_utente` INT NOT NULL ,
   PRIMARY KEY (`id_ambiente`, `id_utente`) ,
@@ -33,7 +33,7 @@ CREATE  TABLE IF NOT EXISTS `mydb`.`appartenenza` (
     ON UPDATE NO ACTION
 )
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`spesa` (
+CREATE  TABLE IF NOT EXISTS `spesa` (
   `id_spesa` INT NOT NULL ,
   `negozio` VARCHAR(45) NULL ,
   `data` DATE NOT NULL ,
@@ -51,7 +51,7 @@ CREATE  TABLE IF NOT EXISTS `mydb`.`spesa` (
     ON UPDATE NO ACTION
 )
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`pagamento` (
+CREATE  TABLE IF NOT EXISTS `pagamento` (
   `id_pagamento` INT NOT NULL ,
   `importo` INT NOT NULL ,
   `data` INT NOT NULL ,
@@ -71,7 +71,7 @@ CREATE  TABLE IF NOT EXISTS `mydb`.`pagamento` (
     ON UPDATE NO ACTION
 )
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`prodotto` (
+CREATE  TABLE IF NOT EXISTS `prodotto` (
   `id_prodotto` INT NOT NULL ,
   `nome` VARCHAR(45) NOT NULL ,
   `quantita` INT NOT NULL ,
@@ -87,7 +87,7 @@ CREATE  TABLE IF NOT EXISTS `mydb`.`prodotto` (
     ON UPDATE NO ACTION
 )
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`utilizzo` (
+CREATE  TABLE IF NOT EXISTS `utilizzo` (
   `prodotto` INT NOT NULL ,
   `utente` INT NOT NULL ,
   PRIMARY KEY (`prodotto`, `utente`) ,
@@ -103,7 +103,7 @@ CREATE  TABLE IF NOT EXISTS `mydb`.`utilizzo` (
     ON UPDATE NO ACTION
 )
 
-CREATE  TABLE IF NOT EXISTS `mydb`.`commento` (
+CREATE  TABLE IF NOT EXISTS `commento` (
   `id_commento` INT NOT NULL AUTO_INCREMENT ,
   `testo` INT NOT NULL ,
   `timestamp` INT NOT NULL ,
