@@ -17,7 +17,7 @@ CREATE TABLE IF NOT EXISTS utente (
 
 CREATE TABLE IF NOT EXISTS appartenenza (
   id_ambiente INTEGER NOT NULL ,
-  id_utente INTEGER NOT NULL ,
+  id_utente VARCHAR(45) NOT NULL ,
   PRIMARY KEY (id_ambiente, id_utente) ,
   FOREIGN KEY (id_ambiente) REFERENCES ambiente(id_ambiente),
   FOREIGN KEY (id_utente) REFERENCES utente(email)
