@@ -29,7 +29,7 @@ CREATE TABLE IF NOT EXISTS spesa (
   data DATE NOT NULL ,
   timestamp DATE NOT NULL ,
   ambiente INTEGER NOT NULL,
-  cliente INTEGER NOT NULL,
+  cliente VARCHAR(45) NOT NULL,
   FOREIGN KEY(ambiente) REFERENCES ambiente(id_ambiente),
   FOREIGN KEY(cliente) REFERENCES utente(email)
 );
