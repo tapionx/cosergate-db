@@ -39,8 +39,8 @@ CREATE TABLE IF NOT EXISTS pagamento (
   importo INTEGER NOT NULL ,
   data INTEGER NOT NULL ,
   timestamp INTEGER NOT NULL ,
-  id_pagante INTEGER NOT NULL ,
-  id_creditore INTEGER NOT NULL ,
+  id_pagante VARCHAR(45) NOT NULL ,
+  id_creditore VARCHAR(45) NOT NULL ,
   FOREIGN KEY (id_pagante) REFERENCES utente(email),
   FOREIGN KEY (id_creditore) REFERENCES utente(email),
 );
