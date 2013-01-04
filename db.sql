@@ -50,22 +50,16 @@ CREATE TABLE IF NOT EXISTS prodotto (
   nome VARCHAR(45) NOT NULL ,
   quantita INTEGER NOT NULL ,
   costo INTEGER NOT NULL ,
-  descrizione VARCHAR(45),
-  codice_a_barre INTEGER,
+  descrizione VARCHAR(45) ,
+  codice_a_barre INTEGER ,
   spesa INTEGER NOT NULL ,
   FOREIGN KEY (spesa) REFERENCES spesa(id_spesa)
 );
 
-CREATE TABLE IF NOT EXISTS `utilizzo` (
-  `prodotto` INT NOT NULL ,
-  `utente` INT NOT NULL ,
+CREATE TABLE IF NOT EXISTS utilizzo (
+  prodotto INTEGER NOT NULL ,
+  utente VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`prodotto`, `utente`) ,
-  CONSTRAINT `prodotto`
-    FOREIGN KEY ()
-    REFERENCES `prodotto` ()
-  CONSTRAINT `utente`
-    FOREIGN KEY ()
-    REFERENCES `utente` ()
 );
 
 CREATE TABLE IF NOT EXISTS `commento` (
