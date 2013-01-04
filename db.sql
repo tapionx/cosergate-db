@@ -43,12 +43,6 @@ CREATE TABLE IF NOT EXISTS pagamento (
   id_creditore INTEGER NOT NULL ,
   FOREIGN KEY (id_pagante) REFERENCES utente(email),
   FOREIGN KEY (id_creditore) REFERENCES utente(email),
-  CONSTRAINT `id_pagante`
-    FOREIGN KEY ()
-    REFERENCES `utente` ()
-  CONSTRAINT `id_creditore`
-    FOREIGN KEY ()
-    REFERENCES `utente` ()
 );
 
 CREATE TABLE IF NOT EXISTS `prodotto` (
