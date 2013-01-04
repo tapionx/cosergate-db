@@ -69,7 +69,7 @@ CREATE TABLE IF NOT EXISTS commento (
   testo INTEGER NOT NULL ,
   timestamp INTEGER NOT NULL ,
   id_prodotto INTEGER NOT NULL ,
-  id_utente INTEGER NOT NULL ,
+  id_utente VARCHAR(45) NOT NULL ,
   FOREIGN KEY (id_prodotto) REFERENCES prodotto(id_prodotto),
   FOREIGN KEY (id_utente) REFERENCES email(utente),
 );
