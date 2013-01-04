@@ -1,5 +1,5 @@
 CREATE TABLE IF NOT EXISTS ambiente (
-  id_ambiente INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  id_ambiente INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
   citta VARCHAR(45),
   via VARCHAR(45),
   cap VARCHAR(45),
@@ -16,19 +16,22 @@ CREATE TABLE IF NOT EXISTS utente (
 );
 
 CREATE TABLE IF NOT EXISTS appartenenza (
-  id_ambiente INT NOT NULL ,
-  id_utente INT NOT NULL ,
+  id_ambiente INTEGER NOT NULL ,
+  id_utente INTEGER NOT NULL ,
   PRIMARY KEY (id_ambiente, id_utente) ,
   FOREIGN KEY (id_ambiente) REFERENCES ambiente(id_ambiente),
   FOREIGN KEY (id_utente) REFERENCES utente(email)
 );
 
-CREATE TABLE IF NOT EXISTS `spesa` (
-  `id_spesa` INT NOT NULL ,
-  `negozio` VARCHAR(45) NULL ,
-  `data` DATE NOT NULL ,
-  `timestamp` DATE NOT NULL ,
-  PRIMARY KEY (`id_spesa`) ,
+CREATE TABLE IF NOT EXISTS spesa (
+  id_spesa INTEGER NOT NULL PRIMARY KEY,
+  negozio VARCHAR(45) NULL ,
+  data DATE NOT NULL ,
+  timestamp DATE NOT NULL ,
+  ambiente INTEGER NOT NULL,
+  cliente INTEGER NOT NULL,
+  FOREIGN KEY(ambiente) REFERENCES ambiente(id_ambiente),
+  FOREIGN KEY(cliente) REFERENCES utente(email),
   CONSTRAINT `ambiente`
     FOREIGN KEY ()
     REFERENCES `ambiente` ()
