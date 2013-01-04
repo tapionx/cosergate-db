@@ -15,16 +15,12 @@ CREATE TABLE IF NOT EXISTS utente (
   username VARCHAR(45) NOT NULL 
 );
 
-CREATE TABLE IF NOT EXISTS `appartenenza` (
-  `id_ambiente` INT NOT NULL ,
-  `id_utente` INT NOT NULL ,
-  PRIMARY KEY (`id_ambiente`, `id_utente`) ,
-  CONSTRAINT `id_utente`
-    FOREIGN KEY ()
-    REFERENCES `utente` ()
-  CONSTRAINT `id_ambiente`
-    FOREIGN KEY ()
-    REFERENCES `ambiente` ()
+CREATE TABLE IF NOT EXISTS appartenenza (
+  id_ambiente INT NOT NULL ,
+  id_utente INT NOT NULL ,
+  PRIMARY KEY (id_ambiente, id_utente) ,
+  FOREIGN KEY (id_ambiente) REFERENCES ambiente(id_ambiente),
+  FOREIGN KEY (id_utente) REFERENCES utente(email)
 );
 
 CREATE TABLE IF NOT EXISTS `spesa` (
