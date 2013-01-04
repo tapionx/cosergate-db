@@ -6,7 +6,7 @@ CREATE TABLE IF NOT EXISTS `ambiente` (
   `numero_civico` VARCHAR(45) NULL ,
   `nome` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id_ambiente`)   
-)
+);
 
 CREATE TABLE IF NOT EXISTS `utente` (
   `email` VARCHAR(45) NOT NULL ,
@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS `utente` (
   `password` VARCHAR(45) NOT NULL ,
   `username` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`email`) 
-)
+);
 
 CREATE TABLE IF NOT EXISTS `appartenenza` (
   `id_ambiente` INT NOT NULL ,
@@ -23,11 +23,11 @@ CREATE TABLE IF NOT EXISTS `appartenenza` (
   PRIMARY KEY (`id_ambiente`, `id_utente`) ,
   CONSTRAINT `idUtente`
     FOREIGN KEY ()
-    REFERENCES `mydb`.`utente` ()
+    REFERENCES `utente` ()
   CONSTRAINT `idAmbiente`
     FOREIGN KEY ()
-    REFERENCES `mydb`.`ambiente` ()
-)
+    REFERENCES `ambiente` ()
+);
 
 CREATE TABLE IF NOT EXISTS `spesa` (
   `id_spesa` INT NOT NULL ,
@@ -37,11 +37,11 @@ CREATE TABLE IF NOT EXISTS `spesa` (
   PRIMARY KEY (`id_spesa`) ,
   CONSTRAINT `ambiente`
     FOREIGN KEY ()
-    REFERENCES `mydb`.`ambiente` ()
+    REFERENCES `ambiente` ()
   CONSTRAINT `cliente`
     FOREIGN KEY ()
-    REFERENCES `mydb`.`utente` ()
-)
+    REFERENCES `utente` ()
+);
 
 CREATE TABLE IF NOT EXISTS `pagamento` (
   `id_pagamento` INT NOT NULL ,
@@ -53,11 +53,11 @@ CREATE TABLE IF NOT EXISTS `pagamento` (
   PRIMARY KEY (`id_pagamento`) ,
   CONSTRAINT `id_pagante`
     FOREIGN KEY ()
-    REFERENCES `mydb`.`utente` ()
+    REFERENCES `utente` ()
   CONSTRAINT `id_creditore`
     FOREIGN KEY ()
-    REFERENCES `mydb`.`utente` ()
-)
+    REFERENCES `utente` ()
+);
 
 CREATE TABLE IF NOT EXISTS `prodotto` (
   `id_prodotto` INT NOT NULL ,
@@ -70,8 +70,8 @@ CREATE TABLE IF NOT EXISTS `prodotto` (
   PRIMARY KEY (`id_prodotto`) ,
   CONSTRAINT `spesa`
     FOREIGN KEY ()
-    REFERENCES `mydb`.`spesa` ()
-)
+    REFERENCES `spesa` ()
+);
 
 CREATE TABLE IF NOT EXISTS `utilizzo` (
   `prodotto` INT NOT NULL ,
@@ -79,11 +79,11 @@ CREATE TABLE IF NOT EXISTS `utilizzo` (
   PRIMARY KEY (`prodotto`, `utente`) ,
   CONSTRAINT `prodotto`
     FOREIGN KEY ()
-    REFERENCES `mydb`.`prodotto` ()
+    REFERENCES `prodotto` ()
   CONSTRAINT `utente`
     FOREIGN KEY ()
-    REFERENCES `mydb`.`utente` ()
-)
+    REFERENCES `utente` ()
+);
 
 CREATE TABLE IF NOT EXISTS `commento` (
   `id_commento` INT NOT NULL AUTO_INCREMENT ,
@@ -94,8 +94,8 @@ CREATE TABLE IF NOT EXISTS `commento` (
   PRIMARY KEY (`id_commento`) ,
   CONSTRAINT `prodotto`
     FOREIGN KEY ()
-    REFERENCES `mydb`.`prodotto` ()
+    REFERENCES `prodotto` ()
   CONSTRAINT `utente`
     FOREIGN KEY ()
-    REFERENCES `mydb`.`utente` ()
-)
+    REFERENCES `utente` ()
+);
