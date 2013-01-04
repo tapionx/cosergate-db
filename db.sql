@@ -34,14 +34,15 @@ CREATE TABLE IF NOT EXISTS spesa (
   FOREIGN KEY(cliente) REFERENCES utente(email)
 );
 
-CREATE TABLE IF NOT EXISTS `pagamento` (
-  `id_pagamento` INT NOT NULL ,
-  `importo` INT NOT NULL ,
-  `data` INT NOT NULL ,
-  `timestamp` INT NOT NULL ,
-  `id_pagante` INT NOT NULL ,
-  `id_creditore` INT NOT NULL ,
-  PRIMARY KEY (`id_pagamento`) ,
+CREATE TABLE IF NOT EXISTS pagamento (
+  id_pagamento INTEGER NOT NULL PRIMARY KEY,
+  importo INTEGER NOT NULL ,
+  data INTEGER NOT NULL ,
+  timestamp INTEGER NOT NULL ,
+  id_pagante INTEGER NOT NULL ,
+  id_creditore INTEGER NOT NULL ,
+  FOREIGN KEY (id_pagante) REFERENCES utente(email),
+  FOREIGN KEY (id_creditore) REFERENCES utente(email),
   CONSTRAINT `id_pagante`
     FOREIGN KEY ()
     REFERENCES `utente` ()
