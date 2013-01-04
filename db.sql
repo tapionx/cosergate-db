@@ -31,13 +31,7 @@ CREATE TABLE IF NOT EXISTS spesa (
   ambiente INTEGER NOT NULL,
   cliente INTEGER NOT NULL,
   FOREIGN KEY(ambiente) REFERENCES ambiente(id_ambiente),
-  FOREIGN KEY(cliente) REFERENCES utente(email),
-  CONSTRAINT `ambiente`
-    FOREIGN KEY ()
-    REFERENCES `ambiente` ()
-  CONSTRAINT `cliente`
-    FOREIGN KEY ()
-    REFERENCES `utente` ()
+  FOREIGN KEY(cliente) REFERENCES utente(email)
 );
 
 CREATE TABLE IF NOT EXISTS `pagamento` (
