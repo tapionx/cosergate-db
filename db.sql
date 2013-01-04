@@ -45,18 +45,15 @@ CREATE TABLE IF NOT EXISTS pagamento (
   FOREIGN KEY (id_creditore) REFERENCES utente(email),
 );
 
-CREATE TABLE IF NOT EXISTS `prodotto` (
-  `id_prodotto` INT NOT NULL ,
-  `nome` VARCHAR(45) NOT NULL ,
-  `quantita` INT NOT NULL ,
-  `costo` INT NOT NULL ,
-  `descrizione` VARCHAR(45) NULL ,
-  `codice_a_barre` INT NULL ,
-  `spesa` INT NOT NULL ,
-  PRIMARY KEY (`id_prodotto`) ,
-  CONSTRAINT `spesa`
-    FOREIGN KEY ()
-    REFERENCES `spesa` ()
+CREATE TABLE IF NOT EXISTS prodotto (
+  id_prodotto INTEGER NOT NULL PRIMARY KEY,
+  nome VARCHAR(45) NOT NULL ,
+  quantita INTEGER NOT NULL ,
+  costo INTEGER NOT NULL ,
+  descrizione VARCHAR(45) NULL ,
+  codice_a_barre INTEGER NULL ,
+  spesa INTEGER NOT NULL ,
+  FOREIGN KEY (spesa) REFERENCES spesa(id_spesa)
 );
 
 CREATE TABLE IF NOT EXISTS `utilizzo` (
