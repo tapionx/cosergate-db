@@ -1,4 +1,4 @@
-CREATE  TABLE IF NOT EXISTS `ambiente` (
+CREATE TABLE IF NOT EXISTS `ambiente` (
   `id_ambiente` INT NOT NULL AUTO_INCREMENT ,
   `citta` VARCHAR(45) NULL ,
   `via` VARCHAR(45) NULL ,
@@ -8,7 +8,7 @@ CREATE  TABLE IF NOT EXISTS `ambiente` (
   PRIMARY KEY (`id_ambiente`)   
 )
 
-CREATE  TABLE IF NOT EXISTS `utente` (
+CREATE TABLE IF NOT EXISTS `utente` (
   `email` VARCHAR(45) NOT NULL ,
   `nome` VARCHAR(45) NOT NULL ,
   `cognome` VARCHAR(45) NOT NULL ,
@@ -17,23 +17,19 @@ CREATE  TABLE IF NOT EXISTS `utente` (
   PRIMARY KEY (`email`) 
 )
 
-CREATE  TABLE IF NOT EXISTS `appartenenza` (
+CREATE TABLE IF NOT EXISTS `appartenenza` (
   `id_ambiente` INT NOT NULL ,
   `id_utente` INT NOT NULL ,
   PRIMARY KEY (`id_ambiente`, `id_utente`) ,
   CONSTRAINT `idUtente`
     FOREIGN KEY ()
     REFERENCES `mydb`.`utente` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `idAmbiente`
     FOREIGN KEY ()
     REFERENCES `mydb`.`ambiente` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
 )
 
-CREATE  TABLE IF NOT EXISTS `spesa` (
+CREATE TABLE IF NOT EXISTS `spesa` (
   `id_spesa` INT NOT NULL ,
   `negozio` VARCHAR(45) NULL ,
   `data` DATE NOT NULL ,
@@ -42,16 +38,12 @@ CREATE  TABLE IF NOT EXISTS `spesa` (
   CONSTRAINT `ambiente`
     FOREIGN KEY ()
     REFERENCES `mydb`.`ambiente` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `cliente`
     FOREIGN KEY ()
     REFERENCES `mydb`.`utente` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
 )
 
-CREATE  TABLE IF NOT EXISTS `pagamento` (
+CREATE TABLE IF NOT EXISTS `pagamento` (
   `id_pagamento` INT NOT NULL ,
   `importo` INT NOT NULL ,
   `data` INT NOT NULL ,
@@ -62,16 +54,12 @@ CREATE  TABLE IF NOT EXISTS `pagamento` (
   CONSTRAINT `id_pagante`
     FOREIGN KEY ()
     REFERENCES `mydb`.`utente` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `id_creditore`
     FOREIGN KEY ()
     REFERENCES `mydb`.`utente` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
 )
 
-CREATE  TABLE IF NOT EXISTS `prodotto` (
+CREATE TABLE IF NOT EXISTS `prodotto` (
   `id_prodotto` INT NOT NULL ,
   `nome` VARCHAR(45) NOT NULL ,
   `quantita` INT NOT NULL ,
@@ -83,27 +71,21 @@ CREATE  TABLE IF NOT EXISTS `prodotto` (
   CONSTRAINT `spesa`
     FOREIGN KEY ()
     REFERENCES `mydb`.`spesa` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
 )
 
-CREATE  TABLE IF NOT EXISTS `utilizzo` (
+CREATE TABLE IF NOT EXISTS `utilizzo` (
   `prodotto` INT NOT NULL ,
   `utente` INT NOT NULL ,
   PRIMARY KEY (`prodotto`, `utente`) ,
   CONSTRAINT `prodotto`
     FOREIGN KEY ()
     REFERENCES `mydb`.`prodotto` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `utente`
     FOREIGN KEY ()
     REFERENCES `mydb`.`utente` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
 )
 
-CREATE  TABLE IF NOT EXISTS `commento` (
+CREATE TABLE IF NOT EXISTS `commento` (
   `id_commento` INT NOT NULL AUTO_INCREMENT ,
   `testo` INT NOT NULL ,
   `timestamp` INT NOT NULL ,
@@ -113,11 +95,7 @@ CREATE  TABLE IF NOT EXISTS `commento` (
   CONSTRAINT `prodotto`
     FOREIGN KEY ()
     REFERENCES `mydb`.`prodotto` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `utente`
     FOREIGN KEY ()
     REFERENCES `mydb`.`utente` ()
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION
 )
