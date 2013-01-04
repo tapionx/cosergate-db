@@ -1,11 +1,10 @@
-CREATE TABLE IF NOT EXISTS `ambiente` (
-  `id_ambiente` INT NOT NULL AUTO_INCREMENT ,
-  `citta` VARCHAR(45) NULL ,
-  `via` VARCHAR(45) NULL ,
-  `cap` VARCHAR(45) NULL ,
-  `numero_civico` VARCHAR(45) NULL ,
-  `nome` VARCHAR(45) NOT NULL ,
-  PRIMARY KEY (`id_ambiente`)   
+CREATE TABLE IF NOT EXISTS ambiente (
+  id_ambiente INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  citta VARCHAR(45),
+  via VARCHAR(45),
+  cap VARCHAR(45),
+  numero_civico VARCHAR(45),
+  nome VARCHAR(45) NOT NULL 
 );
 
 CREATE TABLE IF NOT EXISTS `utente` (
