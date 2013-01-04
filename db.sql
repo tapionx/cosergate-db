@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS pagamento (
   id_pagante VARCHAR(45) NOT NULL ,
   id_creditore VARCHAR(45) NOT NULL ,
   FOREIGN KEY (id_pagante) REFERENCES utente(email),
-  FOREIGN KEY (id_creditore) REFERENCES utente(email),
+  FOREIGN KEY (id_creditore) REFERENCES utente(email)
 );
 
 CREATE TABLE IF NOT EXISTS prodotto (
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS utilizzo (
   utente VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`prodotto`, `utente`) ,
   FOREIGN KEY (prodotto) REFERENCES prodotto(id_prodotto),
-  FOREIGN KEY (utente) REFERENCES utente(email),
+  FOREIGN KEY (utente) REFERENCES utente(email)
 );
 
 CREATE TABLE IF NOT EXISTS commento (
@@ -71,5 +71,5 @@ CREATE TABLE IF NOT EXISTS commento (
   id_prodotto INTEGER NOT NULL ,
   id_utente VARCHAR(45) NOT NULL ,
   FOREIGN KEY (id_prodotto) REFERENCES prodotto(id_prodotto),
-  FOREIGN KEY (id_utente) REFERENCES email(utente),
+  FOREIGN KEY (id_utente) REFERENCES email(utente)
 );
