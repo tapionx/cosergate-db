@@ -21,10 +21,10 @@ CREATE TABLE IF NOT EXISTS `appartenenza` (
   `id_ambiente` INT NOT NULL ,
   `id_utente` INT NOT NULL ,
   PRIMARY KEY (`id_ambiente`, `id_utente`) ,
-  CONSTRAINT `idUtente`
+  CONSTRAINT `id_utente`
     FOREIGN KEY ()
     REFERENCES `utente` ()
-  CONSTRAINT `idAmbiente`
+  CONSTRAINT `id_ambiente`
     FOREIGN KEY ()
     REFERENCES `ambiente` ()
 );
