@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS appartenenza (
 );
 
 CREATE TABLE IF NOT EXISTS spesa (
-  id_spesa INTEGER NOT NULL PRIMARY KEY,
+  id_spesa INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   negozio VARCHAR(45) NULL ,
   data DATE NOT NULL ,
   timestamp DATE NOT NULL ,
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS spesa (
 );
 
 CREATE TABLE IF NOT EXISTS pagamento (
-  id_pagamento INTEGER NOT NULL PRIMARY KEY,
+  id_pagamento INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   importo INTEGER NOT NULL ,
   data INTEGER NOT NULL ,
   timestamp INTEGER NOT NULL ,
@@ -46,7 +46,7 @@ CREATE TABLE IF NOT EXISTS pagamento (
 );
 
 CREATE TABLE IF NOT EXISTS prodotto (
-  id_prodotto INTEGER NOT NULL PRIMARY KEY,
+  id_prodotto INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(45) NOT NULL ,
   quantita INTEGER NOT NULL ,
   costo INTEGER NOT NULL ,
@@ -64,17 +64,12 @@ CREATE TABLE IF NOT EXISTS utilizzo (
   FOREIGN KEY (utente) REFERENCES utente(email),
 );
 
-CREATE TABLE IF NOT EXISTS `commento` (
-  `id_commento` INT NOT NULL AUTO_INCREMENT ,
-  `testo` INT NOT NULL ,
-  `timestamp` INT NOT NULL ,
-  `id_prodotto` INT NOT NULL ,
-  `id_utente` INT NOT NULL ,
-  PRIMARY KEY (`id_commento`) ,
-  CONSTRAINT `prodotto`
-    FOREIGN KEY ()
-    REFERENCES `prodotto` ()
-  CONSTRAINT `utente`
-    FOREIGN KEY ()
-    REFERENCES `utente` ()
+CREATE TABLE IF NOT EXISTS commento (
+  id_commento INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  testo INTEGER NOT NULL ,
+  timestamp INTEGER NOT NULL ,
+  id_prodotto INTEGER NOT NULL ,
+  id_utente INTEGER NOT NULL ,
+  FOREIGN KEY (id_prodotto) REFERENCES prodotto(id_prodotto),
+  FOREIGN KEY (id_utente) REFERENCES email(utente),
 );
