@@ -8,11 +8,11 @@ CREATE TABLE IF NOT EXISTS ambiente (
 );
 
 CREATE TABLE IF NOT EXISTS utente (
-  `email` VARCHAR(45) NOT NULL PRIMARY KEY,
-  `nome` VARCHAR(45) NOT NULL ,
-  `cognome` VARCHAR(45) NOT NULL ,
-  `password` VARCHAR(45) NOT NULL ,
-  `username` VARCHAR(45) NOT NULL 
+  email VARCHAR(45) NOT NULL PRIMARY KEY,
+  nome VARCHAR(45) NOT NULL ,
+  cognome VARCHAR(45) NOT NULL ,
+  password VARCHAR(45) NOT NULL ,
+  username VARCHAR(45) NOT NULL 
 );
 
 CREATE TABLE IF NOT EXISTS `appartenenza` (
