@@ -60,6 +60,8 @@ CREATE TABLE IF NOT EXISTS utilizzo (
   prodotto INTEGER NOT NULL ,
   utente VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`prodotto`, `utente`) ,
+  FOREIGN KEY (prodotto) REFERENCES prodotto(id_prodotto),
+  FOREIGN KEY (utente) REFERENCES utente(email),
 );
 
 CREATE TABLE IF NOT EXISTS `commento` (
