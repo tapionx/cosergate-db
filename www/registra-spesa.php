@@ -61,7 +61,7 @@ if(isset($_POST['inseriscispesa'])){
 		<input type="text" name="descrizione-1" placeholder="descrizione"/>
 		<br />
 	</div>
-	<input type="button" name="aggiungiriga" value="Aggiungi prodotto" onclick="aggiungi_prodotto();"/>
+	<input type="button" name="aggiungiriga" value="Aggiungi prodotto" onclick="aggiungi_prodotto()"/>
 	<input type="hidden" name="nprodotti" value="3"/>
 	<input type="submit" name="inseriscispesa" value="Inserisci"/>
 </form>
