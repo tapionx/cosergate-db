@@ -17,8 +17,7 @@ $esiste = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 if(mysql_num_rows($esiste) == 0){
 	die();
 }
-
-
-
-
 ?>
+
+<p>Il resoconto</p>
+<p>La lista</p>
