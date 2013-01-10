@@ -7,5 +7,5 @@
 	<input type="text" name="costo" placeholder="costo"/>
 	<input type="text" name="descrizione" placeholder="descrizione"/>
 	<br/>
-	<input type="submit" value="Inserisci"/>
+	<input type="submit" nome="inseriscispesa" value="Inserisci"/>
 </form>
