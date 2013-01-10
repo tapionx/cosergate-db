@@ -22,7 +22,8 @@ if(mysql_num_rows($esiste) == 0){
 ?>
 
 <p>Il resoconto</p>
-<p>Non so di preciso quanti soldi devi dare agli altri, spero di potertelo dire presto.</p>
-
+<?php
+$nutenti = "SELECT count() FROM appartenenza WHERE id_ambiente={$_GET['ambiente']};";
+?>
 <p>La lista</p>
 
