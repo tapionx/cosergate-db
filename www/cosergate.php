@@ -54,6 +54,11 @@ $spese = mysql_fetch_all($utenti);
 
 echo "<table border=1>";
 foreach($spese as $spesa){
+	echo "<tr>";
+	foreach($spesa as $campo){
+		echo '<td>'.$campo.'</td>';
+	}
+	echo "</tr>";
 }
 echo "</table>";	
 }
