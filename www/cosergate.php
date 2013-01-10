@@ -50,7 +50,7 @@ echo "</tr></table>";
 
 $query = "SELECT * FROM spesa WHERE ambiente={$_GET['ambiente']}";
 $spese = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
-$spese = mysql_fetch_all($utenti);
+$spese = mysql_fetch_all($spese);
 
 echo "<table border=1>";
 foreach($spese as $spesa){
