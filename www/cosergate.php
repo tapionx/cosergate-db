@@ -25,7 +25,7 @@ if(mysql_num_rows($esiste) == 0){
 <?php
 $query = "SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente={$_GET['ambiente']};";
 $nutenti = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
-print_r(mysql_fetch_assoc($nutenti));
+$nutenti = mysql_fetch_assoc($nutenti)['nutenti'];
 
 ?>
 <p>La lista</p>
