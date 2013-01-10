@@ -61,7 +61,7 @@ foreach($spese as $spesa){
 	echo "</tr>";
 }
 echo "</table>";	
-}
+
 
 ?>
 <p>La lista</p>
