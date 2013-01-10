@@ -64,9 +64,13 @@ foreach($spese as $spesa){
 	$prodotti = mysql_query($prodotti, $db) or die("Errore nella SELECT: '$prodotti'");
 	$prodotti = mysql_fetch_all($prodotti);
 	foreach($prodotti as $prodotto){
-		foreach
+	echo "<tr>";
+		foreach($prodotto as $campo){
+			echo '<td>'.$campo.'</td>';
+		}
+	echo "</tr>";
 	}
-
+	
 }
 echo "</table>";	
 
