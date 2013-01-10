@@ -14,7 +14,17 @@ if(isset($_POST['inseriscispesa'])){
 	mysql_query($inserisci_spesa, $db) or die("Errore nella INSERT SPESA: $inserisci_spesa");
 	
 	for($i=0;$i<$_POST['nprodotti'];$i++){
-		$inserisci_prodotto = "INSERT INTO prodotto () VALUES ();";
+		$inserisci_prodotto = "INSERT INTO prodotto (nome, 
+													 quantita, 
+													 costo, 
+													 descrizione, 
+													 spesa) 
+													 
+													VALUES ('{$_POST["nome-$i"]}',
+															'{$_POST["quantita-$i"]}',
+															'{$_POST["costo-$i"]}',
+															'{$_POST["descrizione-$i"]}',
+															);";
 		mysql_query($inserisci_prodotto, $db) or die("Errore nella INSERT PRODOTTO: $inserisci_prodotto");
 	}
 }
