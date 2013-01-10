@@ -2,8 +2,9 @@
 
 session_start();
 
-if(!isset($_SESSION['loggato']) || !isset($_GET['ambiente']))
+if(!isset($_SESSION['loggato']) || !isset($_GET['ambiente'])
+	die('furbacchione');
 
-echo "ciao";
+if(!isset($_GET['ambiente'])
 
 ?>
