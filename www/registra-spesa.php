@@ -8,9 +8,7 @@
 				   "<input type='text' name='costo-1' placeholder='costo'/>" +
 				   "<input type='text' name='descrizione-1' placeholder='descrizione'/>" +
 				   "<br />";
-
-		$('#prodotti').append("		
-		");
+		$('#prodotti').append(form);
 	}
 </script>
 
