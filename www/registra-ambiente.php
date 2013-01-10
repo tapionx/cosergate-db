@@ -7,10 +7,11 @@ if(isset($_POST['aggiungi'])) {
 	$citta  = $_POST['citta'];
 	$numero = $_POST['numero'];
 	$cap = $_POST['cap'];
-	
-		$query = "INSERT INTO utente VALUES('$email', '$nome', '$cognome', '$password', '$nomeutente');";
-		mysql_query($query, $db) or die('Errore nella INSERT');
-		header("Location: index.php");
+	$query = "INSERT INTO ambiente VALUES(NULL, '$citta', '$via', '$cap', '$numero', '$nome');";
+	$ret = mysql_query($query, $db) or die('Errore nella INSERT');
+	$lastid = mysql_insert_id($ret);
+	$query = "INSERT INTO ambiente VALUES(NULL, '$citta', '$via', '$cap', '$numero', '$nome');";
+	header("Location: index.php");
 }
 
 ?>
