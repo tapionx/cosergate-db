@@ -7,7 +7,7 @@ if(!isset($_SESSION['loggato']) || (!isset($_GET['ambiente']))) {
 	die('1');
 }
 
-$query = "SELECT * FROM ambiente WHERE id_ambiente='${$_GET['ambiente']}';";
+$query = "SELECT * FROM ambiente WHERE id_ambiente='{$_GET['ambiente']}';";
 $esiste = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 if(mysql_num_rows($esiste) == 0){
 	die('2');
