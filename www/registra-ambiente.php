@@ -7,14 +7,10 @@ if(isset($_POST['aggiungi'])) {
 	$citta  = $_POST['citta'];
 	$numero = $_POST['numero'];
 	$cap = $_POST['cap'];
-	$esiste = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
-	if(mysql_num_rows($esiste) == 0){
+	
 		$query = "INSERT INTO utente VALUES('$email', '$nome', '$cognome', '$password', '$nomeutente');";
 		mysql_query($query, $db) or die('Errore nella INSERT');
 		header("Location: index.php");
-	} else {
-		echo "<h1>Questa email è già registrata.</h1>";
-	}
 }
 
 ?>
