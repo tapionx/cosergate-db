@@ -20,11 +20,11 @@ if(isset($_POST['inseriscispesa'])){
 													 descrizione, 
 													 spesa) 
 													 
-													VALUES ('{$_POST["nome-$i"]}',
-															'{$_POST["quantita-$i"]}',
-															'{$_POST["costo-$i"]}',
-															'{$_POST["descrizione-$i"]}'
-															);";
+									VALUES ('{$_POST["nome-$i"]}',
+											'{$_POST["quantita-$i"]}',
+											'{$_POST["costo-$i"]}',
+											'{$_POST["descrizione-$i"]}'
+											);";
 		mysql_query($inserisci_prodotto, $db) or die("Errore nella INSERT PRODOTTO: $inserisci_prodotto");
 	}
 }
