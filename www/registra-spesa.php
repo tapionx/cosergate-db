@@ -1,6 +1,9 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
-	
+	var nprodotti = 1;
+	function aggiungi_prodotto(){
+		$
+	}
 </script>
 
 <?php
