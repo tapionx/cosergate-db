@@ -6,7 +6,7 @@ if(isset($_POST['aggiungi'])) {
 	$via = $_POST['via'];
 	$citta  = $_POST['citta'];
 	$numero = $_POST['numero'];
-	$query = "SELECT * FROM utente WHERE email='$email';";
+	$cap = $_POST['cap'];
 	$esiste = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 	if(mysql_num_rows($esiste) == 0){
 		$query = "INSERT INTO utente VALUES('$email', '$nome', '$cognome', '$password', '$nomeutente');";
