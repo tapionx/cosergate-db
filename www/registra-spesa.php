@@ -10,7 +10,7 @@ if(!isset($_SESSION['loggato'])){
 
 if(isset($_POST['inseriscispesa'])){
 	
-	$inserisci_spesa = "INSERT INTO spesa VALUES();";
+	$inserisci_spesa = "INSERT INTO spesa VALUES(NULL, {$_POST['negozio']}, 1, 1, 3, 'tapion@tapion.it');";
 	
 	die();
 }
