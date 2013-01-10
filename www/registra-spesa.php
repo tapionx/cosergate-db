@@ -16,18 +16,19 @@ if(isset($_POST['inseriscispesa'])){
 	$lastid = mysql_insert_id();
 	
 	for($i=0;$i<$_POST['nprodotti'];$i++){
-		$inserisci_prodotto = "INSERT INTO prodotto (nome, 
-													 quantita, 
-													 costo, 
-													 descrizione, 
-													 spesa) 
-													 
-									VALUES ('{$_POST["nome-$i"]}',
-											{$_POST["quantita-$i"]},
-											{$_POST["costo-$i"]},
-											'{$_POST["descrizione-$i"]}',
-											$lastid
-											);";
+		$inserisci_prodotto = "INSERT INTO prodotto 
+								(nome, 
+								 quantita, 
+								 costo, 
+								 descrizione, 
+								 spesa ) 
+												 
+								VALUES ('{$_POST["nome-$i"]}',
+										{$_POST["quantita-$i"]},
+										{$_POST["costo-$i"]},
+										'{$_POST["descrizione-$i"]}',
+										$lastid
+										);";
 		mysql_query($inserisci_prodotto, $db) or die("Errore nella INSERT PRODOTTO: $inserisci_prodotto");
 	}
 }
