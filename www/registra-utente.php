@@ -12,7 +12,7 @@ if(isset($_POST['registra'])) {
 	if(mysql_num_rows($esiste) == 0){
 		$query = "INSERT INTO utente VALUES('$email', '$nome', '$cognome', '$password', '$nomeutente');";
 		mysql_query($query, $db) or die('Errore nella INSERT');
-		header("Location: lista-ambienti.php");
+		header("Location: index.php");
 	} else {
 		echo "<h1>Questa email è già registrata.</h1>";
 	}
