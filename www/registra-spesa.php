@@ -1,3 +1,12 @@
+<?php
+
+session_start();
+require_once('db.php');
+
+if(!isset($_POST['inseriscispesa'])
+
+?>
+
 <form method="post" action="">
 	<input type="text" name="negozio" placeholder="negozio"/>
 	<input type="date" name="data" placeholder="data"/>
