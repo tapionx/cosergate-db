@@ -1,6 +1,7 @@
 <?php
 
 session_start();
+require_once('db.php');
 
 if(!isset($_SESSION['loggato']) || (!isset($_GET['ambiente']))) {
 	header('Location: index.php');
