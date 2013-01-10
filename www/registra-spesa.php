@@ -1,6 +1,6 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script>
-	fun
+	
 </script>
 
 <?php
