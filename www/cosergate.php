@@ -54,6 +54,7 @@ $spese = mysql_fetch_all($utenti);
 
 echo "<table border=1>";
 foreach($spese as $spesa){
+}
 echo "</table>";	
 }
 
