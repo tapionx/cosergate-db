@@ -49,11 +49,11 @@ if(isset($_POST['inseriscispesa'])){
 	<input type="date" name="data" placeholder="data"/>
 	<p>Prodotti</p>
 	<div id="prodotti">
-	<input type="text" name="nome-1" placeholder="nome"/>
-	<input type="text" name="quantita-1" placeholder="quantita"/>
-	<input type="text" name="costo-1" placeholder="costo"/>
-	<input type="text" name="descrizione-1" placeholder="descrizione"/>
-	<br />
+		<input type="text" name="nome-1" placeholder="nome"/>
+		<input type="text" name="quantita-1" placeholder="quantita"/>
+		<input type="text" name="costo-1" placeholder="costo"/>
+		<input type="text" name="descrizione-1" placeholder="descrizione"/>
+		<br />
 	</div>
 	<input type="button" name="aggiungiriga" value="Aggiungi prodotto" />
 	<input type="hidden" name="nprodotti" value="3"/>
