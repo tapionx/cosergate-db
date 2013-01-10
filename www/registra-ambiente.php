@@ -10,7 +10,7 @@ if(isset($_POST['aggiungi'])) {
 	$query = "INSERT INTO ambiente VALUES(NULL, '$citta', '$via', '$cap', '$numero', '$nome');";
 	$ret = mysql_query($query, $db) or die('Errore nella INSERT');
 	$lastid = mysql_insert_id();
-	$query = "INSERT INTO appartenenza VALUES($lastid, '${_SESSION['email']}');";
+	$query = "INSERT INTO appartenenza VALUES($lastid, '${_SESSION['email']}', 0);";
 	mysql_query($query, $db) or die('Errore nella INSERT');
 	header("Location: cosergate.php?ambiente=$lastid");
 }
