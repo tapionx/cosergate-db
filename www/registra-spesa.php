@@ -3,7 +3,11 @@
 session_start();
 require_once('db.php');
 
-if(!isset($_POST['inseriscispesa']) || !isset($_SESSION['loggato']) ){
+if(!isset($_SESSION['loggato'])){
+	die();
+}
+
+if(isset($_POST['inseriscispesa'])){
 	header("Location: index.php");
 	die();
 }
