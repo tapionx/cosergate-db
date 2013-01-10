@@ -39,6 +39,13 @@ echo "<table><tr>";
 foreach($utenti as $utente) {
 	echo "<td>{$utente['username']}</td>";
 }
+
+echo '<tr>';
+foreach($utenti as $utente) {
+	echo "<td>{$utente['username']}</td>";
+}
+echo '</tr>';
+
 echo "</tr></table>";
 
 ?>
