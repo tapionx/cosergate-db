@@ -35,7 +35,7 @@ $query = "SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente
 $nutenti = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 $nutenti = mysql_fetch_assoc($nutenti)['nutenti'];
 
-echo "<table><tr>";
+echo "<table border=1><tr>";
 foreach($utenti as $utente) {
 	echo "<td>{$utente['username']}</td>";
 }
