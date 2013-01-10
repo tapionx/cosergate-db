@@ -47,6 +47,7 @@ if(isset($_POST['inseriscispesa'])){
 		mysql_query($inserisci_prodotto, $db) or die("Errore nella INSERT PRODOTTO: $inserisci_prodotto");
 		echo $inserisci_prodotto.'<br>';
 	}
+	header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
 }
 
 ?>
