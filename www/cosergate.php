@@ -10,8 +10,15 @@ $query = "SELECT * FROM ambiente WHERE id_ambiente='${$_GET['ambiente']}';";
 $esiste = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 if(mysql_num_rows($esiste) == 0){
 	die();
-} else {
-	echo "<h1>Questa email è già registrata.</h1>";
 }
+
+$query = "SELECT * FROM appartenenza WHERE id_ambiente='${$_GET['ambiente']}' AND id_utente=${_SESSION['email']};";
+$esiste = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
+if(mysql_num_rows($esiste) == 0){
+	die();
+}
+
+
+
 
 ?>
