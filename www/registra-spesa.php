@@ -9,6 +9,9 @@ if(!isset($_SESSION['loggato'])){
 }
 
 if(isset($_POST['inseriscispesa'])){
+	
+	$inserisci_spesa = "INSERT INTO spesa VALUES();";
+	
 	die();
 }
 
