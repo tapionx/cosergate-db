@@ -27,8 +27,8 @@ if(isset($_POST['inseriscispesa'])){
 										{$_POST["quantita-$i"]},
 										{$_POST["costo-$i"]},
 										'{$_POST["descrizione-$i"]}',
-										$lastid
-										);";
+										$lastid );";
+										
 		mysql_query($inserisci_prodotto, $db) or die("Errore nella INSERT PRODOTTO: $inserisci_prodotto");
 	}
 }
