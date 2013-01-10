@@ -52,7 +52,7 @@ echo "</tr></table>";
 <p>La lista</p>
 
 <form method="get" action="registra-spesa.php">
-<input type="hidden" name="ambiente" value="<?php echo $_GET['ambiente'] ?>"/>
+<input type="hidden" name="ambiente" value="<?php echo $_GET['ambiente']; ?>"/>
 <input type="submit" value="Inserisci una spesa" />
 </form>
 
