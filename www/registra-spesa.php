@@ -1,5 +1,5 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script>
-<script>
+<script type="text/javascript">
 	var nprodotti = 1;
 	function aggiungi_prodotto(){
 		$('#prodotti').append('		
