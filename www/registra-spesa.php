@@ -9,6 +9,8 @@
 				   "<input type='text' name='descrizione-"+nprodotti+"' placeholder='descrizione'/> " +
 				   "<br />";
 		$('#prodotti').append(form);
+		$('#nprodotti').attr('value', nprodotti);
+		$
 	}
 </script>
 
@@ -62,6 +64,6 @@ if(isset($_POST['inseriscispesa'])){
 		<br />
 	</div>
 	<input type="button" name="aggiungiriga" value="Aggiungi prodotto" onclick="aggiungi_prodotto()"/>
-	<input type="hidden" name="nprodotti" value="3"/>
+	<input id="nprodotti" type="hidden" name="nprodotti" value="3"/>
 	<input type="submit" name="inseriscispesa" value="Inserisci"/>
 </form>
