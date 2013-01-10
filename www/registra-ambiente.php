@@ -11,6 +11,7 @@ if(isset($_POST['aggiungi'])) {
 	$ret = mysql_query($query, $db) or die('Errore nella INSERT');
 	$lastid = mysql_insert_id();
 	$query = "INSERT INTO appartenenza VALUES($lastid, '${_SESSION['email']}');";
+	mysql_query($query, $db) or die('Errore nella INSERT');
 	header("Location: cosergate.php?ambiente=$lastid");
 }
 
