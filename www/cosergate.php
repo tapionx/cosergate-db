@@ -22,4 +22,5 @@ if(mysql_num_rows($esiste) == 0){
 ?>
 
 <p>Il resoconto</p>
+
 <p>La lista</p>
