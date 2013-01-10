@@ -4,7 +4,7 @@ session_start();
 
 if(!isset($_SESSION['loggato']) || (!isset($_GET['ambiente'])))
 	header('Location: index.php');
-	die('furbacchione');
+	die();
 
 $query = "SELECT * FROM utente WHERE email='$email';";
 	$esiste = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
