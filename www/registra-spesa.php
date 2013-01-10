@@ -10,7 +10,6 @@
 				   "<br />";
 		$('#prodotti').append(form);
 		$('#nprodotti').attr('value', nprodotti);
-		$
 	}
 </script>
 
