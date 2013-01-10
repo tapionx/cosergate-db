@@ -48,6 +48,9 @@ echo '</tr>';
 
 echo "</tr></table>";
 
+
+<p>La lista</p>
+
 $query = "SELECT * FROM spesa WHERE ambiente={$_GET['ambiente']}";
 $spese = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 $spese = mysql_fetch_all($spese);
@@ -76,5 +79,5 @@ echo "</table>";
 
 
 ?>
-<p>La lista</p>
+
 
