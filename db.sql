@@ -27,8 +27,8 @@ CREATE TABLE IF NOT EXISTS appartenenza (
 CREATE TABLE IF NOT EXISTS spesa (
   id_spesa INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   negozio VARCHAR(45) NULL ,
-  data DATE NOT NULL ,
-  timestamp DATE NOT NULL ,
+  data DATETIME NOT NULL ,
+  timestamp DATETIME NOT NULL ,
   ambiente INTEGER NOT NULL,
   cliente VARCHAR(45) NOT NULL,
   FOREIGN KEY(ambiente) REFERENCES ambiente(id_ambiente),
@@ -38,8 +38,8 @@ CREATE TABLE IF NOT EXISTS spesa (
 CREATE TABLE IF NOT EXISTS pagamento (
   id_pagamento INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   importo INTEGER NOT NULL ,
-  data INTEGER NOT NULL ,
-  timestamp INTEGER NOT NULL ,
+  data DATETIME NOT NULL ,
+  timestamp DATETIME NOT NULL ,
   id_pagante VARCHAR(45) NOT NULL ,
   id_creditore VARCHAR(45) NOT NULL ,
   FOREIGN KEY (id_pagante) REFERENCES utente(email),
