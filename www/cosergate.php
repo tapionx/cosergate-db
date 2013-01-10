@@ -2,9 +2,10 @@
 
 session_start();
 
-if(!isset($_SESSION['loggato']) || (!isset($_GET['ambiente'])))
+if(!isset($_SESSION['loggato']) || (!isset($_GET['ambiente']))) {
 	header('Location: index.php');
 	die('1');
+}
 
 $query = "SELECT * FROM ambiente WHERE id_ambiente='${$_GET['ambiente']}';";
 $esiste = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
