@@ -30,15 +30,14 @@ $nutenti = mysql_fetch_assoc($nutenti)['nutenti'];
 $query = "SELECT username FROM appartenenza JOIN utente ON appartenenza.id_utente=utente.email WHERE id_ambiente={$_GET['ambiente']};";
 $utenti = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 $utenti = mysql_fetch_all($utenti);
-print_r($utenti);
 
 $query = "SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente={$_GET['ambiente']};";
 $nutenti = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 $nutenti = mysql_fetch_assoc($nutenti)['nutenti'];
 
 echo "<table><tr>";
-for($i=0;$i<$nutenti;$i++){
-	echo "<td></td>";
+foreach($utenti as $utente) {
+	echo "<td>{$utente['username']}</td>";
 }
 echo "</tr></table>";
 
