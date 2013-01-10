@@ -10,7 +10,7 @@ if(isset($_SESSION['loggato'])){
 	if(mysql_num_rows($ambienti) == 0){
 		echo "<p>Non appartieni a nessun ambiente</p>";
 	} else {
-		while($riga = mysql_fetch_asso($ambienti)) {
+		while($riga = mysql_fetch_assoc($ambienti)) {
 			echo $riga['nome'];
 		}
 	}
