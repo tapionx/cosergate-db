@@ -45,6 +45,7 @@ if(isset($_POST['inseriscispesa'])){
 	<input type="text" name="quantita-1" placeholder="quantita"/>
 	<input type="text" name="costo-1" placeholder="costo"/>
 	<input type="text" name="descrizione-1" placeholder="descrizione"/>
+	<br />
 	<input type="button" name="aggiungiriga" value="Aggiungi prodotto" />
 	<input type="hidden" name="nprodotti" value="3"/>
 	<input type="submit" name="inseriscispesa" value="Inserisci"/>
