@@ -15,7 +15,7 @@ if(isset($_POST['inseriscispesa'])){
 	
 	for($i=0;$i<$_POST['nprodotti'];$i++){
 		$inserisci_prodotto = "INSERT INTO prodotto () VALUES ();";
-		mysql_query($inserisci_spesa, $db) or die("Errore nella INSERT PRODOTTO: $inserisci_prodotto");
+		mysql_query($inserisci_prodotto, $db) or die("Errore nella INSERT PRODOTTO: $inserisci_prodotto");
 	}
 }
 
