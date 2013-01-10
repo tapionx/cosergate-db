@@ -24,7 +24,7 @@ if(mysql_num_rows($esiste) == 0){
 <p>Il resoconto</p>
 <?php
 $query = "SELECT count() FROM appartenenza WHERE id_ambiente={$_GET['ambiente']};";
-$nutenti = mysql_query($nutenti, $db) or die("Errore nella SELECT: '$query'");
+$nutenti = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 print_r($nutenti);
 
 ?>
