@@ -2,7 +2,7 @@
 <script>
 	var nprodotti = 1;
 	function aggiungi_prodotto(){
-		$().
+		$('#prodotti').append();
 	}
 </script>
 
