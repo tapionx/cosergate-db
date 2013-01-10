@@ -31,7 +31,7 @@ if(isset($_POST['inseriscispesa'])){
 										$lastid );";
 										
 		mysql_query($inserisci_prodotto, $db) or die("Errore nella INSERT PRODOTTO: $inserisci_prodotto");
-		echo $inserisci_prodotto;
+		echo $inserisci_prodotto.'<br>';
 	}
 }
 
