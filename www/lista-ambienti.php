@@ -11,7 +11,7 @@ if(isset($_SESSION['loggato'])){
 		echo "<p>Non appartieni a nessun ambiente</p>";
 	} else {
 		while($riga = mysql_fetch_assoc($ambienti)) {
-			echo $riga['nome'];
+			echo '<a href="" >${riga['nome']}</a>;
 		}
 	}
 	
