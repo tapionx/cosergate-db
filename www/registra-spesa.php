@@ -3,10 +3,10 @@
 	var nprodotti = 1;
 	function aggiungi_prodotto(){
 		nprodotti += 1;
-		var form = "<input type='text' name='nome-1' placeholder='nome'/>" + 
-				   "<input type='text' name='quantita-1' placeholder='quantita'/>" +
-				   "<input type='text' name='costo-1' placeholder='costo'/>" +
-				   "<input type='text' name='descrizione-1' placeholder='descrizione'/>" +
+		var form = "<input type='text' name='nome-1' placeholder='nome'/> " + 
+				   "<input type='text' name='quantita-1' placeholder='quantita'/> " +
+				   "<input type='text' name='costo-1' placeholder='costo'/> " +
+				   "<input type='text' name='descrizione-1' placeholder='descrizione'/> " +
 				   "<br />";
 		$('#prodotti').append(form);
 	}
