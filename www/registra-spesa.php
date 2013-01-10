@@ -16,7 +16,7 @@ if(isset($_POST['inseriscispesa'])){
 	
 	$lastid = mysql_insert_id();
 	
-	for($i=0;$i<$_POST['nprodotti'];$i++){
+	for($i=1;$i<=$_POST['nprodotti'];$i++){
 		$inserisci_prodotto = "INSERT INTO prodotto 
 								(nome, 
 								 quantita, 
