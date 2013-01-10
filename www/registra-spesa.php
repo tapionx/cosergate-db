@@ -3,7 +3,7 @@
 session_start();
 require_once('db.php');
 
-if(!isset($_POST['inseriscispesa'])
+if(!isset($_POST['inseriscispesa']))
 
 ?>
 
