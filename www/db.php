@@ -7,7 +7,7 @@ Absurdly simple but utilitarian function returns a numeric array of associative 
 */
 function mysql_fetch_all($result) {
 	$all = array();
-	while ($i = mysql_fetch_assoc($result)) { array_push($all, $i) }
+	while ($i = mysql_fetch_assoc($result)) { array_push($all, $i); }
 	return $all;
 }
 
