@@ -42,7 +42,7 @@ foreach($utenti as $utente) {
 
 echo '<tr>';
 foreach($utenti as $utente) {
-	echo "<td>{$utente['username']}</td>";
+	echo "<td>{$utente['totale']}</td>";
 }
 echo '</tr>';
 
