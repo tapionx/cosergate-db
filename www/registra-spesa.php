@@ -13,6 +13,8 @@ if(isset($_POST['inseriscispesa'])){
 	$inserisci_spesa = "INSERT INTO spesa (negozio, ambiente, cliente) VALUES ('{$_POST['negozio']}', {$_GET['ambiente']}, '{$_SESSION['email']}');";
 	mysql_query($inserisci_spesa, $db) or die("Errore nella INSERT SPESA: $inserisci_spesa");
 	
+	$lastid = mysql_insert_id();
+	
 	for($i=0;$i<$_POST['nprodotti'];$i++){
 		$inserisci_prodotto = "INSERT INTO prodotto (nome, 
 													 quantita, 
@@ -24,6 +26,7 @@ if(isset($_POST['inseriscispesa'])){
 											{$_POST["quantita-$i"]},
 											{$_POST["costo-$i"]},
 											'{$_POST["descrizione-$i"]}'
+											
 											);";
 		mysql_query($inserisci_prodotto, $db) or die("Errore nella INSERT PRODOTTO: $inserisci_prodotto");
 	}
