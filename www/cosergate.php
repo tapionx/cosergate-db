@@ -47,10 +47,16 @@ foreach($utenti as $utente) {
 echo '</tr>';
 
 echo "</tr></table>";
+?>
 
+<p>La lista</p>
 
-echo '<p>La lista</p>';
+<form method="get" action="registra-spesa.php">
+<input type="hidden" name="ambiente" value="<?php echo $_GET['ambiente'] ?>"/>
+<input type="submit" value="Inserisci una spesa" />
+</form>
 
+<?php
 $query = "SELECT * FROM spesa WHERE ambiente={$_GET['ambiente']}";
 $spese = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 $spese = mysql_fetch_all($spese);
