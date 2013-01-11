@@ -55,7 +55,7 @@ if(isset($_POST['inseriscispesa'])){
 	var nprodotti = 1;
 	function aggiungi_prodotto(){
 		nprodotti += 1;
-		var form = "<tr><td><input type='text' name='nome-"+nprodotti+"' placeholder='nome'/></td> " + 
+		var form = "<tr><td><input type='text' name='t["+nprodotti+"][nome]' placeholder='nome'/></td> " + 
 				   "<td><input type='text' name='quantita-"+nprodotti+"' placeholder='quantita'/></td> " +
 				   "<td><input type='text' name='costo-"+nprodotti+"' placeholder='costo'/></td> " +
 					<?php
