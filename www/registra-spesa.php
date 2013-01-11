@@ -63,7 +63,7 @@ if(isset($_POST['inseriscispesa'])){
 						echo '"<td><input type=\'checkbox\' name=\''.$utente['email'].'-"+nprodotti+"\' checked/></td>"+';
 					}
 					?>
-				   "<td><input type='text' name='descrizione-"+nprodotti+"' placeholder='descrizione'/> </td>" +
+				   "<td><input type='text' name='t["+nprodotti+"][descrizione]' placeholder='descrizione'/> </td>" +
 				   "</tr>";
 		$('table').append(form);
 		$('#nprodotti').attr('value', nprodotti);
