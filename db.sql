@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS prodotto (
   costo FLOAT NOT NULL ,
   descrizione VARCHAR(45) ,
   codice_a_barre INTEGER ,
-  spesa INTEGER NOT NULL ON DELETE CASCADE,
+  spesa INTEGER NOT NULL ,
   FOREIGN KEY (spesa) REFERENCES spesa(id_spesa)
 );
 
