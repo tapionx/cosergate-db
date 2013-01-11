@@ -84,9 +84,7 @@ foreach($spese as $spesa){
 	}
 	echo "</tr>";
 	
-	$prodotti = "SELECT * FROM prodotto WHERE id_spesa={$spesa['id_spesa']};";
-	$prodotti = mysql_query($prodotti, $db) or die("Errore nella SELECT: '$prodotti'");
-	$prodotti = mysql_fetch_all($prodotti);
+	$prodotti = query("SELECT * FROM prodotto WHERE id_spesa={$spesa['id_spesa']};");
 	foreach($prodotti as $prodotto){
 	echo "<tr>";
 		foreach($prodotto as $campo){
