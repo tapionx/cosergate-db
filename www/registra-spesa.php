@@ -27,7 +27,7 @@ if(isset($_POST['inseriscispesa'])){
 								 quantita, 
 								 costo, 
 								 descrizione, 
-								 spesa ) 
+								 id_spesa ) 
 												 
 								VALUES ('{$prodotto['nome']}',
 										{$prodotto['quantita']},
