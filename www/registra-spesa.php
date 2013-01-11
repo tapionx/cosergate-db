@@ -39,7 +39,7 @@ if(isset($_POST['inseriscispesa'])){
 		
 		query("UPDATE appartenenza SET saldo=saldo+{$prodotto['costo']} WHERE id_utente='{$_SESSION['email']}' AND id_ambiente={$_GET['ambiente']}");
 		
-		$costo_per_utilizzatore = $prodotto['costo'] / count($prodotto['email']);
+		$costo_per_utilizzatore = $prodotto['costo'] / count($prodotto['id_utente']);
 		foreach($prodotto['email'] as $utente){
 			query("UPDATE appartenenza SET saldo=saldo-$costo_per_utilizzatore WHERE id_utente='$utente' AND id_ambiente={$_GET['ambiente']}");
 			query("INSERT INTO utilizzo (id_prodotto, id_utente) VALUES ($id_prodotto, '$utente');");
