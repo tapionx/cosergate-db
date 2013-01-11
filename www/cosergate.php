@@ -97,32 +97,35 @@ foreach($spese as $spesa){
 	
 	$prodotti = query("SELECT * FROM prodotto WHERE id_spesa={$spesa['id_spesa']};");
 	foreach($prodotti as $prodotto){
-	echo "<tr>
-			<th>Nome</th>
-			<th>Quantità</th>
-			<th>Prezzo</th>
-			<th>Descrizione</th>
-	";
-	foreach($utenti as $utente){
-		echo "<th>{$utente['username']}</th>";
-	}
-	echo "</tr>";
-	
-	echo "<tr>
-			<td>{$prodotto['nome']}</td>
-			<td>{$prodotto['quantita']}</td>
-			<td>{$prodotto['costo']}</td>
-			<td>{$prodotto['descrizione']}</td>";
-	foreach($utenti as $utente){
-		$utilizzo = query("SELECT * FROM utilizzo WHERE id_prodotto={$prodotto['id_prodotto']} AND id_utente='{$utente['id_utente']}';");
-		if(!empty($utilizzo)){
-			echo "<td>X</td>";
-		} else {
-			echo "<td></td>";
+		echo "<tr>
+				<th>Nome</th>
+				<th>Quantità</th>
+				<th>Prezzo</th>
+				<th>Descrizione</th>
+		";
+		foreach($utenti as $utente){
+			echo "<th>{$utente['username']}</th>";
 		}
+		echo "</tr>";
+		
+		echo "<tr>
+				<td>{$prodotto['nome']}</td>
+				<td>{$prodotto['quantita']}</td>
+				<td>{$prodotto['costo']}</td>
+				<td>{$prodotto['descrizione']}</td>";
+		foreach($utenti as $utente){
+			$utilizzo = query("SELECT * FROM utilizzo WHERE id_prodotto={$prodotto['id_prodotto']} AND id_utente='{$utente['id_utente']}';");
+			if(!empty($utilizzo)){
+				echo "<td>X</td>";
+			} else {
+				echo "<td></td>";
+			}
+		}	
 	}
+	echo "<tr>
+			<td>Commento:</td>
+	      </tr>";
 	
-	}
 }
 echo "</table>";	
 
