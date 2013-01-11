@@ -110,7 +110,11 @@ foreach($spese as $spesa){
 			<td>{$prodotto['descrizione']}</td>";
 	foreach($utenti as $utente){
 		$utilizzo = query("SELECT * FROM utilizzo WHERE id_prodotto={$prodotto['id_prodotto']} AND id_utente='{$utente['id_utente']}';");
-		print_r($utilizzo); echo "<br>";
+		if(!empty($utilizzo)){
+			echo "<td>X</td>";
+		} else {
+			echo "<td></td>";
+		}
 	}
 	
 	}
