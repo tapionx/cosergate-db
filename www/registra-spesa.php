@@ -34,10 +34,10 @@ if(isset($_POST['inseriscispesa'])){
 								 descrizione, 
 								 spesa ) 
 												 
-								VALUES ('p',
-										{$_POST["quantita-$i"]},
-										{$_POST["costo-$i"]},
-										'{$_POST["descrizione-$i"]}',
+								VALUES ('{$prodotto['nome']}',
+										{$prodotto['quantita']},
+										{$prodotto['costo']},
+										'{$prodotto['descrizione']}',
 										$lastid );");
 	}
 	header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
