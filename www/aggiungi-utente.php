@@ -51,3 +51,7 @@ if(isset($_POST['aggiungi'])){
 	<input type="text" placeholder="email utente" name="email">
 	<input type="submit" value="Aggiungi" name="aggiungi">
 </form>
+
+<?php 
+echo '<a href=""Torna indietro</a>'
+?>
