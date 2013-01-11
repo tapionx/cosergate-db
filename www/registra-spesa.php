@@ -56,8 +56,8 @@ if(isset($_POST['inseriscispesa'])){
 	function aggiungi_prodotto(){
 		nprodotti += 1;
 		var form = "<tr><td><input type='text' name='t["+nprodotti+"][nome]' placeholder='nome'/></td> " + 
-				   "<td><input type='text' name='quantita-"+nprodotti+"' placeholder='quantita'/></td> " +
-				   "<td><input type='text' name='costo-"+nprodotti+"' placeholder='costo'/></td> " +
+				   "<td><input type='text' name='t["+nprodotti+"][quantita]' placeholder='quantita'/></td> " +
+				   "<td><input type='text' name='t["+nprodotti+"][costo]' placeholder='costo'/></td> " +
 					<?php
 					foreach($utenti as $utente){
 						echo '"<td><input type=\'checkbox\' name=\''.$utente['email'].'-"+nprodotti+"\' checked/></td>"+';
