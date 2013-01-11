@@ -62,7 +62,19 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=apparten
 ?>
 
 
+
 <form method="post" action="">
+<table border='1'>
+	<tr>
+		<th>Negozio</th>
+		<th>Quantità</th>
+		<th>Costo</th>
+		<?php
+		foreach($utenti as $utente)
+			echo "<th>{$utente['nome']}</th>";
+		?>
+		<th>Descrizione</th>
+	</tr>
 	<input type="text" name="negozio" placeholder="negozio"/>
 	<input type="date" name="data" placeholder="data"/>
 	<p>Prodotti</p>
