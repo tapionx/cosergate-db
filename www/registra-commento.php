@@ -1,6 +1,6 @@
 <?php
 
-require_once(db.php);
+require_once("db.php");
 
 query("INSERT INTO commento (testo, id_prodotto, id_utente) VALUES ('{$_POST['commento']}',{$_POST['id_prodotto']},'{$_POST['id_utente']}')");
 
