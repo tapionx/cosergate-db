@@ -132,7 +132,10 @@ foreach($spese as $spesa){
 	      </form>";
 	$commenti = query("SELECT * FROM commento WHERE id_prodotto={$prodotto['id_prodotto']}");
 	foreach($commenti as $commento){
-		echo "<tr>{$commento['testo']} da {$commento['id_utente']}</tr>";
+		echo "<tr>
+				<td>{$commento['testo']}</td>
+				<td>{$commento['id_utente']}</td>
+			  </tr>";
 	}
 }
 echo "</table>";	
