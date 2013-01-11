@@ -27,7 +27,7 @@ if(isset($_POST['inseriscispesa'])){
 			query("UPDATE appartenenza SET totale=totale-$costo_per_utilizzatore WHERE id_utente=$utente AND id_ambiente={$_GET['ambiente']}");
 		}
 		
-		$inserisci_prodotto = "INSERT INTO prodotto 
+		$query = "INSERT INTO prodotto 
 								(nome, 
 								 quantita, 
 								 costo, 
