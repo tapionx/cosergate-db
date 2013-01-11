@@ -34,12 +34,12 @@ if(isset($_POST['aggiungi'])){
 		$utente = mysql_query($query, $db) or die('Errore nella SELECT');
 
 		if( mysql_num_rows($utenti) == 1){
-			echo "da aggiungere"	
+			echo "da aggiungere";
 		} else {
-			echo "ERRORE"
+			echo "ERRORE";
 		}
 	}else{
-		echo "Non puoi aggiungere te stesso furbacchione."
+		echo "Non puoi aggiungere te stesso furbacchione.";
 	}
 }
 ?>
