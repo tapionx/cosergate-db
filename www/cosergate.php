@@ -68,7 +68,7 @@ echo "</tr></table>";
 ?>
 
 <p>Vuoi restituire dei soldi a qualcuno?</p>
-<form method="post" action="registra-saldo.php">
+<form method="post" action="registra-saldo.php?ambiente=<?php echo $_GET['ambiente'] ?>">
 	<input type="text" name="importo" placeholder="Importo"/>
 	<select name="creditore">
 <?php
