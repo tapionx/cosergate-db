@@ -7,7 +7,7 @@ $prodotti = query("SELECT * FROM prodotto WHERE id_spesa={$_POST['id_spesa']}");
 
 echo "<form method='post' action=''>
 		<input type='text' name='negozio' value='{$spesa['negozio']}'/>
-		<input type='text' name='negozio' value='{$_POST['data']}'/>
+		<input type='text' name='negozio' value='{$spesa['data']}'/>
 	  </form>";
 
 header("Content-type:text/plain;");
