@@ -92,7 +92,7 @@ $spese = query("SELECT * FROM spesa WHERE id_ambiente={$_GET['ambiente']}");
 
 echo "<table border=1>";
 foreach($spese as $spesa){
-	$col = 4 + $nutenti;
+	$col = 3 + $nutenti;
 	echo "<tr><td colspan='$col' >Spesa fatta da {$spesa['id_utente']} il {$spesa['data']} nel negozio {$spesa['negozio']}</td></tr>";
 	/*
 	echo "<tr>
@@ -135,7 +135,6 @@ foreach($spese as $spesa){
 			}
 		}	
 	}
-	$col = $col -1;
 	echo "<form method='post' action='registra-commento.php?ambiente={$_GET['ambiente']}'>
 			  <tr>
 				<td  colspan='$col'><input type='text' name='commento' placeholder='aggiungi commento'/></td>
