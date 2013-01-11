@@ -15,7 +15,7 @@ function mysql_fetch_all($result) {
 	return $all;
 }
 
-function query($q){
+function query($q, $db){
 	$q = mysql_query($q, $db) or die("Errore: '$q'");
 	return mysql_fetch_all($q);
 }
