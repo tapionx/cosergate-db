@@ -103,6 +103,13 @@ foreach($spese as $spesa){
 	}
 	echo "</tr>";
 	
+	echo "<tr>
+			<td>{$prodotto['nome']}</td>
+			<td>{$prodotto['quantita']}</td>
+			<td>{$prodotto['costo']}</td>
+			<td>{$prodotto['descrizione']}</td>
+		  </tr>";
+	
 	}
 	
 }
