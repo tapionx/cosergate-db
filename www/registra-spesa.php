@@ -21,6 +21,9 @@ if(isset($_POST['inseriscispesa'])){
 	$lastid = mysql_insert_id();
 	
 	foreach($_POST['t'] as $prodotto){
+		
+		query("UPDATE appartenenza SET totale=totale+$prodotto['costo']");
+		
 		$costo_per_utilizzatore = $prodotto['costo'] / count($prodotto['email']);
 		foreach($prodotto['email'] as $utente){
 			query("UPDATE appartenenza SET totale=totale-$costo_per_utilizzatore WHERE id_utente='$utente' AND id_ambiente={$_GET['ambiente']}");
