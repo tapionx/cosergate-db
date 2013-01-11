@@ -13,6 +13,8 @@ $nutenti = $nutenti[0]['nutenti'];
 
 $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=appartenenza.id_utente WHERE id_ambiente='{$_GET['ambiente']}';");
 
+print_r($utenti);
+
 if(isset($_POST['inseriscispesa'])){
 	
 	$inserisci_spesa = "INSERT INTO spesa (negozio, ambiente, cliente) VALUES ('{$_POST['negozio']}', {$_GET['ambiente']}, '{$_SESSION['email']}');";
