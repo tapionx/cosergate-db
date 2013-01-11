@@ -34,7 +34,7 @@ if(isset($_POST['inseriscispesa'])){
 								 descrizione, 
 								 spesa ) 
 												 
-								VALUES ('{$_POST["nome-$i"]}',
+								VALUES ('p',
 										{$_POST["quantita-$i"]},
 										{$_POST["costo-$i"]},
 										'{$_POST["descrizione-$i"]}',
