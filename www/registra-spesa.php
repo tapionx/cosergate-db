@@ -23,6 +23,9 @@ if(isset($_POST['inseriscispesa'])){
 	
 	foreach($_POST['t'] as $prodotto){
 		$costo_per_utilizzatore = $prodotto['costo'] / count($prodotto['email']);
+		foreach($prodotto['email'] as $utente){
+			
+		}
 		
 		$inserisci_prodotto = "INSERT INTO prodotto 
 								(nome, 
