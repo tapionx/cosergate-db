@@ -21,6 +21,8 @@ if(mysql_num_rows($esiste) == 0){
 }
 ?>
 
+<a href="">Aggiungi Utente</a>
+
 <p>Il resoconto</p>
 <?php
 $query = "SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente={$_GET['ambiente']};";
