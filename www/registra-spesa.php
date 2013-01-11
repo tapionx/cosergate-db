@@ -22,7 +22,7 @@ if(isset($_POST['inseriscispesa'])){
 	
 	foreach($_POST['t'] as $prodotto){
 		
-		query("UPDATE appartenenza SET totale=totale+$prodotto['costo']");
+		query("UPDATE appartenenza SET totale=totale+{$prodotto['costo']}");
 		
 		$costo_per_utilizzatore = $prodotto['costo'] / count($prodotto['email']);
 		foreach($prodotto['email'] as $utente){
