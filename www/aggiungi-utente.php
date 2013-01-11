@@ -28,6 +28,7 @@ if(mysql_num_rows($esiste) == 0){
 }
 
 if(isset($_POST['aggiungi'])){
+	echo $_POST['email'];
 	
 }
 ?>
