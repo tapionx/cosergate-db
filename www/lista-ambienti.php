@@ -11,8 +11,8 @@ if(isset($_SESSION['loggato'])){
 	echo "<p>Benvenuto ".$email.'</p>';
 	require_once('db.php');
 	$ambienti = query("SELECT * FROM appartenenza JOIN ambiente ON appartenenza.id_ambiente=ambiente.id_ambiente WHERE id_utente='$email'");
-	while($riga = mysql_fetch_assoc($ambienti)) {
-		echo '<a href="cosergate.php?ambiente='.$riga['id_ambiente'].'" >'.$riga['nome'].'</a>';
+	foreach($ambienti as $ambiente){
+		echo '<a href="cosergate.php?ambiente='.$ambiente['id_ambiente'].'" >'.$ambiente['nome'].'</a>';
 	}
 	}
 	
