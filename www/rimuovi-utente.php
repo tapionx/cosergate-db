@@ -55,8 +55,9 @@ if(isset($_POST['rimuovi'])){
 ?>
 
 <form method="post" action="">
-	<input type="text" placeholder="email utente" name="email">
-	<input type="submit" value="Aggiungi" name="aggiungi">
+	<p>Questa operazione non può essere annullata, una volta uscito da un ambiente dovrai essere re-invitato.</p>
+	<p>Per uscire dall'ambiente devi prima aver saldato tutti i debiti e aver ricevuto tutti i crediti.</p>
+	<input type="submit" value="Rimuoviti" name="rimuovi">
 </form>
 
 <?php 
