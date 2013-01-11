@@ -38,7 +38,7 @@ if(isset($_POST['aggiungi'])){
 			
 			$query = "SELECT * FROM utente WHERE email='$email'";
 			$utente = mysql_query($query, $db) or die('Errore nella SELECT');
-			if(){
+			if(){ /* controllo se la mail non esite già nell'ambiente */
 				$query = "INSERT INTO appartenenza VALUES('{$_GET['ambiente']}','$email',0)";
 				$utente = mysql_query($query, $db) or die('Errore nell\'inserimento dell\'utente');
 				echo "Utente aggiunto!";
