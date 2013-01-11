@@ -76,7 +76,7 @@ $spese = query("SELECT * FROM spesa WHERE id_ambiente={$_GET['ambiente']}");
 
 echo "<table border=1>";
 foreach($spese as $spesa){
-	echo "<tr><td>Spesa fatta da {} il {} nel negozio {}</td></tr>";
+	echo "<tr><td>Spesa fatta da {$spesa['id_utente']} il {$spesa['data']} nel negozio {$spesa['negozio']}</td></tr>";
 	/*
 	echo "<tr>
 			<th>Negozio</th>
