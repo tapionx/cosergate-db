@@ -123,7 +123,7 @@ foreach($spese as $spesa){
 		}	
 	}
 	$col = $col -1;
-	echo "<form method='post' action='registra-commento.php'>
+	echo "<form method='post' action='registra-commento.php?ambiente={$_GET['ambiente']}'>
 			  <tr>
 				<td  colspan='$col'><input type='text' name='commento' placeholder='aggiungi commento'/></td>
 				<td><input type='submit' value='Commenta'/></td>
