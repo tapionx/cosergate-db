@@ -102,6 +102,7 @@ foreach($spese as $spesa){
 	foreach($utenti as $utente){
 		echo "<th>{$utente['nome']}</th>";
 	}
+	echo "</tr>";
 	
 	}
 	
