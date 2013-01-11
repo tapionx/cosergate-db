@@ -36,6 +36,7 @@ if(isset($_POST['aggiungi'])){
 
 		if( mysql_num_rows($utente) == 1){
 			$query = "INSERT INTO appartenenza VALUES('{$_GET['ambiente']}','$email',0)"
+			$utente = mysql_query($query, $db) or die('Errore nell\'inserimento dell\'utente');
 		} else {
 			echo "Email errata.";
 		}
