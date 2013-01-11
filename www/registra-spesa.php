@@ -57,6 +57,8 @@ $nutenti = "SELECT count(id_utente) FROM appartenenza WHERE id_ambiente='{$_GET[
 mysql_query($nutenti, $db) or die("Errore in NUTENTI: $nutenti");
 $nutenti = mysql_fetch_all($nutenti)[0];
 
+echo $nutenti;
+
 
 ?>
 
