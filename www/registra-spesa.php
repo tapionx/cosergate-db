@@ -90,9 +90,9 @@ if(isset($_POST['inseriscispesa'])){
 		<th>Descrizione</th>
 	</tr>
 	<tr>
-		<td><input type="text" name="nome-1" placeholder="nome"/></td>
-		<td><input type="text" name="quantita-1" placeholder="quantita"/></td>
-		<td><input type="text" name="costo-1" placeholder="costo"/></td>
+		<td><input type="text" name="t[1][nome]" placeholder="nome"/></td>
+		<td><input type="text" name="t[1][quantita]" placeholder="quantita"/></td>
+		<td><input type="text" name="t[1][costo]" placeholder="costo"/></td>
 		<?php
 		foreach($utenti as $utente){
 			echo "<td><input type='checkbox' name='{$utente['email']}-1' checked/></td>";
