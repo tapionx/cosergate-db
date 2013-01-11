@@ -1,35 +1,3 @@
-
-<?php
-
-// Recupero il numero di utenti
-$nutenti = query("SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente='{$_GET['ambiente']}';");
-$nutenti = $nutenti[0]['nutenti'];
-
-$utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=appartenenza.id_utente WHERE id_ambiente='{$_GET['ambiente']}';");
-
-?>
-
-
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript">
-	var nprodotti = 1;
-	function aggiungi_prodotto(){
-		nprodotti += 1;
-		var form = "<tr><td><input type='text' name='nome-"+nprodotti+"' placeholder='nome'/></td> " + 
-				   "<td><input type='text' name='quantita-"+nprodotti+"' placeholder='quantita'/></td> " +
-				   "<td><input type='text' name='costo-"+nprodotti+"' placeholder='costo'/></td> " +
-					<?php
-					foreach($utenti as $utente){
-						echo '"<td><input type=\'checkbox\' name=\''.$utente['email'].'\' checked/></td>"+';
-					}
-					?>
-				   "<td><input type='text' name='descrizione-"+nprodotti+"' placeholder='descrizione'/> </td>" +
-				   "</tr>";
-		$('table').append(form);
-		$('#nprodotti').attr('value', nprodotti);
-	}
-</script>
-
 <?php
 session_start();
 require_once('db.php');
@@ -67,6 +35,38 @@ if(isset($_POST['inseriscispesa'])){
 	header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
 }
 ?>
+
+<?php
+
+// Recupero il numero di utenti
+$nutenti = query("SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente='{$_GET['ambiente']}';");
+$nutenti = $nutenti[0]['nutenti'];
+
+$utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=appartenenza.id_utente WHERE id_ambiente='{$_GET['ambiente']}';");
+
+?>
+
+
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+	var nprodotti = 1;
+	function aggiungi_prodotto(){
+		nprodotti += 1;
+		var form = "<tr><td><input type='text' name='nome-"+nprodotti+"' placeholder='nome'/></td> " + 
+				   "<td><input type='text' name='quantita-"+nprodotti+"' placeholder='quantita'/></td> " +
+				   "<td><input type='text' name='costo-"+nprodotti+"' placeholder='costo'/></td> " +
+					<?php
+					foreach($utenti as $utente){
+						echo '"<td><input type=\'checkbox\' name=\''.$utente['email'].'\' checked/></td>"+';
+					}
+					?>
+				   "<td><input type='text' name='descrizione-"+nprodotti+"' placeholder='descrizione'/> </td>" +
+				   "</tr>";
+		$('table').append(form);
+		$('#nprodotti').attr('value', nprodotti);
+	}
+</script>
+
 
 
 
