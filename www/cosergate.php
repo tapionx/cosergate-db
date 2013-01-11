@@ -21,7 +21,7 @@ if(mysql_num_rows($esiste) == 0){
 }
 ?>
 
-<a href="aggiungi-utente?ambiente=".$_GET['ambiente']>Aggiungi Utente</a>
+<a href="aggiungi-utente?ambiente="<?php echo $_GET['ambiente'] ?>>Aggiungi Utente</a>
 
 <p>Il resoconto</p>
 <?php
