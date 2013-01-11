@@ -42,7 +42,7 @@ $query = "SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente
 $nutenti = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 $nutenti = mysql_fetch_assoc($nutenti)['nutenti'];
 
-$query = "SELECT username, totale FROM appartenenza JOIN utente ON appartenenza.id_utente=utente.email WHERE id_ambiente={$_GET['ambiente']};";
+$query = "SELECT username, totale FROM appartenenza JOIN utente ON appartenenza.id_utente=utente.id_utente WHERE id_ambiente={$_GET['ambiente']};";
 $utenti = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 $utenti = mysql_fetch_all($utenti);
 
