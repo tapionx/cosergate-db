@@ -95,7 +95,12 @@ foreach($spese as $spesa){
 	$col = 3 + $nutenti;
 	echo "<tr>
 			<td colspan='$col' >Spesa fatta da {$spesa['id_utente']} il {$spesa['data']} nel negozio {$spesa['negozio']}</td>
-			<td><form method='post' action='modifica-spesa.php?ambiente={$_GET['ambiente']}'></form></td>
+			<td>
+				<form method='post' action='modifica-spesa.php?ambiente={$_GET['ambiente']}'>
+					<input type='submit' name='modifica' value='Modifica' />
+					<input type='hidden' name='id_spesa' value='{$spesa['id_spesa']}
+			    </form>
+			</td>
 		  </tr>";
 	/*
 	echo "<tr>
