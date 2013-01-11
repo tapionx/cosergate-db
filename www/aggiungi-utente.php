@@ -31,7 +31,7 @@ if(isset($_POST['aggiungi'])){
 	$email = $_POST['email'];
 	
 	if($email != $_SESSION['email']){ /* Controllo se sto aggiungendo me stesso */
-		$query = "SELECT * FROM utente WHERE email='$email'";
+		$query = "SELECT * FROM utente WHERE id_utente='$email'";
 		$utente = mysql_query($query, $db) or die('Errore nella SELECT');
 
 		if( mysql_num_rows($utente) == 1){ /* controllo se la mail esiste */
