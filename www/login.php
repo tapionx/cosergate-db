@@ -4,7 +4,7 @@ require_once('db.php');
 $email = $_POST['email'];
 $password = md5($_POST['password']);
 
-$query = "SELECT * FROM utente WHERE email='$email' AND password='$password'";
+$query = "SELECT * FROM utente WHERE id_utente='$email' AND password='$password'";
 
 $utenti = mysql_query($query, $db) or die('Errore nella SELECT');
 
