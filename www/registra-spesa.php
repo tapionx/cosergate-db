@@ -76,8 +76,8 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=apparten
 		<th>Descrizione</th>
 	</tr>
 	<tr>
-		<input type="text" name="negozio" placeholder="negozio"/>
-		<input type="date" name="data" placeholder="data"/>
+		<td><input type="text" name="negozio" placeholder="negozio"/></td>
+		<td><input type="date" name="data" placeholder="data"/>
 		<p>Prodotti</p>
 		<div id="prodotti">
 			<input type="text" name="nome-1" placeholder="nome"/>
