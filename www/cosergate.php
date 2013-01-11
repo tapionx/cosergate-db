@@ -77,6 +77,7 @@ echo "</tr></table>";
 	}
 ?>
 	</select>
+	<input type="submit" value="Paga" />
 </form>
 
 <p>Lista delle spese</p>
