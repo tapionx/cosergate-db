@@ -1,7 +1,7 @@
 DROP DATABASE cosergate;
 CREATE DATABASE cosergate;
 USE cosergate;
-source /home/tapion/SparkleShare/cosergate-db/db.sql
+source db.sql
 INSERT INTO utente (id_utente, nome, cognome, password, username) VALUES ('tapion@tapion.it', 'Riccardo', 'Serafini', '7815696ecbf1c96e6894b779456d330e', 'tapion');
 INSERT INTO utente (id_utente, nome, cognome, password, username) VALUES ('daniele@sciuto.it', 'Daniele', 'Sciuto', '7815696ecbf1c96e6894b779456d330e', 'sciuto');
 INSERT INTO utente (id_utente, nome, cognome, password, username) VALUES ('dario@serra.it', 'Dario', 'Serra', '7815696ecbf1c96e6894b779456d330e', 'daffo');
