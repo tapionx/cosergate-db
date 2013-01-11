@@ -15,17 +15,13 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=apparten
 
 if(isset($_POST['inseriscispesa'])){
 	
-	header("Content-type:text/plain;");
-	print_r($_POST);
-	die();
-	
 	$inserisci_spesa = "INSERT INTO spesa (negozio, ambiente, cliente) VALUES ('{$_POST['negozio']}', {$_GET['ambiente']}, '{$_SESSION['email']}');";
 	mysql_query($inserisci_spesa, $db) or die("Errore nella INSERT SPESA: $inserisci_spesa");
-	echo $inserisci_spesa.'<br>';
+	echo $inserisci_spesa.'<br>'
 	
 	$lastid = mysql_insert_id();
 	
-	for($i=1;$i<=$_POST['nprodotti'];$i++){
+	foreach($_POST['t'] as $prodotto){
 		$costo_per_utilizzatore = $_POST['costo'];
 		
 		$inserisci_prodotto = "INSERT INTO prodotto 
