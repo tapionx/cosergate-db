@@ -11,7 +11,7 @@ echo "<form method='post' action=''>
 	  ";
 
 foreach($prodotti as $prodotto){
-	echo "<input type='text' name='p[][nome]' value='{$prodotto['nome']}' />
+	echo "<input type='text' name='p[{$prodotto['id_prodotto']}][nome]' value='{$prodotto['nome']}' />
 }
 
 	  </form>";
