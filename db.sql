@@ -30,9 +30,9 @@ CREATE TABLE IF NOT EXISTS spesa (
   data DATETIME NOT NULL,
   timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   id_ambiente INTEGER NOT NULL,
-  id_cliente VARCHAR(45) NOT NULL,
+  id_utente VARCHAR(45) NOT NULL,
   FOREIGN KEY(id_ambiente) REFERENCES ambiente(id_ambiente),
-  FOREIGN KEY(id_cliente) REFERENCES utente(id_utente)
+  FOREIGN KEY(id_utente) REFERENCES utente(id_utente)
 );
 
 CREATE TABLE IF NOT EXISTS pagamento (
