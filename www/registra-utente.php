@@ -7,7 +7,7 @@ if(isset($_POST['registra'])) {
 	$cognome  = $_POST['cognome'];
 	$password = md5($_POST['password']);
 	$nomeutente = $_POST['nomeutente'];
-	$query = "SELECT * FROM utente WHERE email='$email';";
+	$query = "SELECT * FROM utente WHERE id_utente='$email';";
 	$esiste = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 	if(mysql_num_rows($esiste) == 0){
 		$query = "INSERT INTO utente VALUES('$email', '$nome', '$cognome', '$password', '$nomeutente');";
