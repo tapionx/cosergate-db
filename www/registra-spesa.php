@@ -22,7 +22,7 @@ if(isset($_POST['inseriscispesa'])){
 	$lastid = mysql_insert_id();
 	
 	foreach($_POST['t'] as $prodotto){
-		$costo_per_utilizzatore = $prodotto['costo']/count($prodotto['email']);
+		$costo_per_utilizzatore = $prodotto['costo'] / count($prodotto['email']);
 		
 		$inserisci_prodotto = "INSERT INTO prodotto 
 								(nome, 
