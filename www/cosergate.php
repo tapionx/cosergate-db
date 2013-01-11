@@ -134,7 +134,7 @@ foreach($spese as $spesa){
 	foreach($commenti as $commento){
 		echo "<tr>
 				<td colspan='$col'>{$commento['testo']}</td>
-				<td>{$utenti['id_utente']}</td>
+				<td>{$commento['id_utente']}</td>
 			  </tr>";
 	}
 }
