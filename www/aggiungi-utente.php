@@ -36,10 +36,10 @@ if(isset($_POST['aggiungi'])){
 
 		if( $utente[0]['nutenti'] == 1){ /* controllo se la mail esiste */
 			
-			$query = "SELECT * FROM appartenenza WHERE id_utente='$email' AND id_ambiente=".$_GET['ambiente'];
-			$utente = mysql_query($query, $db) or die('Errore nella select');
+			$query = "SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_utente='$email' AND id_ambiente=".$_GET['ambiente'];
+			$utente = query($query);
 			
-			if(mysql_num_rows($utente) == 0){ /* controllo se la mail non esite già nell'ambiente */
+			if($utente[0]['nutenti'] == 0){ /* controllo se la mail non esite già nell'ambiente */
 				$query = "INSERT INTO appartenenza VALUES('{$_GET['ambiente']}','$email',0)";
 				$utente = mysql_query($query, $db) or die('Errore nell\'inserimento dell\'utente');
 				echo "Utente aggiunto!";
