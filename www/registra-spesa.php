@@ -1,3 +1,15 @@
+
+<?php
+
+// Recupero il numero di utenti
+$nutenti = query("SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente='{$_GET['ambiente']}';");
+$nutenti = $nutenti[0]['nutenti'];
+
+$utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=appartenenza.id_utente WHERE id_ambiente='{$_GET['ambiente']}';");
+
+?>
+
+
 <script src="http://code.jquery.com/jquery-latest.js"></script>
 <script type="text/javascript">
 	var nprodotti = 1;
@@ -54,16 +66,6 @@ if(isset($_POST['inseriscispesa'])){
 	}
 	header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
 }
-?>
-
-<?php
-
-// Recupero il numero di utenti
-$nutenti = query("SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente='{$_GET['ambiente']}';");
-$nutenti = $nutenti[0]['nutenti'];
-
-$utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=appartenenza.id_utente WHERE id_ambiente='{$_GET['ambiente']}';");
-
 ?>
 
 
