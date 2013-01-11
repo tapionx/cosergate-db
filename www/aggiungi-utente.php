@@ -61,5 +61,5 @@ if(isset($_POST['aggiungi'])){
 </form>
 
 <?php 
-echo '<a href="cosergate.php?ambiente='.$_GET['ambiente'].'>Torna indietro</a>';
+echo '<a href="cosergate.php?ambiente='.$_GET['ambiente'].'">Torna indietro</a>';
 ?>
