@@ -15,6 +15,10 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=apparten
 
 if(isset($_POST['inseriscispesa'])){
 	
+	header("content-type=text/plain");
+	print_r($_POST);
+	die();
+	
 	$inserisci_spesa = "INSERT INTO spesa (negozio, ambiente, cliente) VALUES ('{$_POST['negozio']}', {$_GET['ambiente']}, '{$_SESSION['email']}');";
 	mysql_query($inserisci_spesa, $db) or die("Errore nella INSERT SPESA: $inserisci_spesa");
 	echo $inserisci_spesa.'<br>';
@@ -22,6 +26,8 @@ if(isset($_POST['inseriscispesa'])){
 	$lastid = mysql_insert_id();
 	
 	for($i=1;$i<=$_POST['nprodotti'];$i++){
+		$costo_per_utilizzatore = $_POST['costo'];
+		
 		$inserisci_prodotto = "INSERT INTO prodotto 
 								(nome, 
 								 quantita, 
@@ -36,7 +42,7 @@ if(isset($_POST['inseriscispesa'])){
 										$lastid );";
 										
 		mysql_query($inserisci_prodotto, $db) or die("Errore nella INSERT PRODOTTO: $inserisci_prodotto");
-		echo $inserisci_prodotto.'<br>';
+		
 	}
 	header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
 }
