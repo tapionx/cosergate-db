@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS prodotto (
   id_prodotto INTEGER NOT NULL PRIMARY KEY AUTO_INCREMENT,
   nome VARCHAR(45) NOT NULL ,
   quantita INTEGER NOT NULL ,
-  costo INTEGER NOT NULL ,
+  costo FLOAT NOT NULL ,
   descrizione VARCHAR(45) ,
   codice_a_barre INTEGER ,
   spesa INTEGER NOT NULL ,
