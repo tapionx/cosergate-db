@@ -42,7 +42,7 @@ if(isset($_POST['inseriscispesa'])){
 										'{$prodotto['descrizione']}',
 										$lastid );");
 	}
-	header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
+	//header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
 }
 ?>
 
