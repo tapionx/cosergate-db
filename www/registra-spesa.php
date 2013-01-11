@@ -98,7 +98,7 @@ if(isset($_POST['inseriscispesa'])){
 			echo "<td><input type='checkbox' name='{$utente['email']}-1' checked/></td>";
 		}
 		?>
-		<td><input type="text" name="descrizione-1" placeholder="descrizione"/></td>
+		<td><input type="text" name="t[1][descrizione]" placeholder="descrizione"/></td>
 	</tr>
 </table>
 
