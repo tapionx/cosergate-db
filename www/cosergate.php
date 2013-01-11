@@ -124,8 +124,8 @@ foreach($spese as $spesa){
 	}
 	$col = $col -1;
 	echo "<form method='post' action='registra-commento.php'>
-			  <tr colspan='$col'>
-				<td><input type='text' name='commento' placeholder='aggiungi commento'/></td>
+			  <tr>
+				<td  colspan='$col'><input type='text' name='commento' placeholder='aggiungi commento'/></td>
 				<td><input type='submit' value='Commenta'/></td>
 			  </tr>
 	      </form>";
