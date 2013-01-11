@@ -122,7 +122,7 @@ foreach($spese as $spesa){
 			}
 		}	
 	}
-	echo "<tr>
+	echo "<tr style='margin-bottom:10px'>
 			<td>Commento:</td>
 	      </tr>";
 	
