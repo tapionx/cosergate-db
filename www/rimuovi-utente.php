@@ -30,9 +30,12 @@ if(mysql_num_rows($esiste) == 0){
 if(isset($_POST['rimuovi'])){
 	
 		$query = "DELETE FROM appartenenza WHERE id_utente='".$_SESSION['email']."' AND id_ambiente=".$_GET['ambiente']." AND totale=0";
-		$utente = mysql_query($query, $db) or die('Errore nella SELECT');
+		$rimozione = mysql_query($query, $db) or die('Errore nella DELETE');
 
-		if( mysql_num_rows($utente) == 1){ /* controllo se la mail esiste */
+		if( mysql_affected_rows($utente) == 1){ /* controllo se l'eliminazione è andata a buon fine*/
+			echo = "Ti sei rimosso con successo.<br>"
+			echo '<a href="">Torna indietro!</a>'
+		}
 }
 ?>
 
