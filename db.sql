@@ -21,7 +21,7 @@ CREATE TABLE IF NOT EXISTS appartenenza (
   saldo FLOAT NOT NULL,
   PRIMARY KEY (id_ambiente, id_utente) ,
   FOREIGN KEY (id_ambiente) REFERENCES ambiente(id_ambiente),
-  FOREIGN KEY (id_utente) REFERENCES utente(email)
+  FOREIGN KEY (id_utente) REFERENCES utente(id_utente)
 );
 
 CREATE TABLE IF NOT EXISTS spesa (
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS spesa (
   id_ambiente INTEGER NOT NULL,
   id_cliente VARCHAR(45) NOT NULL,
   FOREIGN KEY(id_ambiente) REFERENCES ambiente(id_ambiente),
-  FOREIGN KEY(id_cliente) REFERENCES utente(email)
+  FOREIGN KEY(id_cliente) REFERENCES utente(id_utente)
 );
 
 CREATE TABLE IF NOT EXISTS pagamento (
@@ -42,8 +42,8 @@ CREATE TABLE IF NOT EXISTS pagamento (
   timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   id_pagante VARCHAR(45) NOT NULL ,
   id_creditore VARCHAR(45) NOT NULL ,
-  FOREIGN KEY (id_pagante) REFERENCES utente(email),
-  FOREIGN KEY (id_creditore) REFERENCES utente(email)
+  FOREIGN KEY (id_pagante) REFERENCES utente(id_utente),
+  FOREIGN KEY (id_creditore) REFERENCES utente(id_utente)
 );
 
 CREATE TABLE IF NOT EXISTS prodotto (
@@ -62,7 +62,7 @@ CREATE TABLE IF NOT EXISTS utilizzo (
   id_utente VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`prodotto`, `utente`) ,
   FOREIGN KEY (id_prodotto) REFERENCES prodotto(id_prodotto),
-  FOREIGN KEY (id_utente) REFERENCES utente(email)
+  FOREIGN KEY (id_utente) REFERENCES utente(id_utente)
 );
 
 CREATE TABLE IF NOT EXISTS commento (
@@ -72,5 +72,5 @@ CREATE TABLE IF NOT EXISTS commento (
   id_prodotto INTEGER NOT NULL ,
   id_utente VARCHAR(45) NOT NULL ,
   FOREIGN KEY (id_prodotto) REFERENCES prodotto(id_prodotto),
-  FOREIGN KEY (id_utente) REFERENCES utente(email)
+  FOREIGN KEY (id_utente) REFERENCES utente(id_utente)
 );
