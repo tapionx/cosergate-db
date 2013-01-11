@@ -43,6 +43,8 @@ if(isset($_POST['aggiungi'])){
 				$query = "INSERT INTO appartenenza VALUES('{$_GET['ambiente']}','$email',0)";
 				$utente = mysql_query($query, $db) or die('Errore nell\'inserimento dell\'utente');
 				echo "Utente aggiunto!";
+			}else{
+					echo "Utente già presente";
 			}
 		} else {
 			echo "Email errata.";
