@@ -26,6 +26,10 @@ $esiste = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 if(mysql_num_rows($esiste) == 0){
 	die('3');
 }
+
+if(isset($_POST['aggiungi'])){
+	
+}
 ?>
 
 <form method="post" action="">
