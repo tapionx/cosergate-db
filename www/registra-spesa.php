@@ -55,7 +55,7 @@ if(isset($_POST['inseriscispesa'])){
 
 $nutenti = "SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente='{$_GET['ambiente']}';";
 $nutenti = mysql_query($nutenti, $db) or die("Errore in NUTENTI: $nutenti");
-$nutenti = mysql_fetch_all($nutenti)[0]['nutenti'];
+$nutenti = mysql_fetch_row($nutenti)['nutenti'];
 
 print_r( $nutenti);
 
