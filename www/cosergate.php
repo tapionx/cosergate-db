@@ -24,6 +24,7 @@ if(mysql_num_rows($esiste) == 0){
 	die('2');
 }
  /* controllo se l'utente appartiene all'ambiente */
+ 
 $query = "SELECT * FROM appartenenza WHERE id_ambiente={$_GET['ambiente']} AND id_utente='{$_SESSION['email']}'";
 $esiste = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 if(mysql_num_rows($esiste) == 0){
