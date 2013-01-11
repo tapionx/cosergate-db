@@ -41,7 +41,7 @@ if(mysql_num_rows($esiste) == 0){
  echo '<a href="rimuovi-utente.php?ambiente='.$_GET['ambiente'].'">Rimuoviti dall\'ambiente</a><br/>';
  echo '<a href="cosergate.php?logout=1">Logout</a>';
 ?>
-<p>Il resoconto</p>
+<p>Resoconto Situazione</p>
 <?php
 $query = "SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente={$_GET['ambiente']};";
 $nutenti = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
@@ -67,7 +67,7 @@ echo '</tr>';
 echo "</tr></table>";
 ?>
 
-<p>La lista</p>
+<p>La lista delle spese</p>
 
 <form method="get" action="registra-spesa.php">
 <input type="hidden" name="ambiente" value="<?php echo $_GET['ambiente']; ?>"/>
