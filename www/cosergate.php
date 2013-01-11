@@ -19,10 +19,10 @@ $esiste = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 if(mysql_num_rows($esiste) == 0){
 	die('3');
 }
+
+
+ echo '<a href="aggiungi-utente.php?ambiente='.$_GET['ambiente'].'">Aggiungi Utente</a>';
 ?>
-
-<a href="aggiungi-utente.php?ambiente="<?php echo 'asd'?>>Aggiungi Utente</a>
-
 <p>Il resoconto</p>
 <?php
 $query = "SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente={$_GET['ambiente']};";
