@@ -57,7 +57,7 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=apparten
 				   "<td><input type='text' name='costo-"+nprodotti+"' placeholder='costo'/></td> " +
 					<?php
 					foreach($utenti as $utente){
-						echo '"<td><input type=\'checkbox\' name=\''.$utente['email'].'\' checked/></td>"+';
+						echo '"<td><input type=\'checkbox\' name=\''.$utente['email'].'-\'+nprodotti+\' checked/></td>"+';
 					}
 					?>
 				   "<td><input type='text' name='descrizione-"+nprodotti+"' placeholder='descrizione'/> </td>" +
@@ -92,7 +92,7 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=apparten
 		<td><input type="text" name="costo-1" placeholder="costo"/></td>
 		<?php
 		foreach($utenti as $utente){
-			echo "<td><input type='checkbox' name='{$utente['email']}' checked/></td>";
+			echo "<td><input type='checkbox' name='{$utente['email']}-1' checked/></td>";
 		}
 		?>
 		<td><input type="text" name="descrizione-1" placeholder="descrizione"/></td>
