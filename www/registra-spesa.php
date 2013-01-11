@@ -8,7 +8,7 @@
 				   "<td><input type='text' name='costo-"+nprodotti+"' placeholder='costo'/></td> " +
 				   "<td><input type='text' name='descrizione-"+nprodotti+"' placeholder='descrizione'/> </td>" +
 				   "</tr>";
-		$('#prodotti').append(form);
+		$('table').append(form);
 		$('#nprodotti').attr('value', nprodotti);
 	}
 </script>
