@@ -78,7 +78,7 @@ if(isset($_POST['inseriscispesa'])){
 
 <form method="post" action="">
 		<input type="text" name="negozio" placeholder="negozio"/>
-		<input type="date" name="data" placeholder="data" value="<?php echo date(); ?>"/>
+		<input type="date" name="data" placeholder="data" value="<?php echo date("Y-m-d H:i:s"); ?>"/>
 <p>Prodotti</p>
 		
 <table>
