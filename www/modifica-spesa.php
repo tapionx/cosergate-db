@@ -4,6 +4,7 @@ require_once("db.php");
 
 $spesa = query("SELECT * FROM spesa WHERE id_spesa={$_POST['id_spesa']}")[0];
 $prodotti = query("SELECT * FROM prodotto WHERE id_spesa={$_POST['id_spesa']}");
+$utenti = query("SELECT * FROM utenti WHERE id_ambiente={$_GET['ambiente']}");
 
 echo "<form method='post' action=''>
 		<input type='text' name='negozio' value='{$spesa['negozio']}' />
@@ -20,6 +21,7 @@ foreach($prodotti as $prodotto){
 	";
 	
 	$utilizzi = query("SELECT * FROM utilizzo WHERE id_prodotto={$prodotto['id_prodotto']};");
+	
 }
 
 echo "</form>";
