@@ -15,7 +15,7 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=apparten
 
 if(isset($_POST['inseriscispesa'])){
 	
-	header("content-type=text/plain");
+	header("content-type=text/plain;");
 	print_r($_POST);
 	die();
 	
