@@ -8,15 +8,23 @@ $prodotti = query("SELECT * FROM prodotto WHERE id_spesa={$_POST['id_spesa']}");
 echo "<form method='post' action=''>
 		<input type='text' name='negozio' value='{$spesa['negozio']}' />
 		<input type='text' name='negozio' value='{$spesa['data']}' />
+		<br>
 	  ";
 
 foreach($prodotti as $prodotto){
 	echo "<input type='text' name='p[{$prodotto['id_prodotto']}][nome]' value='{$prodotto['nome']}' />
+		  <input type='text' name='p[{$prodotto['id_prodotto']}][quantita]' value='{$prodotto['quantita']}' />
+		  <input type='text' name='p[{$prodotto['id_prodotto']}][costo]' value='{$prodotto['costo']}' />
+		  <input type='text' name='p[{$prodotto['id_prodotto']}][descrizione]' value='{$prodotto['descrizione']}' />
+		  <br>
+	";
+	
+	$utilizzi = query("SELECT * FROM utilizzo WHERE id_prodotto={$prodotto['id_prodotto']};");
 }
 
-	  </form>";
+echo "</form>";
 
-header("Content-type:text/plain;");
+echo "<pre>";
 print_r($spesa);
 print_r($prodotti);
 ?>
