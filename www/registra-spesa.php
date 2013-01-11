@@ -47,7 +47,7 @@ if(isset($_POST['inseriscispesa'])){
 		
 		
 	}
-		//header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
+	header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
 }
 ?>
 
