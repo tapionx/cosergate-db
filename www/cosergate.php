@@ -1,3 +1,8 @@
+<style>
+	table {
+		border-collapse: collapse;
+	}
+</style>
 <?php
 
 session_start();
