@@ -38,6 +38,8 @@ if(isset($_POST['aggiungi'])){
 		} else {
 			echo "ERRORE"
 		}
+	}else{
+		echo "Non puoi aggiungere te stesso furbacchione."
 	}
 }
 ?>
