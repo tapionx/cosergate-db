@@ -11,6 +11,12 @@ function mysql_fetch_all($result) {
 	return $all;
 }
 
+function query($q){
+	$q = mysql_query($q, $db) or die("Errore: '$utenti'");
+	$utenti = mysql_fetch_row($nutenti)[0];
+
+}
+
 $db = mysql_connect('localhost','cosergate','cosergate') or die("Errore di connessione al DB");
 mysql_select_db("cosergate", $db) or die("select db");
 
