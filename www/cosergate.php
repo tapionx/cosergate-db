@@ -98,7 +98,7 @@ foreach($spese as $spesa){
 			<td>
 				<form method='post' action='modifica-spesa.php?ambiente={$_GET['ambiente']}'>
 					<input type='submit' name='modifica' value='Modifica' />
-					<input type='hidden' name='id_spesa' value='{$spesa['id_spesa']}
+					<input type='hidden' name='id_spesa' value='{$spesa['id_spesa']}'/>
 			    </form>
 			</td>
 		  </tr>";
