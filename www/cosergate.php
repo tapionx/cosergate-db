@@ -130,7 +130,7 @@ foreach($spese as $spesa){
 			  </tr>
 			<input type='hidden' name='id_prodotto' value='{$prodotto['id_prodotto']}'/>
 	      </form>";
-	
+	$commenti = query("SELECT * FROM commento WHERE id_prodotto={$prodotto['id_prodotto']}");
 }
 echo "</table>";	
 
