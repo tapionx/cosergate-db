@@ -98,8 +98,10 @@ foreach($spese as $spesa){
 			<th>Quantità</th>
 			<th>Prezzo</th>
 			<th>Descrizione</th>
-		  </tr>
 	";
+	foreach($utenti as $utente){
+		echo "<th>{$utente['nome']}</th>";
+	}
 	
 	}
 	
