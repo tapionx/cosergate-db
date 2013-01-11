@@ -13,7 +13,7 @@ function mysql_fetch_all($result) {
 
 function query($q){
 	$q = mysql_query($q, $db) or die("Errore: '$q'");
-	$q = mysql_fetch_all($q);
+	return mysql_fetch_all($q);
 
 }
 
