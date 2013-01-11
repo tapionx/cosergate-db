@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS ambiente (
 );
 
 CREATE TABLE IF NOT EXISTS utente (
-  email VARCHAR(45) NOT NULL PRIMARY KEY,
+  id_utente VARCHAR(45) NOT NULL PRIMARY KEY,
   nome VARCHAR(45) NOT NULL ,
   cognome VARCHAR(45) NOT NULL ,
   password VARCHAR(45) NOT NULL ,
@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS utente (
 CREATE TABLE IF NOT EXISTS appartenenza (
   id_ambiente INTEGER NOT NULL ,
   id_utente VARCHAR(45) NOT NULL ,
-  totale FLOAT NOT NULL,
+  saldo FLOAT NOT NULL,
   PRIMARY KEY (id_ambiente, id_utente) ,
   FOREIGN KEY (id_ambiente) REFERENCES ambiente(id_ambiente),
   FOREIGN KEY (id_utente) REFERENCES utente(email)
@@ -29,8 +29,8 @@ CREATE TABLE IF NOT EXISTS spesa (
   negozio VARCHAR(45) NULL ,
   data DATETIME NOT NULL,
   timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  ambiente INTEGER NOT NULL,
-  cliente VARCHAR(45) NOT NULL,
+  id_ambiente INTEGER NOT NULL,
+  id_cliente VARCHAR(45) NOT NULL,
   FOREIGN KEY(ambiente) REFERENCES ambiente(id_ambiente),
   FOREIGN KEY(cliente) REFERENCES utente(email)
 );
