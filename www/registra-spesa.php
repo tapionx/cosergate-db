@@ -11,7 +11,7 @@ if(!isset($_SESSION['loggato'])){
 $nutenti = query("SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente='{$_GET['ambiente']}';");
 $nutenti = $nutenti[0]['nutenti'];
 
-$utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=appartenenza.id_utente WHERE id_ambiente='{$_GET['ambiente']}';");
+$utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.id_utente=appartenenza.id_utente WHERE id_ambiente='{$_GET['ambiente']}';");
 
 if(isset($_POST['inseriscispesa'])){
 	
