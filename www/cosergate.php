@@ -81,6 +81,11 @@ foreach($spese as $spesa){
 			<th>Data</th>
 			<th>Acquirente</th>
 		  </tr>
+		  <tr>
+			<td>{$spesa['negozio']}</td>
+			<td>{$spesa['data']}</td>
+			<td>{$spesa['id_cliente']}</td>
+		  </tr>
 	";
 	
 	
