@@ -28,7 +28,6 @@ if(mysql_num_rows($esiste) == 0){
 }
 
 if(isset($_POST['rimuovi'])){
-	$email = $_POST['email'];
 	
 	if($email != $_SESSION['email']){ /* Controllo se sto aggiungendo me stesso */
 		$query = "SELECT * FROM utente WHERE email='$email'";
