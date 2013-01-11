@@ -29,15 +29,16 @@ if(mysql_num_rows($esiste) == 0){
 
 if(isset($_POST['aggiungi'])){
 	
-	$query = "SELECT * FROM utente WHERE email='$email'";
-	$utente = mysql_query($query, $db) or die('Errore nella SELECT');
+	if($_POST['email'] != $_SESSION['email']){
+		$query = "SELECT * FROM utente WHERE email='$email'";
+		$utente = mysql_query($query, $db) or die('Errore nella SELECT');
 
-	if( mysql_num_rows($utenti) == 1){
-	  echo ""	
-	} else {
+		if( mysql_num_rows($utenti) == 1){
+			echo "da aggiungere"	
+		} else {
 
+		}
 	}
-	
 }
 ?>
 
