@@ -60,8 +60,8 @@ if(isset($_POST['inseriscispesa'])){
 				   "<td><input type='text' name='t["+nprodotti+"][costo]' placeholder='costo'/></td> " +
 					<?php
 					foreach($utenti as $utente){
-						echo '"<td><input type=\'checkbox\' name=\''.$utente['email'].'-"+nprodotti+"\' checked/></td>"+';
-					}
+						echo '"<td><input type=\'checkbox\' name=\'t["+nprodotti+"]['.$utente['email'].']\' checked/></td>"+';
+					}\''.$utente['email'].'-"+nprodotti+"\'
 					?>
 				   "<td><input type='text' name='t["+nprodotti+"][descrizione]' placeholder='descrizione'/> </td>" +
 				   "</tr>";
