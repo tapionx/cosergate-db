@@ -30,14 +30,19 @@ if(mysql_num_rows($esiste) == 0){
 if(isset($_POST['aggiungi'])){
 	$email = $_POST['email'];
 	
-	if($email != $_SESSION['email']){
+	if($email != $_SESSION['email']){ /* Controllo se sto aggiungendo me stesso */
 		$query = "SELECT * FROM utente WHERE email='$email'";
 		$utente = mysql_query($query, $db) or die('Errore nella SELECT');
 
 		if( mysql_num_rows($utente) == 1){
-			$query = "INSERT INTO appartenenza VALUES('{$_GET['ambiente']}','$email',0)";
-			$utente = mysql_query($query, $db) or die('Errore nell\'inserimento dell\'utente');
-			echo "Utente aggiunto!";
+			
+			$query = "SELECT * FROM utente WHERE email='$email'";
+			$utente = mysql_query($query, $db) or die('Errore nella SELECT');
+			if(){
+				$query = "INSERT INTO appartenenza VALUES('{$_GET['ambiente']}','$email',0)";
+				$utente = mysql_query($query, $db) or die('Errore nell\'inserimento dell\'utente');
+				echo "Utente aggiunto!";
+			}
 		} else {
 			echo "Email errata.";
 		}
