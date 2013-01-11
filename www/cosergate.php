@@ -72,9 +72,7 @@ echo "</tr></table>";
 </form>
 
 <?php
-$query = "SELECT * FROM spesa WHERE id_ambiente={$_GET['ambiente']}";
-$spese = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
-$spese = mysql_fetch_all($spese);
+$spese = query("SELECT * FROM spesa WHERE id_ambiente={$_GET['ambiente']}");
 
 echo "<table border=1>";
 foreach($spese as $spesa){
