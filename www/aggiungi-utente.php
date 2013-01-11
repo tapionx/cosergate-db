@@ -26,5 +26,9 @@ $esiste = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
 if(mysql_num_rows($esiste) == 0){
 	die('3');
 }
-
 ?>
+
+<form method="post" action="">
+	<input type="text" placeholder="email utente" name="email">
+	<input type="submit" 
+</form>
