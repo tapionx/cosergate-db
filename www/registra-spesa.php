@@ -66,7 +66,7 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=apparten
 <form method="post" action="">
 		<input type="text" name="negozio" placeholder="negozio"/>
 		<input type="date" name="data" placeholder="data"/>
-	<p>Prodotti</p>
+<p>Prodotti</p>
 		
 <table border='1'>
 	<tr>
