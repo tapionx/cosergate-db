@@ -16,8 +16,10 @@ function mysql_fetch_all($result) {
 }
 
 function query($q){
+	echo $q;
 	global $db;
-	return mysql_fetch_all( mysql_query($q, $db) or die("Errore: '$q'") );
+	$q = mysql_query($q, $db) or die("Errore: '$q'");
+	return mysql_fetch_all($q);
 }
 
 ?>
