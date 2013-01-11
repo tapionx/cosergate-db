@@ -27,7 +27,7 @@ if(mysql_num_rows($esiste) == 0){
 	die('3');
 }
 
-if(isset($_POST['aggiungi'])){
+if(isset($_POST['rimuovi'])){
 	$email = $_POST['email'];
 	
 	if($email != $_SESSION['email']){ /* Controllo se sto aggiungendo me stesso */
