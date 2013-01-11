@@ -107,8 +107,10 @@ foreach($spese as $spesa){
 			<td>{$prodotto['nome']}</td>
 			<td>{$prodotto['quantita']}</td>
 			<td>{$prodotto['costo']}</td>
-			<td>{$prodotto['descrizione']}</td>
-		  </tr>";
+			<td>{$prodotto['descrizione']}</td>";
+	foreach($utenti as $utente){
+		$utilizzo = query("SELECT * FROM utilizzo WHERE id_prodotto={$prodotto['id_prodotto']} AND id_utente='{$utente['id_utente']}';");
+	}
 	
 	}
 	
