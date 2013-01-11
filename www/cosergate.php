@@ -84,7 +84,7 @@ foreach($spese as $spesa){
 		  <tr>
 			<td>{$spesa['negozio']}</td>
 			<td>{$spesa['data']}</td>
-			<td>{$spesa['id_cliente']}</td>
+			<td>{$spesa['id_utente']}</td>
 		  </tr>
 	";
 	
