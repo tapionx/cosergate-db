@@ -15,7 +15,7 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.id_utente=appa
 
 if(isset($_POST['inseriscispesa'])){
 	
-	$inserisci_spesa = "INSERT INTO spesa (negozio, id_ambiente, id_utente, data) VALUES ('{$_POST['negozio']}', {$_GET['ambiente']}, '{$_SESSION['email']}', {$_POST['data']});";
+	$inserisci_spesa = "INSERT INTO spesa (negozio, id_ambiente, id_utente, data) VALUES ('{$_POST['negozio']}', {$_GET['ambiente']}, '{$_SESSION['email']}', '{$_POST['data']}');";
 	mysql_query($inserisci_spesa, $db) or die("Errore nella INSERT SPESA: $inserisci_spesa");
 	
 	$id_spesa = mysql_insert_id();
