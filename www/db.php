@@ -14,7 +14,6 @@ function mysql_fetch_all($result) {
 function query($q){
 	$q = mysql_query($q, $db) or die("Errore: '$q'");
 	return mysql_fetch_all($q);
-
 }
 
 $db = mysql_connect('localhost','cosergate','cosergate') or die("Errore di connessione al DB");
