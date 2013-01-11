@@ -123,7 +123,6 @@ foreach($spese as $spesa){
 	}
 	
 	}
-	
 }
 echo "</table>";	
 
