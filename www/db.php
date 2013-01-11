@@ -12,8 +12,8 @@ function mysql_fetch_all($result) {
 }
 
 function query($q){
-	$q = mysql_query($q, $db) or die("Errore: '$utenti'");
-	$utenti = mysql_fetch_row($nutenti)[0];
+	$q = mysql_query($q, $db) or die("Errore: '$q'");
+	$q = mysql_fetch_all($q);
 
 }
 
