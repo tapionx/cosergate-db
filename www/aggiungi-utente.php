@@ -42,7 +42,7 @@ if(isset($_POST['aggiungi'])){
 				$utente = mysql_query($query, $db) or die('Errore nell\'inserimento dell\'utente');
 				echo "Utente aggiunto!";
 			}else{
-					echo "Utente già presente";
+				echo "Utente già presente";
 			}
 		} else {
 			echo "Email errata.";
