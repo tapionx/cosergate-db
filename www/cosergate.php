@@ -3,10 +3,13 @@
 session_start();
 require_once('db.php');
 
+/* logout? */
 if(isset($_GET['logout'])){
 	 session_unset();
 	 header('Location: index.php');
 }
+
+/* Utente loggato? */
 
 if(!isset($_SESSION['loggato']) || (!isset($_GET['ambiente']))) {
 	header('Location: index.php');
