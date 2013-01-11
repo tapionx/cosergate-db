@@ -64,6 +64,10 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=apparten
 
 
 <form method="post" action="">
+		<input type="text" name="negozio" placeholder="negozio"/>
+		<input type="date" name="data" placeholder="data"/>
+	<p>Prodotti</p>
+		
 <table border='1'>
 	<tr>
 		<th>Negozio</th>
@@ -76,9 +80,6 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=apparten
 		<th>Descrizione</th>
 	</tr>
 	<tr>
-		<td><input type="text" name="negozio" placeholder="negozio"/></td>
-		<td><input type="date" name="data" placeholder="data"/>
-		<p>Prodotti</p>
 		<div id="prodotti">
 			<input type="text" name="nome-1" placeholder="nome"/>
 			<input type="text" name="quantita-1" placeholder="quantita"/>
