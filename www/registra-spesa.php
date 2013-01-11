@@ -19,7 +19,10 @@ if(isset($_POST['inseriscispesa'])){
 	mysql_query($inserisci_spesa, $db) or die("Errore nella INSERT SPESA: $inserisci_spesa");
 	
 	$id_spesa = mysql_insert_id();
-	query("INSERT INTO prodotto 
+	
+	foreach($_POST['t'] as $prodotto){
+		
+		query("INSERT INTO prodotto 
 								(nome, 
 								 quantita, 
 								 costo, 
@@ -32,9 +35,7 @@ if(isset($_POST['inseriscispesa'])){
 										'{$prodotto['descrizione']}',
 										$id_spesa );");
 	
-	$id_prodotto = mysql_insert_id();
-	
-	foreach($_POST['t'] as $prodotto){
+		$id_prodotto = mysql_insert_id();
 		
 		query("UPDATE appartenenza SET totale=totale+{$prodotto['costo']} WHERE id_utente='{$_SESSION['email']}' AND id_ambiente={$_GET['ambiente']}");
 		
