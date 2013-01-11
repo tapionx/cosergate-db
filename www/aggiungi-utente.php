@@ -30,5 +30,5 @@ if(mysql_num_rows($esiste) == 0){
 
 <form method="post" action="">
 	<input type="text" placeholder="email utente" name="email">
-	<input type="submit" 
+	<input type="submit" value="Aggiungi">
 </form>
