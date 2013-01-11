@@ -6,8 +6,14 @@ $spesa = query("SELECT * FROM spesa WHERE id_spesa={$_POST['id_spesa']}")[0];
 $prodotti = query("SELECT * FROM prodotto WHERE id_spesa={$_POST['id_spesa']}");
 
 echo "<form method='post' action=''>
-		<input type='text' name='negozio' value='{$spesa['negozio']}'/>
-		<input type='text' name='negozio' value='{$spesa['data']}'/>
+		<input type='text' name='negozio' value='{$spesa['negozio']}' />
+		<input type='text' name='negozio' value='{$spesa['data']}' />
+	  ";
+
+foreach($prodotti as $prodotto){
+	echo "<input type='text' name='p[][nome]' value='{$prodotto['nome']}' />
+}
+
 	  </form>";
 
 header("Content-type:text/plain;");
