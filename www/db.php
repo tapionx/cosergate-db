@@ -19,7 +19,7 @@ function query($q){
 	global $db;
 	$aq = mysql_query($q, $db) or die("Errore: '$q'");
 	
-	if($aq!=TRUE)
+	if(!is_bool($aq))
 		return mysql_fetch_all($aq);
 }
 
