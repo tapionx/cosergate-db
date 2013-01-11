@@ -88,19 +88,16 @@ foreach($spese as $spesa){
 		  </tr>
 	";
 	
-	
-	//foreach($spesa as $campo){
-	//	echo '<td>'.$campo.'</td>';
-	//}
-	//echo "</tr>";
-	
 	$prodotti = query("SELECT * FROM prodotto WHERE id_spesa={$spesa['id_spesa']};");
 	foreach($prodotti as $prodotto){
-	echo "<tr>";
-		foreach($prodotto as $campo){
-			echo '<td>'.$campo.'</td>';
-		}
-	echo "</tr>";
+	echo "<tr>
+			<th>Nome</th>
+			<th>Quantità</th>
+			<th>Prezzo</th>
+			<th>Descrizione</th>
+		  </tr>
+	";
+	
 	}
 	
 }
