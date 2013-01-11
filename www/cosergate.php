@@ -77,7 +77,7 @@ echo "</tr></table>";
 	}
 ?>
 	</select>
-	<input type="submit" value="Paga" />
+	<input type="submit" value="Paga" onclick="confirm('Sei sicuro?')"/>
 </form>
 
 <p>Lista delle spese</p>
