@@ -33,6 +33,7 @@ if(mysql_num_rows($esiste) == 0){
 
 
  echo '<a href="aggiungi-utente.php?ambiente='.$_GET['ambiente'].'">Aggiungi Utente</a><br/>';
+ echo '<a href="rimuovi-utente.php?ambiente='.$_GET['ambiente'].'">Rimuoviti dall\'ambiente</a><br/>';
  echo '<a href="cosergate.php?logout=1">Logout</a>';
 ?>
 <p>Il resoconto</p>
