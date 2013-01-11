@@ -73,7 +73,7 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=apparten
 		<?php
 		
 		foreach($utenti as $utente){
-			echo "<input type='checkbox' name='{$utente['nome']}' />";
+			echo "<input type='checkbox' name='{$utente['id']}' value=''/>";
 		}
 		
 		?>
