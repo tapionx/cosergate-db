@@ -44,7 +44,7 @@ if(isset($_POST['aggiungi'])){
 	}
 }
 ?>
-
+<br>
 <form method="post" action="">
 	<input type="text" placeholder="email utente" name="email">
 	<input type="submit" value="Aggiungi" name="aggiungi">
