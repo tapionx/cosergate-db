@@ -59,9 +59,6 @@ $nutenti = $nutenti[0]['nutenti'];
 
 $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=appartenenza.id_utente WHERE id_ambiente='{$_GET['ambiente']}';");
 
-print_r($nutenti);
-print_r($utenti);
-
 ?>
 
 
@@ -73,6 +70,13 @@ print_r($utenti);
 		<input type="text" name="nome-1" placeholder="nome"/>
 		<input type="text" name="quantita-1" placeholder="quantita"/>
 		<input type="text" name="costo-1" placeholder="costo"/>
+		<?php
+		
+		foreach($utenti as $utente){
+			echo "<input type='checkbox' name='{$utente['nome']}'";
+		}
+		
+		?>
 		<input type="text" name="descrizione-1" placeholder="descrizione"/>
 		<br />
 	</div>
