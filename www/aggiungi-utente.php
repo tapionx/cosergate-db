@@ -35,7 +35,7 @@ if(isset($_POST['aggiungi'])){
 		$utente = mysql_query($query, $db) or die('Errore nella SELECT');
 
 		if( mysql_num_rows($utente) == 1){
-			echo "da aggiungere";
+			$query = "INSERT into appartenenza "
 		} else {
 			echo "Email errata.";
 		}
