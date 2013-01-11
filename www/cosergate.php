@@ -122,9 +122,12 @@ foreach($spese as $spesa){
 			}
 		}	
 	}
-	echo "<tr>
-			<td>Commento:</td>
-	      </tr>";
+	echo "<form method='post' action='registra-commento.php'>
+			  <tr>
+				<td><input type='text' name='commento' placeholder='aggiungi commento'/></td>
+				<td><input type='submit' value='inseriscicommento'/></td>
+			  </tr>
+	      </form>";
 	
 }
 echo "</table>";	
