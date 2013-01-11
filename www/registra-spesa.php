@@ -27,7 +27,7 @@ if(isset($_POST['inseriscispesa'])){
 			query("UPDATE appartenenza SET totale=totale-$costo_per_utilizzatore WHERE id_utente=$utente AND id_ambiente={$_GET['ambiente']}");
 		}
 		
-		$query = "INSERT INTO prodotto 
+		query("INSERT INTO prodotto 
 								(nome, 
 								 quantita, 
 								 costo, 
@@ -38,10 +38,7 @@ if(isset($_POST['inseriscispesa'])){
 										{$_POST["quantita-$i"]},
 										{$_POST["costo-$i"]},
 										'{$_POST["descrizione-$i"]}',
-										$lastid );";
-										
-		mysql_query($inserisci_prodotto, $db) or die("Errore nella INSERT PRODOTTO: $inserisci_prodotto");
-		
+										$lastid );");
 	}
 	header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
 }
