@@ -53,7 +53,7 @@ if(isset($_POST['inseriscispesa'])){
 
 <?php
 
-$nutenti = "SELECT count(email) FROM appartenenza WHERE id_ambiente={$_GET['ambiente']};";
+$nutenti = "SELECT count(id_utente) FROM appartenenza WHERE id_ambiente={$_GET['ambiente']};";
 
 
 ?>
