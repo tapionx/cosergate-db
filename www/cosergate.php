@@ -67,7 +67,7 @@ echo '</tr>';
 echo "</tr></table>";
 ?>
 
-<p>La lista delle spese</p>
+<p>Lista delle spese</p>
 
 <form method="get" action="registra-spesa.php">
 <input type="hidden" name="ambiente" value="<?php echo $_GET['ambiente']; ?>"/>
