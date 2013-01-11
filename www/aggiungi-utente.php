@@ -31,13 +31,11 @@ if(isset($_POST['aggiungi'])){
 	$email = $_POST['email'];
 	
 	if($email != $_SESSION['email']){ /* Controllo se sto aggiungendo me stesso */
-		$query = "SELECT count(id_utente) AS nutenti FROM utente WHERE id_utente='$email'";
-		$utente = query($query);
+		$utente = query("SELECT count(id_utente) AS nutenti FROM utente WHERE id_utente='$email'");
 
 		if( $utente[0]['nutenti'] == 1){ /* controllo se la mail esiste */
 			
-			$query = "SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_utente='$email' AND id_ambiente=".$_GET['ambiente'];
-			$utente = query($query);
+			$utente = query("SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_utente='$email' AND id_ambiente=".$_GET['ambiente']);
 			
 			if($utente[0]['nutenti'] == 0){ /* controllo se la mail non esite già nell'ambiente */
 				$query = "INSERT INTO appartenenza VALUES('{$_GET['ambiente']}','$email',0)";
