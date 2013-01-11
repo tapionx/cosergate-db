@@ -8,7 +8,7 @@
 				   "<td><input type='text' name='costo-"+nprodotti+"' placeholder='costo'/></td> " +
 					<?php
 					foreach($utenti as $utente){
-						echo '"<td><input type=\'checkbox\' name=\''.$utente['email']'\' checked/></td>"+';
+						echo '"<td><input type=\'checkbox\' name=\''.$utente['email'].'\' checked/></td>"+';
 					}
 					?>
 				   "<td><input type='text' name='descrizione-"+nprodotti+"' placeholder='descrizione'/> </td>" +
