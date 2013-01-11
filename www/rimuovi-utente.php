@@ -34,7 +34,7 @@ if(isset($_POST['rimuovi'])){
 
 		if( mysql_affected_rows($utente) == 1){ /* controllo se l'eliminazione è andata a buon fine*/
 			echo = "Ti sei rimosso con successo.<br>"
-			echo '<a href="">Torna indietro!</a>'
+			echo '<a href="lista-ambienti.php">Torna alla lista ambienti</a>'
 		}
 }
 ?>
