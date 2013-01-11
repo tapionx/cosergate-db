@@ -92,6 +92,7 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=apparten
 		
 		?>
 		<td><input type="text" name="descrizione-1" placeholder="descrizione"/></td>
+	</tr>
 	</div>
 </table>
 
