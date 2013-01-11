@@ -16,6 +16,7 @@ if(isset($_SESSION['loggato'])){
 	}
 	
 	echo "<p><a href='registra-ambiente.php'>Crea un nuovo ambiente</a></p>";
+	echo '<a href="cosergate.php?logout=1">Logout</a>';
 	
 } else {
 	echo "Non sei loggato";
