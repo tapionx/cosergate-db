@@ -10,7 +10,7 @@ if(isset($_SESSION['loggato'])){
 	$email = $_SESSION['email'];
 	echo "<p>Benvenuto ".$email.'</p>';
 	require_once('db.php');
-	$ambienti = query("SELECT * FROM appartenenza JOIN ambiente ON appartenenza.id_ambiente=id_ambiente.id_ambiente WHERE id_utente='$email'")
+	$ambienti = query("SELECT * FROM appartenenza JOIN ambiente ON appartenenza.id_ambiente=id_ambiente.id_ambiente WHERE id_utente='$email'");
 	if(mysql_num_rows($ambienti) == 0){
 		echo "<p>Non appartieni a nessun ambiente</p>";
 	} else {
