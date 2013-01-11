@@ -128,7 +128,7 @@ foreach($spese as $spesa){
 				<td  colspan='$col'><input type='text' name='commento' placeholder='aggiungi commento'/></td>
 				<td><input type='submit' value='Commenta'/></td>
 			  </tr>
-			<input type='hidden' name='id_prodoto' value='{$prodotto['id_prodotto']}'/>
+			<input type='hidden' name='id_prodotto' value='{$prodotto['id_prodotto']}'/>
 	      </form>";
 	
 }
