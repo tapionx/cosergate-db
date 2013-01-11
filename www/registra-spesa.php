@@ -75,23 +75,25 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=apparten
 		?>
 		<th>Descrizione</th>
 	</tr>
-	<input type="text" name="negozio" placeholder="negozio"/>
-	<input type="date" name="data" placeholder="data"/>
-	<p>Prodotti</p>
-	<div id="prodotti">
-		<input type="text" name="nome-1" placeholder="nome"/>
-		<input type="text" name="quantita-1" placeholder="quantita"/>
-		<input type="text" name="costo-1" placeholder="costo"/>
-		<?php
-		
-		foreach($utenti as $utente){
-			echo "<input type='checkbox' name='{$utente['email']}' checked/>";
-		}
-		
-		?>
-		<input type="text" name="descrizione-1" placeholder="descrizione"/>
-		<br />
-	</div>
+	<tr>
+		<input type="text" name="negozio" placeholder="negozio"/>
+		<input type="date" name="data" placeholder="data"/>
+		<p>Prodotti</p>
+		<div id="prodotti">
+			<input type="text" name="nome-1" placeholder="nome"/>
+			<input type="text" name="quantita-1" placeholder="quantita"/>
+			<input type="text" name="costo-1" placeholder="costo"/>
+			<?php
+			
+			foreach($utenti as $utente){
+				echo "<input type='checkbox' name='{$utente['email']}' checked/>";
+			}
+			
+			?>
+			<input type="text" name="descrizione-1" placeholder="descrizione"/>
+			<br />
+		</div>
+	</tr>
 	<input type="button" name="aggiungiriga" value="Aggiungi prodotto" onclick="aggiungi_prodotto()"/>
 	<input id="nprodotti" type="hidden" name="nprodotti" value="3"/>
 	<input type="submit" name="inseriscispesa" value="Inserisci"/>
