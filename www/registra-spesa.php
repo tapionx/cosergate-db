@@ -6,6 +6,11 @@
 		var form = "<tr><td><input type='text' name='nome-"+nprodotti+"' placeholder='nome'/></td> " + 
 				   "<td><input type='text' name='quantita-"+nprodotti+"' placeholder='quantita'/></td> " +
 				   "<td><input type='text' name='costo-"+nprodotti+"' placeholder='costo'/></td> " +
+					<?php
+					foreach($utenti as $utente){
+						echo "'<td><input type=\'checkbox\' name=\'{$utente['email']}\' checked/></td>'+";
+					}
+					?>
 				   "<td><input type='text' name='descrizione-"+nprodotti+"' placeholder='descrizione'/> </td>" +
 				   "</tr>";
 		$('table').append(form);
@@ -84,11 +89,9 @@ $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=apparten
 		<td><input type="text" name="quantita-1" placeholder="quantita"/></td>
 		<td><input type="text" name="costo-1" placeholder="costo"/></td>
 		<?php
-		
 		foreach($utenti as $utente){
 			echo "<td><input type='checkbox' name='{$utente['email']}' checked/></td>";
 		}
-		
 		?>
 		<td><input type="text" name="descrizione-1" placeholder="descrizione"/></td>
 	</tr>
