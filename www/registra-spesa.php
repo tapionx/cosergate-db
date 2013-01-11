@@ -19,18 +19,7 @@ if(isset($_POST['inseriscispesa'])){
 	mysql_query($inserisci_spesa, $db) or die("Errore nella INSERT SPESA: $inserisci_spesa");
 	
 	$id_spesa = mysql_insert_id();
-	
-	foreach($_POST['t'] as $prodotto){
-		
-		query("UPDATE appartenenza SET totale=totale+{$prodotto['costo']} WHERE id_utente='{$_SESSION['email']}' AND id_ambiente={$_GET['ambiente']}");
-		
-		$costo_per_utilizzatore = $prodotto['costo'] / count($prodotto['email']);
-		foreach($prodotto['email'] as $utente){
-			query("UPDATE appartenenza SET totale=totale-$costo_per_utilizzatore WHERE id_utente='$utente' AND id_ambiente={$_GET['ambiente']}");
-			query("");
-		}
-		
-		query("INSERT INTO prodotto 
+	query("INSERT INTO prodotto 
 								(nome, 
 								 quantita, 
 								 costo, 
@@ -42,6 +31,20 @@ if(isset($_POST['inseriscispesa'])){
 										{$prodotto['costo']},
 										'{$prodotto['descrizione']}',
 										$id_spesa );");
+	
+	$id_prodotto = mysql_insert_id();
+	
+	foreach($_POST['t'] as $prodotto){
+		
+		query("UPDATE appartenenza SET totale=totale+{$prodotto['costo']} WHERE id_utente='{$_SESSION['email']}' AND id_ambiente={$_GET['ambiente']}");
+		
+		$costo_per_utilizzatore = $prodotto['costo'] / count($prodotto['email']);
+		foreach($prodotto['email'] as $utente){
+			query("UPDATE appartenenza SET totale=totale-$costo_per_utilizzatore WHERE id_utente='$utente' AND id_ambiente={$_GET['ambiente']}");
+			query("");
+		}
+		
+		
 	}
 	//header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
 }
