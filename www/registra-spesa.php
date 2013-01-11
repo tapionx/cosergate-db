@@ -49,8 +49,15 @@ if(isset($_POST['inseriscispesa'])){
 	}
 	header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
 }
+?>
+
+<?php
+
+$nutenti = "SELECT count(email) FROM appartenenza WHERE id_ambiente={$_GET['ambiente']};";
+
 
 ?>
+
 
 <form method="post" action="">
 	<input type="text" name="negozio" placeholder="negozio"/>
