@@ -10,13 +10,10 @@ if(isset($_SESSION['loggato'])){
 	$email = $_SESSION['email'];
 	echo "<p>Benvenuto ".$email.'</p>';
 	require_once('db.php');
-	$ambienti = query("SELECT * FROM appartenenza JOIN ambiente ON appartenenza.id_ambiente=id_ambiente.id_ambiente WHERE id_utente='$email'");
-	if(mysql_num_rows($ambienti) == 0){
-		echo "<p>Non appartieni a nessun ambiente</p>";
-	} else {
-		while($riga = mysql_fetch_assoc($ambienti)) {
-			echo '<a href="cosergate.php?ambiente='.$riga['id_ambiente'].'" >'.$riga['nome'].'</a>';
-		}
+	$ambienti = query("SELECT * FROM appartenenza JOIN ambiente ON appartenenza.id_ambiente=ambiente.id_ambiente WHERE id_utente='$email'");
+	while($riga = mysql_fetch_assoc($ambienti)) {
+		echo '<a href="cosergate.php?ambiente='.$riga['id_ambiente'].'" >'.$riga['nome'].'</a>';
+	}
 	}
 	
 	echo "<p><a href='registra-ambiente.php'>Crea un nuovo ambiente</a></p>";
