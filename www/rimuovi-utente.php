@@ -32,7 +32,7 @@ if(isset($_POST['rimuovi'])){
 		$query = "DELETE FROM appartenenza WHERE id_utente='".$_SESSION['email']."' AND id_ambiente=".$_GET['ambiente']." AND totale=0";
 		$rimozione = mysql_query($query, $db) or die('Errore nella DELETE');
 
-		if( mysql_affected_rows($utente) == 1){ /* controllo se l'eliminazione è andata a buon fine*/
+		if( mysql_affected_rows($rimozione) == 1){ /* controllo se l'eliminazione è andata a buon fine*/
 			echo "Ti sei rimosso con successo.<br>";
 			echo '<a href="lista-ambienti.php">Torna alla lista ambienti</a>';
 			exit();
