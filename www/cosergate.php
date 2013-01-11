@@ -67,6 +67,18 @@ echo '</tr>';
 echo "</tr></table>";
 ?>
 
+<p>Vuoi restituire dei soldi a qualcuno?</p>
+<form method="post" action="registra-saldo.php">
+	<input type="text" name="importo" placeholder="Importo"/>
+	<select name="creditore">
+<?php
+	foreach($utenti as $utente){
+		echo "<option value='{$utente['id_utente']}'/>{$utente['username']}</option>";
+	}
+?>
+	</select>
+</form>
+
 <p>Lista delle spese</p>
 
 <form method="get" action="registra-spesa.php">
