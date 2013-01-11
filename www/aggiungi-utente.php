@@ -28,7 +28,7 @@ if(mysql_num_rows($esiste) == 0){
 }
 
 if(isset($_POST['aggiungi'])){
-	$email = $_POST['email']
+	$email = $_POST['email'];
 	
 	if($email != $_SESSION['email']){
 		$query = "SELECT * FROM utente WHERE email='$email'";
