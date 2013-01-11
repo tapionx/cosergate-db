@@ -37,7 +37,7 @@ if(isset($_POST['aggiungi'])){
 		if( mysql_num_rows($utente) == 1){
 			echo "da aggiungere";
 		} else {
-			echo "ERRORE";
+			echo "Email errata.";
 		}
 	}else{
 		echo "Non puoi aggiungere te stesso furbacchione.";
