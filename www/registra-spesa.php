@@ -58,6 +58,8 @@ $nutenti = query("SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_
 
 $utenti = query("SELECT * FROM utenti JOIN appartenenza ON utenti.email=appartenenza.id_utente WHERE id_ambiente='{$_GET['ambiente']}';");
 
+print_r($nutenti);
+print_r($utenti);
 
 ?>
 
