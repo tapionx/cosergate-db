@@ -1,5 +1,11 @@
 <?php
 session_start();
+/* logout? */
+if(isset($_GET['logout'])){
+	 session_unset();
+	 header('Location: index.php');
+}
+
 if(isset($_SESSION['loggato'])){
 	$email = $_SESSION['email'];
 	echo "<p>Benvenuto ".$email.'</p>';
