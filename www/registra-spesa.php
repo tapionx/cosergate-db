@@ -80,7 +80,7 @@ if(isset($_POST['inseriscispesa'])){
 		
 <table>
 	<tr>
-		<th>Negozio</th>
+		<th>Nome</th>
 		<th>Quantità</th>
 		<th>Costo</th>
 		<?php
