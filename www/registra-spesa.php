@@ -55,6 +55,7 @@ if(isset($_POST['inseriscispesa'])){
 
 // Recupero il numero di utenti
 $nutenti = query("SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente='{$_GET['ambiente']}';");
+$nutenti = $nutenti[0]['nutenti'];
 
 $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.email=appartenenza.id_utente WHERE id_ambiente='{$_GET['ambiente']}';");
 
