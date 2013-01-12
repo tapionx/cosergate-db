@@ -17,7 +17,6 @@ foreach($prodotti as $prodotto){
 		  <input type='text' name='p[{$prodotto['id_prodotto']}][quantita]' value='{$prodotto['quantita']}' />
 		  <input type='text' name='p[{$prodotto['id_prodotto']}][costo]' value='{$prodotto['costo']}' />
 		  <input type='text' name='p[{$prodotto['id_prodotto']}][descrizione]' value='{$prodotto['descrizione']}' />
-		  <br>
 	";
 	
 	$utilizzi = query("SELECT * FROM utilizzo WHERE id_prodotto={$prodotto['id_prodotto']};");
@@ -25,6 +24,7 @@ foreach($prodotti as $prodotto){
 		echo "<input type='checkbox' name='p[{$prodotto['id_prodotto']}][utenti][]' value='{$utente['id_utente']}'/>";
 	}
 	
+	echo "<br>";
 }
 
 echo "</form>";
