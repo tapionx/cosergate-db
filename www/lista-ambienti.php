@@ -12,6 +12,8 @@ if(!isset($_SESSION['loggato'])){
 	die();
 }
 
+require_once("db.php");
+
 $email = $_SESSION['email'];
 
 $utente = query("SELECT * FROM utente WHERE id_utente='$email';");
