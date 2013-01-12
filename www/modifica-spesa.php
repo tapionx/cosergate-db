@@ -11,7 +11,18 @@ echo "<form method='post' action=''>
 		<input type='text' name='negozio' value='{$spesa['data']}' />
 		<br>
 	  ";
+?>
 
+<table>
+	<tr>
+		<th>Nome</th>
+		<th>Quantità</th>
+		<th>Costo</th>
+		<th>Descrizione</th>
+<?php
+foreach($utenti as $utente){
+	echo "<th>{$utente['id_utente']}</th>";
+}
 foreach($prodotti as $prodotto){
 	echo "<input type='text' name='p[{$prodotto['id_prodotto']}][nome]' value='{$prodotto['nome']}' />
 		  <input type='text' name='p[{$prodotto['id_prodotto']}][quantita]' value='{$prodotto['quantita']}' />
