@@ -21,7 +21,7 @@ echo "<form method='post' action=''>
 		<th>Descrizione</th>
 <?php
 foreach($utenti as $utente){
-	echo "<th>{$utente['id_utente']}</th>";
+	echo "<th>{$utente['username']}</th>";
 }
 echo "</tr>";
 foreach($prodotti as $prodotto){
