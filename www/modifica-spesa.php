@@ -8,6 +8,9 @@ if(isset($_POST['spesamodificata'])){
 	query("UPDATE spesa SET data='{$_POST['data']}', negozio='{$_POST['negozio']}' WHERE id_spesa={$_POST['id_spesa']}");
 	
 	foreach($_POST['p'] as $id_prodotto => $prodotto) {
+		
+		$utilizzi = query("");
+		
 		query("UPDATE prodotto SET nome='{$prodotto['nome']}', quantita={$prodotto['quantita']}, costo={$prodotto['costo']}, descrizione='{$prodotto['descrizione']}' WHERE id_prodotto=$id_prodotto");
 		query("DELETE FROM utilizzo WHERE id_prodotto=$id_prodotto");
 		foreach($prodotto['utenti'] as $utilizzo) {
