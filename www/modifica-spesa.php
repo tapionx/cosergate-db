@@ -1,6 +1,14 @@
 <?php
 
+session_start();
 require_once("db.php");
+
+if(isset($_POST['spesamodificata'])){
+
+	header("Content-type:text/plain;");
+	die();
+}
+
 
 $spesa = query("SELECT * FROM spesa WHERE id_spesa={$_POST['id_spesa']}")[0];
 $prodotti = query("SELECT * FROM prodotto WHERE id_spesa={$_POST['id_spesa']}");
