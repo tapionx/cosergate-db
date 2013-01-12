@@ -16,7 +16,7 @@ $utenti = query("SELECT utente.* FROM utente JOIN appartenenza ON utente.id_uten
 
 echo "<form method='post' action=''>
 		<input type='text' name='negozio' value='{$spesa['negozio']}' />
-		<input type='text' name='negozio' value='{$spesa['data']}' />
+		<input type='text' name='data' value='{$spesa['data']}' />
 		<br>
 	  ";
 ?>
