@@ -25,10 +25,10 @@ foreach($utenti as $utente){
 }
 echo "</tr><tr>";
 foreach($prodotti as $prodotto){
-	echo "<input type='text' name='p[{$prodotto['id_prodotto']}][nome]' value='{$prodotto['nome']}' />
-		  <input type='text' name='p[{$prodotto['id_prodotto']}][quantita]' value='{$prodotto['quantita']}' />
-		  <input type='text' name='p[{$prodotto['id_prodotto']}][costo]' value='{$prodotto['costo']}' />
-		  <input type='text' name='p[{$prodotto['id_prodotto']}][descrizione]' value='{$prodotto['descrizione']}' />
+	echo "<td><input type='text' name='p[{$prodotto['id_prodotto']}][nome]' value='{$prodotto['nome']}' /></td>
+		  <td><input type='text' name='p[{$prodotto['id_prodotto']}][quantita]' value='{$prodotto['quantita']}' /></td>
+		  <td><input type='text' name='p[{$prodotto['id_prodotto']}][costo]' value='{$prodotto['costo']}' /></td>
+		  <td><input type='text' name='p[{$prodotto['id_prodotto']}][descrizione]' value='{$prodotto['descrizione']}' /></td>
 	";
 	
 	foreach($utenti as $utente){
