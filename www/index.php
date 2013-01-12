@@ -12,3 +12,5 @@
 			<input type="password" name="password" placeholder="password" />
 			<input type="submit" value="Login" />
 		</form>
+	</body>
+</html>
