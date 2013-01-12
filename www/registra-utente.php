@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cosergate</title>
+	</head>
+	<body>
 <?php
 
 if(isset($_POST['registra'])) {
