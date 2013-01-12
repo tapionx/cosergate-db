@@ -103,7 +103,7 @@ foreach($spese as $spesa){
 					<input type='hidden' name='id_spesa' value='{$spesa['id_spesa']}'/>
 			    </form>
 			    <form method='post' action='elimina-spesa.php?ambiente={$_GET['ambiente']}'>
-					<input type='submit' name='modifica' value='Modifica' />
+					<input type='submit' name='elimina' value='Elimina' />
 					<input type='hidden' name='id_spesa' value='{$spesa['id_spesa']}'/>
 			    </form>
 			</td>
