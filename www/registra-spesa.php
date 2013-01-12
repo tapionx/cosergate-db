@@ -1,3 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cosergate</title>
+	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript">
+			var nprodotti = 1;
+			function aggiungi_prodotto(){
+				nprodotti += 1;
+				var form = "<tr><td><input type='text' name='t["+nprodotti+"][nome]' placeholder='nome'/></td> " + 
+						   "<td><input type='text' name='t["+nprodotti+"][quantita]' placeholder='quantita'/></td> " +
+						   "<td><input type='text' name='t["+nprodotti+"][costo]' placeholder='costo'/></td> " +
+							<?php
+							foreach($utenti as $utente){
+								echo '"<td><input type=\'checkbox\' name=\'t["+nprodotti+"][id_utente][]\' value=\''.$utente['id_utente'].'\' checked/></td>"+';
+							}
+							?>
+						   "<td><input type='text' name='t["+nprodotti+"][descrizione]' placeholder='descrizione'/> </td>" +
+						   "</tr>";
+				$('table').append(form);
+				$('#nprodotti').attr('value', nprodotti);
+			}
+		</script>
+
+		
+	</head>
+	<body>
 <?php
 session_start();
 require_once('db.php');
@@ -52,26 +80,6 @@ if(isset($_POST['inseriscispesa'])){
 ?>
 
 
-
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script type="text/javascript">
-	var nprodotti = 1;
-	function aggiungi_prodotto(){
-		nprodotti += 1;
-		var form = "<tr><td><input type='text' name='t["+nprodotti+"][nome]' placeholder='nome'/></td> " + 
-				   "<td><input type='text' name='t["+nprodotti+"][quantita]' placeholder='quantita'/></td> " +
-				   "<td><input type='text' name='t["+nprodotti+"][costo]' placeholder='costo'/></td> " +
-					<?php
-					foreach($utenti as $utente){
-						echo '"<td><input type=\'checkbox\' name=\'t["+nprodotti+"][id_utente][]\' value=\''.$utente['id_utente'].'\' checked/></td>"+';
-					}
-					?>
-				   "<td><input type='text' name='t["+nprodotti+"][descrizione]' placeholder='descrizione'/> </td>" +
-				   "</tr>";
-		$('table').append(form);
-		$('#nprodotti').attr('value', nprodotti);
-	}
-</script>
 
 
 
