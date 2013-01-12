@@ -29,12 +29,14 @@ if(isset($_POST['spesamodificata'])){
 		
 		foreach($utilizzi as $utilizzo){
 			query("UPDATE appartenenza SET saldo = saldo + {$costo_per_utilizzatore_old} WHERE id_utente='{$utilizzo['id_utente']}' AND id_ambiente={$_GET['ambiente']}");
-			echo "<p>tolgo {$costo_per_utilizzatore_old} a {$utilizzo['id_utente']}</p>";
+			echo "<p>aggiungo {$costo_per_utilizzatore_old} a {$utilizzo['id_utente']}</p>";
 		}
 		
 		query("UPDATE prodotto SET nome='{$prodotto['nome']}', quantita={$prodotto['quantita']}, costo={$prodotto['costo']}, descrizione='{$prodotto['descrizione']}' WHERE id_prodotto=$id_prodotto");
 		
 		query("UPDATE appartenenza SET saldo = saldo + {$prodotto['costo']} WHERE id_utente='{$_POST['id_utente']}' AND id_ambiente={$_GET['ambiente']}");
+		
+		
 		
 		query("DELETE FROM utilizzo WHERE id_prodotto=$id_prodotto");
 		foreach($prodotto['utenti'] as $utilizzo) {
