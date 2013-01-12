@@ -44,6 +44,7 @@ $utenti = query("SELECT utente.* FROM utente JOIN appartenenza ON utente.id_uten
 
 echo "<form method='post' action=''>
 		<input type='hidden' name='id_spesa' value='{$_POST['id_spesa']}' />
+		<input type='hidden' name='id_utente' value='{$_POST['id_utente']}' />
 		<input type='text' name='negozio' value='{$spesa['negozio']}' />
 		<input type='text' name='data' value='{$spesa['data']}' />
 		<br>
