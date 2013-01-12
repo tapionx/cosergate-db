@@ -22,7 +22,7 @@ foreach($prodotti as $prodotto){
 	
 	$utilizzi = query("SELECT * FROM utilizzo WHERE id_prodotto={$prodotto['id_prodotto']};");
 	foreach($utenti as $utente){
-		echo "<input type='checkbox' name='p[{$prodotto['id_prodotto']}][utenti][]' value='{$utente['id_utente']}'";
+		echo "<input type='checkbox' name='p[{$prodotto['id_prodotto']}][utenti][]' value='{$utente['id_utente']}'/>";
 	}
 	
 }
