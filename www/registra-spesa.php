@@ -1,3 +1,20 @@
+
+<?php
+session_start();
+require_once('db.php');
+
+if(!isset($_SESSION['loggato'])){
+	header("Location: index.php");
+	die();
+}
+
+// Recupero il numero di utenti
+$nutenti = query("SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente='{$_GET['ambiente']}';");
+$nutenti = $nutenti[0]['nutenti'];
+
+$utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.id_utente=appartenenza.id_utente WHERE id_ambiente='{$_GET['ambiente']}';");
+
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -26,20 +43,6 @@
 		
 	</head>
 	<body>
-<?php
-session_start();
-require_once('db.php');
-
-if(!isset($_SESSION['loggato'])){
-	header("Location: index.php");
-	die();
-}
-
-// Recupero il numero di utenti
-$nutenti = query("SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente='{$_GET['ambiente']}';");
-$nutenti = $nutenti[0]['nutenti'];
-
-$utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.id_utente=appartenenza.id_utente WHERE id_ambiente='{$_GET['ambiente']}';");
 
 if(isset($_POST['inseriscispesa'])){
 	
