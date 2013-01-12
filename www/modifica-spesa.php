@@ -46,7 +46,7 @@ if(isset($_POST['spesamodificata'])){
 		}
 	}
 
-	//header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
+	Header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
 	//print_r($_POST);
 	die();
 }
