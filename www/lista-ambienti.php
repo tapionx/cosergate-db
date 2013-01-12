@@ -24,7 +24,8 @@ require_once("db.php");
 
 $email = $_SESSION['email'];
 
-$utente = query("SELECT * FROM utente WHERE id_utente='$email';")[0];
+$utente = query("SELECT * FROM utente WHERE id_utente='$email';");
+$utente = $utente[0];
 
 echo "<p>Benvenuto ".$utente['nome']." ".$utente['cognome'].'</p>';
 echo "<p>Questa è la lista dei tuoi ambienti, selezionane uno per iniziare, altrimenti creane uno.</p>";
