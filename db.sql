@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS utilizzo (
   id_prodotto INTEGER NOT NULL ,
   id_utente VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id_prodotto`, `id_utente`) ,
-  FOREIGN KEY (id_prodotto) REFERENCES prodotto(id_prodotto),
+  FOREIGN KEY (id_prodotto) REFERENCES prodotto(id_prodotto)  ON DELETE CASCADE,
   FOREIGN KEY (id_utente) REFERENCES utente(id_utente)
 );
 
