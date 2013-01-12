@@ -9,10 +9,12 @@ if(isset($_POST['spesamodificata'])){
 	
 	foreach($_POST['p'] as $id_prodotto => $prodotto) {
 		query("UPDATE prodotto SET nome='{$prodotto['nome']}', quantita={$prodotto['quantita']}, costo={$prodotto['costo']}, descrizione='{$prodotto['descrizione']}' WHERE id_prodotto=$id_prodotto");
+		query("DELETE FROM utilizzo WHERE id_prodotto=$id_prodotto");
+		foreach($prodotto['utenti'] as $utilizzo) {
+			query("INSERT INTO utilizzo (id_prodotto, id_utente) VALUES ({$id_prodotto}, '{$utilizzo}');");
+		}
 	}
 
-	query("DELETE FROM utilizzo WHERE id_prodotto=$id_prodotto");
-	
 	header("Content-type:text/plain;");
 	print_r($_POST);
 	die();
