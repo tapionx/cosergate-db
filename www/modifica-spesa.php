@@ -29,15 +29,15 @@ foreach($prodotti as $prodotto){
 		  <td><input type='text' name='p[{$prodotto['id_prodotto']}][quantita]' value='{$prodotto['quantita']}' /></td>
 		  <td><input type='text' name='p[{$prodotto['id_prodotto']}][costo]' value='{$prodotto['costo']}' /></td>
 		  <td><input type='text' name='p[{$prodotto['id_prodotto']}][descrizione]' value='{$prodotto['descrizione']}' /></td>
-	</tr>";
+	";
 	
 	foreach($utenti as $utente){
-		echo "<input type='checkbox' name='p[{$prodotto['id_prodotto']}][utenti][]' value='{$utente['id_utente']}'";
+		echo "<td><input type='checkbox' name='p[{$prodotto['id_prodotto']}][utenti][]' value='{$utente['id_utente']}'";
 		$utilizzi = query("SELECT id_utente FROM utilizzo WHERE id_prodotto={$prodotto['id_prodotto']} AND id_utente='{$utente['id_utente']}';");
 		if(!empty($utilizzi)){
 			echo " checked ";
 		}
-		echo " />";
+		echo " /></td>";
 	}
 	
 	echo "<br>";
