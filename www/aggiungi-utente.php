@@ -1,3 +1,10 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cosergate</title>
+		
+	</head>
+	<body>
 <?php 
 session_start();
 require_once('db.php');
