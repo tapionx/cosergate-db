@@ -23,4 +23,8 @@ function query($q){
 		return mysql_fetch_all($aq);
 }
 
+function username($id){
+	return query("SELECT username FROM utente WHERE id_utente='$id';");
+}
+
 ?>
