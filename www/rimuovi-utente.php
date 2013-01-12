@@ -30,7 +30,7 @@ if(isset($_POST['rimuovi'])){
 			echo '<a href="lista-ambienti.php">Torna alla lista ambienti</a>';
 			exit();
 		}else{
-			echo "CACCIA I FOLDI!!.";
+			echo "Devi aver saldato tutti i tuoi debiti prima di lasciare un ambiente.";
 		}
 }
 
