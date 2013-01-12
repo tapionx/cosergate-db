@@ -40,7 +40,7 @@ foreach($prodotti as $prodotto){
 		echo " /></td>";
 	}
 	
-	echo "<br>";
+	echo "</tr>";
 }
 
 echo "</form>";
