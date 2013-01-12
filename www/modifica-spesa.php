@@ -37,7 +37,7 @@ if(isset($_POST['spesamodificata'])){
 		}
 	}
 
-	header("Content-type:text/plain;");
+	header("Location: cosergate.php;");
 	//print_r($_POST);
 	die();
 }
