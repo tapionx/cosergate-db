@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS appartenenza (
   id_utente VARCHAR(45) NOT NULL ,
   saldo FLOAT NOT NULL,
   PRIMARY KEY (id_ambiente, id_utente) ,
-  FOREIGN KEY (id_ambiente) REFERENCES ambiente(id_ambiente),
+  FOREIGN KEY (id_ambiente) REFERENCES ambiente(id_ambiente) ON DELETE CASCADE,
   FOREIGN KEY (id_utente) REFERENCES utente(id_utente)
 );
 
