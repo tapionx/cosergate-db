@@ -68,3 +68,6 @@ if(isset($_POST['aggiungi'])){
 <?php 
 echo '<a href="cosergate.php?ambiente='.$_GET['ambiente'].'">Torna indietro</a>';
 ?>
+
+	</body>
+</html>
