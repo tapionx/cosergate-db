@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Cosergate</title>
+		<meta charset="utf-8">
 		<style>
 			table {
 				border-collapse: collapse;
