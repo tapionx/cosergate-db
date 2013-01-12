@@ -19,6 +19,7 @@ $email = $_SESSION['email'];
 $utente = query("SELECT * FROM utente WHERE id_utente='$email';")[0];
 
 echo "<p>Benvenuto ".$utente['nome']." ".$utente['cognome'].'</p>';
+echo "<p>Questa è la lista dei tuoi ambienti, selezionane uno per iniziare, altrimenti creane uno.</p>";
 require_once('db.php');
 $ambienti = query("SELECT * FROM appartenenza JOIN ambiente ON appartenenza.id_ambiente=ambiente.id_ambiente WHERE id_utente='$email'");
 echo "<ul>";
