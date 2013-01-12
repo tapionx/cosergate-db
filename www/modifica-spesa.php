@@ -5,7 +5,7 @@ require_once("db.php");
 
 if(isset($_POST['spesamodificata'])){
 	
-	query("UPDATE spesa SET data='{$_POST['data']}' WHERE id_spesa={}");
+	query("UPDATE spesa SET data='{$_POST['data']}' WHERE id_spesa={$_POST['id_spesa']}");
 	
 	header("Content-type:text/plain;");
 	print_r($_POST);
