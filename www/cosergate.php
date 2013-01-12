@@ -176,3 +176,6 @@ echo "</table>";
 ?>
 
 
+	</body>
+</html>
+
