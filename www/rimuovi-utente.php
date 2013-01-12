@@ -59,3 +59,6 @@ if(mysql_num_rows($esiste) == 0){
 <?php 
 echo '<a href="cosergate.php?ambiente='.$_GET['ambiente'].'">Torna indietro</a>';
 ?>
+
+	</body>
+</html>

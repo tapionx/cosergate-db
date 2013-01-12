@@ -39,4 +39,5 @@ if(isset($_POST['aggiungi'])) {
 <input type="submit" name="aggiungi" value="Aggiungi" />
 </form>
 
-
+	</body>
+</html>

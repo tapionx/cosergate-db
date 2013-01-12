@@ -40,5 +40,6 @@ if(isset($_POST['registra'])) {
 <br>
 <input type="submit" name="registra" value="Registrati" />
 </form>
-
+	</body>
+</html>
 

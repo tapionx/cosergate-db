@@ -118,3 +118,5 @@ if(isset($_POST['inseriscispesa'])){
 	<input id="nprodotti" type="hidden" name="nprodotti" value="3"/>
 	<input type="submit" name="inseriscispesa" value="Inserisci"/>
 </form>
+	</body>
+</html>

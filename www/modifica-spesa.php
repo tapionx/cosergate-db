@@ -84,4 +84,7 @@ print_r($spesa);
 print_r($prodotti);
 print_r($utenti);
 print_r($utilizzi);
+
 ?>
+	</body>
+</html>
