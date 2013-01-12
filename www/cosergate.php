@@ -37,10 +37,11 @@ if(mysql_num_rows($esiste) == 0){
 }
 
 
- echo '<a href="aggiungi-utente.php?ambiente='.$_GET['ambiente'].'">Aggiungi Utente</a><br/>';
- echo '<a href="rimuovi-utente.php?ambiente='.$_GET['ambiente'].'">Rimuoviti dall\'ambiente</a><br/>';
- echo '<a href="cosergate.php?logout=1">Logout</a>';
- echo '<a href="lista-ambienti.php">Seleziona un altro ambiente</a>';
+ echo '<p><a href="aggiungi-utente.php?ambiente='.$_GET['ambiente'].'">Aggiungi Utente</a></p>';
+ echo '<p><a href="rimuovi-utente.php?ambiente='.$_GET['ambiente'].'">Rimuoviti dall\'ambiente</a></p>';
+ echo '<p><a href="lista-ambienti.php">Seleziona un altro ambiente</a></p>';
+ echo '<p><a href="cosergate.php?logout=1">Logout</a></p>';
+
 ?>
 <p>Resoconto Situazione</p>
 <?php
