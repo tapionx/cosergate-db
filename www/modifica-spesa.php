@@ -43,6 +43,8 @@ foreach($prodotti as $prodotto){
 	echo "</tr>";
 }
 
+echo "</table>";
+
 echo "</form>";
 
 echo "<pre>";
