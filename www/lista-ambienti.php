@@ -20,7 +20,7 @@ echo "<ul>";
 foreach($ambienti as $ambiente){
 	echo '<li><a href="cosergate.php?ambiente='.$ambiente['id_ambiente'].'" >'.$ambiente['nome'].'</a></li>';
 }
-echo "</li>";
+echo "</ul>";
 
 echo "<p><a href='registra-ambiente.php'>Crea un nuovo ambiente</a></p>";
 echo '<a href="cosergate.php?logout=1">Logout</a>';
