@@ -24,7 +24,7 @@ function query($q){
 }
 
 function username($id){
-	$a = query("SELECT username FROM utente WHERE id_utente='$id';")[0]['username'];
+	$a = query("SELECT username FROM utente WHERE id_utente='$id';");
 	$a = $a[0]['username'];
 	return $a;
 }
