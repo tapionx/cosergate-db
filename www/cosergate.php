@@ -40,6 +40,7 @@ if(mysql_num_rows($esiste) == 0){
  echo '<a href="aggiungi-utente.php?ambiente='.$_GET['ambiente'].'">Aggiungi Utente</a><br/>';
  echo '<a href="rimuovi-utente.php?ambiente='.$_GET['ambiente'].'">Rimuoviti dall\'ambiente</a><br/>';
  echo '<a href="cosergate.php?logout=1">Logout</a>';
+ echo '<a href="lista-ambienti.php">Seleziona un altro ambiente</a>';
 ?>
 <p>Resoconto Situazione</p>
 <?php
