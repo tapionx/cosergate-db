@@ -16,7 +16,7 @@ require_once("db.php");
 
 $email = $_SESSION['email'];
 
-$utente = query("SELECT * FROM utente WHERE id_utente='$email';");
+$utente = query("SELECT * FROM utente WHERE id_utente='$email';")[0];
 
 echo "<p>Benvenuto ".$utente['nome']." ".$utente['cognome'].'</p>';
 require_once('db.php');
