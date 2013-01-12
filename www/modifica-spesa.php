@@ -29,6 +29,7 @@ if(isset($_POST['spesamodificata'])){
 		
 		foreach($utilizzi as $utilizzo){
 			query("UPDATE appartenenza SET saldo = saldo + {$costo_per_utilizzatore_old} WHERE id_utente='{$utilizzo['id_utente']}' AND id_ambiente={$_GET['ambiente']}");
+			echo "tolgo {$costo_per_utilizzatore_old} a {$utilizzo['id_utente']}";
 		}
 		
 		query("UPDATE prodotto SET nome='{$prodotto['nome']}', quantita={$prodotto['quantita']}, costo={$prodotto['costo']}, descrizione='{$prodotto['descrizione']}' WHERE id_prodotto=$id_prodotto");
