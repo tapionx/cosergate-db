@@ -160,7 +160,7 @@ foreach($spese as $spesa){
 	foreach($commenti as $commento){
 		echo "<tr>
 				<td colspan='$col'>{$commento['testo']}</td>
-				<td>{$commento['id_utente']}</td>
+				<td>".username($spesa['id_utente'])."</td>
 			  </tr>";
 	}
 }
