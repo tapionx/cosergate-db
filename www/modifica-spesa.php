@@ -29,4 +29,5 @@ echo "</form>";
 echo "<pre>";
 print_r($spesa);
 print_r($prodotti);
+print_r($utenti);
 ?>
