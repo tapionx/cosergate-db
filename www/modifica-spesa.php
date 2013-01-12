@@ -22,9 +22,8 @@ if(isset($_POST['spesamodificata'])){
 
 		$costo_per_utilizzatore_old = $prodotto_old['costo'] / count($utilizzi);
 		
-		query("UPDATE appartenenza SET saldo = saldo - {$prodotto_old['costo']} WHERE id_utente='{}' AND id_ambiente={$_GET['ambiente']}");
+		query("UPDATE appartenenza SET saldo = saldo - {$prodotto_old['costo']} WHERE id_utente='{$prodotto_old['id_']}' AND id_ambiente={$_GET['ambiente']}");
 		
-		if(){}
 		
 		query("UPDATE prodotto SET nome='{$prodotto['nome']}', quantita={$prodotto['quantita']}, costo={$prodotto['costo']}, descrizione='{$prodotto['descrizione']}' WHERE id_prodotto=$id_prodotto");
 		query("DELETE FROM utilizzo WHERE id_prodotto=$id_prodotto");
