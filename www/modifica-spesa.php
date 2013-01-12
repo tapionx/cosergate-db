@@ -17,7 +17,8 @@ if(isset($_POST['spesamodificata'])){
 	
 	foreach($_POST['p'] as $id_prodotto => $prodotto) {
 		
-		$utilizzi = query("");
+		$utilizzi = query("SELECT * FROM utilizzo WHERE id_prodotto=$id_prodotto");
+		$prodotto_old = query("SELECT * FROM prodotto WHERE id_prodotto=$id_prodotto");
 		
 		query("UPDATE prodotto SET nome='{$prodotto['nome']}', quantita={$prodotto['quantita']}, costo={$prodotto['costo']}, descrizione='{$prodotto['descrizione']}' WHERE id_prodotto=$id_prodotto");
 		query("DELETE FROM utilizzo WHERE id_prodotto=$id_prodotto");
