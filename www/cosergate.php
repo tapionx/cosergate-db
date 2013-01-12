@@ -1,8 +1,15 @@
-<style>
-	table {
-		border-collapse: collapse;
-	}
-</style>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cosergate</title>
+		<style>
+			table {
+				border-collapse: collapse;
+			}
+		</style>
+
+	</head>
+	<body>
 <?php
 
 session_start();
