@@ -139,20 +139,22 @@ foreach($spese as $spesa){
 				echo "<td></td>";
 			}
 		}	
-	}
-	echo "<form method='post' action='registra-commento.php?ambiente={$_GET['ambiente']}'>
+	
+		echo "<form method='post' action='registra-commento.php?ambiente={$_GET['ambiente']}'>
 			  <tr>
 				<td  colspan='$col'><input type='text' name='commento' placeholder='aggiungi commento'/></td>
 				<td><input type='submit' value='Commenta'/></td>
 			  </tr>
-			<input type='hidden' name='id_prodotto' value='{$prodotto['id_prodotto']}'/>
-	      </form>";
-	$commenti = query("SELECT * FROM commento WHERE id_prodotto={$prodotto['id_prodotto']}");
-	foreach($commenti as $commento){
-		echo "<tr>
-				<td colspan='$col'>{$commento['testo']}</td>
-				<td>".username($spesa['id_utente'])."</td>
-			  </tr>";
+			     <input type='hidden' name='id_prodotto' value='{$prodotto['id_prodotto']}'/>
+		      </form>";
+		$commenti = query("SELECT * FROM commento WHERE id_prodotto={$prodotto['id_prodotto']}");
+		foreach($commenti as $commento){
+			echo "<tr>
+				   <td colspan='$col'>{$commento['testo']}</td>
+				   <td>".username($spesa['id_utente'])."</td>
+			     </tr>";
+		}
+	
 	}
 }
 echo "</table>";	
