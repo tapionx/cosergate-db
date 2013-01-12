@@ -23,6 +23,7 @@ echo "<form method='post' action=''>
 foreach($utenti as $utente){
 	echo "<th>{$utente['id_utente']}</th>";
 }
+echo "</tr>";
 foreach($prodotti as $prodotto){
 	echo "<input type='text' name='p[{$prodotto['id_prodotto']}][nome]' value='{$prodotto['nome']}' />
 		  <input type='text' name='p[{$prodotto['id_prodotto']}][quantita]' value='{$prodotto['quantita']}' />
