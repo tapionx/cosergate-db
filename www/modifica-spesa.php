@@ -18,7 +18,7 @@ if(isset($_POST['spesamodificata'])){
 	foreach($_POST['p'] as $id_prodotto => $prodotto) {
 		
 		$utilizzi = query("SELECT * FROM utilizzo WHERE id_prodotto=$id_prodotto");
-		$prodotto_old = query("SELECT * FROM prodotto WHERE id_prodotto=$id_prodotto");
+		$prodotto_old = query("SELECT * FROM prodotto WHERE id_prodotto=$id_prodotto")[0];
 
 		$costo_per_utilizzatore_old = $prodotto_old['costo'] / count($utilizzi);
 		
