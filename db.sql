@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS appartenenza (
   id_utente VARCHAR(45) NOT NULL ,
   saldo FLOAT NOT NULL,
   PRIMARY KEY (id_ambiente, id_utente) ,
-  FOREIGN KEY (id_ambiente) REFERENCES ambiente(id_ambiente) ON DELETE CASCADE,
+  FOREIGN KEY (id_ambiente) REFERENCES ambiente(id_ambiente),
   FOREIGN KEY (id_utente) REFERENCES utente(id_utente)
 );
 
@@ -31,7 +31,7 @@ CREATE TABLE IF NOT EXISTS spesa (
   timestamp TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   id_ambiente INTEGER NOT NULL,
   id_utente VARCHAR(45) NOT NULL,
-  FOREIGN KEY(id_ambiente) REFERENCES ambiente(id_ambiente) ON DELETE CASCADE,
+  FOREIGN KEY(id_ambiente) REFERENCES ambiente(id_ambiente),
   FOREIGN KEY(id_utente) REFERENCES utente(id_utente)
 );
 
@@ -53,14 +53,14 @@ CREATE TABLE IF NOT EXISTS prodotto (
   descrizione VARCHAR(45) ,
   codice_a_barre INTEGER ,
   id_spesa INTEGER NOT NULL ,
-  FOREIGN KEY (id_spesa) REFERENCES spesa(id_spesa) ON DELETE CASCADE
+  FOREIGN KEY (id_spesa) REFERENCES spesa(id_spesa)
 );
 
 CREATE TABLE IF NOT EXISTS utilizzo (
   id_prodotto INTEGER NOT NULL ,
   id_utente VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`id_prodotto`, `id_utente`) ,
-  FOREIGN KEY (id_prodotto) REFERENCES prodotto(id_prodotto)  ON DELETE CASCADE,
+  FOREIGN KEY (id_prodotto) REFERENCES prodotto(id_prodotto),
   FOREIGN KEY (id_utente) REFERENCES utente(id_utente)
 );
 
