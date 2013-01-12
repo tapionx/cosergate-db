@@ -25,6 +25,8 @@ if(isset($_POST['spesamodificata'])){
 		
 		query("UPDATE appartenenza SET saldo = saldo - {$prodotto_old['costo']} WHERE id_utente='{$_POST['id_utente']}' AND id_ambiente={$_GET['ambiente']}");
 		
+		echo "tolgo ";
+		
 		foreach($utilizzi as $utilizzo){
 			query("UPDATE appartenenza SET saldo = saldo + {$costo_per_utilizzatore_old} WHERE id_utente='{$utilizzo['id_utente']}' AND id_ambiente={$_GET['ambiente']}");
 		}
@@ -37,7 +39,7 @@ if(isset($_POST['spesamodificata'])){
 		}
 	}
 
-	header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
+	//header("Location: cosergate.php?ambiente={$_GET['ambiente']}");
 	//print_r($_POST);
 	die();
 }
