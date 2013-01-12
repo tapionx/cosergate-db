@@ -14,7 +14,7 @@ if(!isset($_SESSION['loggato'])){
 
 $email = $_SESSION['email'];
 
-$utente = query("SELECT * FROM utente WHERE id_utente=$email;");
+$utente = query("SELECT * FROM utente WHERE id_utente='$email';");
 
 echo "<p>Benvenuto ".$email.'</p>';
 require_once('db.php');
