@@ -52,7 +52,8 @@ if(isset($_POST['spesamodificata'])){
 }
 
 
-$spesa = query("SELECT * FROM spesa WHERE id_spesa={$_POST['id_spesa']}")[0];
+$spesa = query("SELECT * FROM spesa WHERE id_spesa={$_POST['id_spesa']}");
+$spesa = $spesa[0];
 $prodotti = query("SELECT * FROM prodotto WHERE id_spesa={$_POST['id_spesa']}");
 $utenti = query("SELECT utente.* FROM utente JOIN appartenenza ON utente.id_utente=appartenenza.id_utente WHERE id_ambiente={$_GET['ambiente']};");
 
