@@ -24,7 +24,7 @@ if(isset($_POST['registra'])) {
 <form method="post" action="">
 <input type="text" name="email" placeholder="email" />
 <br>
-<input type="text" name="nomeutente" placeholder="nome utente" />
+<input type="text" name="nomeutente" placeholder="nome visualizzato" />
 <br>
 <input type="text" name="nome" placeholder="nome" />
 <br>
