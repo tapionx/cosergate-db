@@ -53,7 +53,7 @@ if(mysql_num_rows($esiste) == 0){
 <p>Resoconto Situazione</p>
 <?php
 $nutenti = query("SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente={$_GET['ambiente']};");
-$nutenti = $nutenti['nutenti'];
+$nutenti = $nutenti[0]['nutenti'];
 
 $utenti = query("SELECT username, saldo, nome, utente.id_utente FROM appartenenza JOIN utente ON appartenenza.id_utente=utente.id_utente WHERE id_ambiente={$_GET['ambiente']};");
 
