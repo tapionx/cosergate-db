@@ -96,7 +96,7 @@ echo "<table border=1>";
 foreach($spese as $spesa){
 	$col = 3 + $nutenti;
 	echo "<tr>
-			<td colspan='$col' >Spesa fatta da {$spesa['id_utente']} il {$spesa['data']} nel negozio {$spesa['negozio']}</td>
+			<td colspan='$col' >Spesa fatta da ".username($spesa['id_utente'])." il {$spesa['data']} nel negozio {$spesa['negozio']}</td>
 			<td>
 				<form method='post' action='modifica-spesa.php?ambiente={$_GET['ambiente']}'>
 					<input type='submit' name='modifica' value='Modifica' />
