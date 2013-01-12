@@ -111,22 +111,7 @@ foreach($spese as $spesa){
 			    </form>
 			</td>
 		  </tr>";
-	/*
-	echo "<tr>
-			<th>Negozio</th>
-			<th>Data</th>
-			<th>Acquirente</th>
-		  </tr>
-		  <tr>
-			<td>{$spesa['negozio']}</td>
-			<td>{$spesa['data']}</td>
-			<td>{$spesa['id_utente']}</td>
-		  </tr>
-	";
-	*/
-	
-	$prodotti = query("SELECT * FROM prodotto WHERE id_spesa={$spesa['id_spesa']};");
-	foreach($prodotti as $prodotto){
+
 		echo "<tr>
 				<th>Nome</th>
 				<th>Quantità</th>
@@ -137,7 +122,10 @@ foreach($spese as $spesa){
 			echo "<th>{$utente['username']}</th>";
 		}
 		echo "</tr>";
-		
+	
+	$prodotti = query("SELECT * FROM prodotto WHERE id_spesa={$spesa['id_spesa']};");
+	foreach($prodotti as $prodotto){
+	
 		echo "<tr>
 				<td>{$prodotto['nome']}</td>
 				<td>{$prodotto['quantita']}</td>
