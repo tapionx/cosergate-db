@@ -4,6 +4,9 @@ session_start();
 require_once("db.php");
 
 if(isset($_POST['spesamodificata'])){
+	
+	query("UPDATE spesa SET data='{$_POST['data']}' WHERE id_spesa={}");
+	
 	header("Content-type:text/plain;");
 	print_r($_POST);
 	die();
@@ -15,6 +18,7 @@ $prodotti = query("SELECT * FROM prodotto WHERE id_spesa={$_POST['id_spesa']}");
 $utenti = query("SELECT utente.* FROM utente JOIN appartenenza ON utente.id_utente=appartenenza.id_utente WHERE id_ambiente={$_GET['ambiente']};");
 
 echo "<form method='post' action=''>
+		<input type='hidden' name='id_spesa' value='{$_POST['id_spesa']}' />
 		<input type='text' name='negozio' value='{$spesa['negozio']}' />
 		<input type='text' name='data' value='{$spesa['data']}' />
 		<br>
