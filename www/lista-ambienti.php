@@ -39,3 +39,5 @@ echo "<p><a href='registra-ambiente.php'>Crea un nuovo ambiente</a></p>";
 echo '<a href="cosergate.php?logout=1">Logout</a>';
 	
 ?>
+	</body>
+</html>
