@@ -42,7 +42,7 @@ if(isset($_POST['spesamodificata'])){
 		foreach($prodotto['utenti'] as $utilizzo) {
 			query("INSERT INTO utilizzo (id_prodotto, id_utente) VALUES ({$id_prodotto}, '{$utilizzo}');");
 			query("UPDATE appartenenza SET saldo = saldo - $costo_per_utilizzatore WHERE id_utente='{$utilizzo}' AND id_ambiente={$_GET['ambiente']}");
-			echo "aggiungo $costo_per_utilizzatore a $utilizzo";
+			echo "tolgo $costo_per_utilizzatore a $utilizzo";
 		}
 	}
 
