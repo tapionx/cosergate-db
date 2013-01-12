@@ -15,35 +15,6 @@ $nutenti = $nutenti[0]['nutenti'];
 $utenti = query("SELECT * FROM utente JOIN appartenenza ON utente.id_utente=appartenenza.id_utente WHERE id_ambiente='{$_GET['ambiente']}';");
 
 
-<!DOCTYPE html>
-<html>
-	<head>
-		<title>Cosergate</title>
-	
-		<script src="http://code.jquery.com/jquery-latest.js"></script>
-		<script type="text/javascript">
-			var nprodotti = 1;
-			function aggiungi_prodotto(){
-				nprodotti += 1;
-				var form = "<tr><td><input type='text' name='t["+nprodotti+"][nome]' placeholder='nome'/></td> " + 
-						   "<td><input type='text' name='t["+nprodotti+"][quantita]' placeholder='quantita'/></td> " +
-						   "<td><input type='text' name='t["+nprodotti+"][costo]' placeholder='costo'/></td> " +
-							<?php
-							foreach($utenti as $utente){
-								echo '"<td><input type=\'checkbox\' name=\'t["+nprodotti+"][id_utente][]\' value=\''.$utente['id_utente'].'\' checked/></td>"+';
-							}
-							?>
-						   "<td><input type='text' name='t["+nprodotti+"][descrizione]' placeholder='descrizione'/> </td>" +
-						   "</tr>";
-				$('table').append(form);
-				$('#nprodotti').attr('value', nprodotti);
-			}
-		</script>
-
-		
-	</head>
-	<body>
-
 if(isset($_POST['inseriscispesa'])){
 	
 	$inserisci_spesa = "INSERT INTO spesa (negozio, id_ambiente, id_utente, data) VALUES ('{$_POST['negozio']}', {$_GET['ambiente']}, '{$_SESSION['email']}', '{$_POST['data']}');";
@@ -83,7 +54,34 @@ if(isset($_POST['inseriscispesa'])){
 ?>
 
 
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Cosergate</title>
+	
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript">
+			var nprodotti = 1;
+			function aggiungi_prodotto(){
+				nprodotti += 1;
+				var form = "<tr><td><input type='text' name='t["+nprodotti+"][nome]' placeholder='nome'/></td> " + 
+						   "<td><input type='text' name='t["+nprodotti+"][quantita]' placeholder='quantita'/></td> " +
+						   "<td><input type='text' name='t["+nprodotti+"][costo]' placeholder='costo'/></td> " +
+							<?php
+							foreach($utenti as $utente){
+								echo '"<td><input type=\'checkbox\' name=\'t["+nprodotti+"][id_utente][]\' value=\''.$utente['id_utente'].'\' checked/></td>"+';
+							}
+							?>
+						   "<td><input type='text' name='t["+nprodotti+"][descrizione]' placeholder='descrizione'/> </td>" +
+						   "</tr>";
+				$('table').append(form);
+				$('#nprodotti').attr('value', nprodotti);
+			}
+		</script>
 
+		
+	</head>
+	<body>
 
 
 
