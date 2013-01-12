@@ -58,7 +58,7 @@ if(isset($_POST['inseriscispesa'])){
 <html>
 	<head>
 		<title>Cosergate</title>
-	
+		<meta charset="utf-8"/>
 		<script src="http://code.jquery.com/jquery-latest.js"></script>
 		<script type="text/javascript">
 			var nprodotti = 1;
