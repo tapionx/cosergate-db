@@ -7,7 +7,6 @@
 				border-collapse: collapse;
 			}
 		</style>
-
 	</head>
 	<body>
 <?php
