@@ -37,7 +37,7 @@ if(isset($_POST['spesamodificata'])){
 	}
 
 	header("Content-type:text/plain;");
-	print_r($_POST);
+	//print_r($_POST);
 	die();
 }
 
@@ -92,11 +92,12 @@ echo "<input type='submit' name='spesamodificata' value='Modifica' />";
 echo "</form>";
 
 echo "<pre>";
+/*
 print_r($spesa);
 print_r($prodotti);
 print_r($utenti);
 print_r($utilizzi);
-
+*/
 ?>
 	</body>
 </html>
