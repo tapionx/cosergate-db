@@ -45,7 +45,7 @@ foreach($prodotti as $prodotto){
 
 echo "</table>";
 
-echo "<input type='submit' name='modificaspesa' value='Modifica' />";
+echo "<input type='submit' name='spesamodificata' value='Modifica' />";
 
 echo "</form>";
 
