@@ -32,6 +32,7 @@ if(isset($_POST['spesamodificata'])){
 		query("DELETE FROM utilizzo WHERE id_prodotto=$id_prodotto");
 		foreach($prodotto['utenti'] as $utilizzo) {
 			query("INSERT INTO utilizzo (id_prodotto, id_utente) VALUES ({$id_prodotto}, '{$utilizzo}');");
+			query("UPDATE appartenenza SET saldo = saldo - $costo_per_utilizzatore WHERE id_utente='{$utilizzo}' AND id_ambiente={$_GET['ambiente']}");
 		}
 	}
 
