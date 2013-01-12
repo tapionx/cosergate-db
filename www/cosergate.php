@@ -53,8 +53,6 @@ if(mysql_num_rows($esiste) == 0){
 <p>Resoconto Situazione</p>
 <?php
 $nutenti = query("SELECT count(id_utente) AS nutenti FROM appartenenza WHERE id_ambiente={$_GET['ambiente']};");
-$nutenti = mysql_query($query, $db) or die("Errore nella SELECT: '$query'");
-$nutenti = mysql_fetch_assoc($nutenti);
 $nutenti = $nutenti['nutenti'];
 
 $utenti = query("SELECT username, saldo, nome, utente.id_utente FROM appartenenza JOIN utente ON appartenenza.id_utente=utente.id_utente WHERE id_ambiente={$_GET['ambiente']};");
