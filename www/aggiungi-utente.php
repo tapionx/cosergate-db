@@ -56,7 +56,7 @@ if(isset($_POST['aggiungi'])){
 			echo "Email errata.";
 		}
 	}else{
-		echo "Non puoi aggiungere te stesso furbacchione. =)";
+		echo "Non puoi aggiungere te stesso.";
 	}
 }
 ?>
